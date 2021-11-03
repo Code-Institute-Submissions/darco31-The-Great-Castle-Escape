@@ -10,6 +10,7 @@ colorama.init(autoreset=True)
 
 TIME_ELAPSED = 2
 
+# Start the game and gives initial choices to the player
 
 def start():
     """
@@ -191,6 +192,8 @@ def direction_choice():
         go-left()
     else:
         go_right()
+
+# Section 2 player goes left or right
 
 
 def play_again():
