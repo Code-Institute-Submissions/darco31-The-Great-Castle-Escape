@@ -293,6 +293,27 @@ def go_right():
         P_STAT("\n Maybe its a combination of the levers", 1.2)
         P_STAT("\n Worth a go? (Y or N)", 2)
 
+    try_again = input("=> \n").lower().strip()
+    choice_one = 1
+    choice_two = 2
+    choice_three = 3
+
+    if try_again == "y" or try_again == "yes":
+
+        P_STAT(f"\n You pull {choice_one} and {choice_two}", 3)
+        P_STAT("\n You hear a loud groan , when you turn", 2)
+        P_STAT("\n you see a large object hurtling toward you...", 2)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
 
 def play_again():
     """
