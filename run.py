@@ -173,8 +173,24 @@ def back_to_window():
     else:
         P_STAT("\n Looking down into the dark bleak night", 2)
         P_STAT("\n you decide its best not to try and make your", 2)
-        P_STAT("\n way back to the large door", 2)
+        P_STAT("\n way back to the large door opening", 2)
         direction_choice()
+
+
+def direction_choice():
+    """
+    Player will make a choice to go left or right
+    out of the doorway.
+    """
+    "\n Standing in the doorway you need to make a choice", 1
+    "\n Do you go left or go right? (Left or Right)", 2
+
+    player_choice = input("=> \n").lower().strip()
+
+    if player_choice == "left":
+        go-left()
+    else:
+        go_right()
 
 
 def play_again():
