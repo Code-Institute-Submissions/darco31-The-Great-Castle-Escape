@@ -72,4 +72,40 @@ def start():
         start()
 
 
+def small_window():
+    """
+    Player goes to investigte small window
+    and decides next course of action
+    """
+    P_STAT("\n You get up and walk towards the window", 1)
+    P_STAT("\n You peer out an can only see darkeness", 1)
+    P_STAT("\n Do you try open the window? Y or N", 2)
+
+    try_window = input("=> \n").lower().strip()
+    if try_window == "y" or try_window == "yes":
+        P_STAT("\n You try the wondow, nothing.", 1)
+        P_STAT("\n Urggh its sealed shut", 1)
+        try_door()
+    else:
+        P_STAT("\n You ignore the window", 1)
+        P_STAT("\n and head for the door", 1)
+
+
+def play_again():
+    """
+    Asks the player if they would like to play again
+    """
+    print("\n Would you like to play again? (Y or N")
+
+    answer = input("=> \n").lower().strip()
+
+    if answer == "y" or answer == "yes":
+        start()
+    elif answer == "n" or answer == "no":
+        print(f"\n Sorry to see you go {P_NAME}")
+        print("\n Please do comeback again")
+    else:
+        start()
+
+
 start()
