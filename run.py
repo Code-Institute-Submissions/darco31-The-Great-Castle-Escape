@@ -53,12 +53,12 @@ def start():
     P_STAT("\n You awake a little dazed and confused", 2)
     P_STAT("\n You find yourself in a dimly lit room", 2)
     P_STAT("\n You can hear the rain crashing down outside", 2)
-    P_STAT("\n As you gather your senses you try to recall how you got here", 2)
+    P_STAT("\n Gathering your senses you try to recall how you got here", 2)
     P_STAT("\n You look around the room", 2)
     P_STAT("\n Its big but cold and damp, you notice a window", 2)
     P_STAT("\n A large wooden door is in front of you", 2)
     P_STAT("\n Not a lot of choice", 2)
-    P_STAT("\n So, do you have the guts to try and escape? (Escape or Stay)", 2)
+    P_STAT("\n So, do you have the guts to try and escape?(Escape or Stay)", 2)
     # convert the player's input to lower_case
     answer = input("=> \n").lower().strip()
 
@@ -107,7 +107,7 @@ def try_door():
         P_STAT("\n You open the door as silently as you can", 2)
         P_STAT("\n Looking outside you notice a door at either end", 2)
         P_STAT("\n of a long corridor", 2)
-        P_STAT("\n A table outside cathes your eye, it has a drawer inset", 2)
+        P_STAT("\n A table outside catches your eye, it has a drawer inset", 2)
         P_STAT("\n Do you try the drawer in the table? (Y or N)", 2)
 
         open_drawer = input("=> \n").lower().strip()
@@ -125,20 +125,58 @@ def take_items():
     """
     Player decide to take items from the drawer or leave them
     """
-    "\n Do you pick up the two items (Y or N)",1
+    P_STAT("\n Do you pick up the two items (Y or N)", 1)
     pickup_items = input("=> \n").lower().strip()
 
     if pickup_items == "y" or pickup_items == "yes":
 
-        P_STAT("\n You reeach in quickly and pick up both items", 2)
+        P_STAT("\n You reach in quickly and pick up both items", 2)
         P_STAT("\n You stuff them in your pockets and close the drawer", 2)
         P_STAT("\n You think maybe the knife will open the window", 1)
         back_to_window()
 
     else:
         P_STAT("\n You shut the drawer and leave the items", 1)
+        direction_choice()
 
-        
+
+def back_to_window():
+    """
+    Brings the player back into the start room to the locked
+    window
+    """
+    P_STAT(Fore.RED + "\n You return to the first room", 3)
+
+    P_STAT("\n You look out the window again", 2)
+    P_STAT("\n Do you try the window with the knife? (Y or N)", 1)
+
+    open_window = input("=> \n").lower().strip()
+
+    if open_window == "y" or open_window == "yes":
+        P_STAT("\n You jam the knife into the gap of the window pane", 2)
+        P_STAT("\n the timber comes loose and the window pops open", 2)
+        P_STAT("\n Success, you climb up and out side", 2)
+        P_STAT("\n You peer through the dark and the rain and can just", 2)
+        P_STAT("\n make out the sloping roof. You jump and to your horror ", 2)
+        P_STAT("\n the tile gives way and you fall to your death.", 3)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
+    else:
+        P_STAT("\n Looking down into the dark bleak night", 2)
+        P_STAT("\n you decide its best not to try and make your", 2)
+        P_STAT("\n way back to the large door", 2)
+        direction_choice()
+
+
 def play_again():
     """
     Asks the player if they would like to play again
