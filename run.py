@@ -14,7 +14,8 @@ TIME_ELAPSED = 2
 def start():
     """
     Starts the game, gives a narrative to set the scene and asks
-    if the player would like to play or not.
+    if the player would like to play or not. The function also asks
+    the players name
     """
     print(Fore.RED + Back.YELLOW + Style.BRIGHT + "\nThe Great Castle Escape")
     time.sleep(TIME_ELAPSED)
@@ -49,17 +50,17 @@ def start():
         else:
             break
     P_STAT(f"\n Welcome {P_NAME}, good luck, you will need it\n", 2)
-    P_STAT("\n You awake a little daxed and confused", 2)
+    P_STAT("\n You awake a little dazed and confused", 2)
     P_STAT("\n You find yourself in a dimly lit room", 2)
-    P_STAT("\n You can hear the ran crashing down outside", 2)
-    P_STAT("\n As you gater your senses you try to recall how you got here", 2)
+    P_STAT("\n You can hear the rain crashing down outside", 2)
+    P_STAT("\n As you gather your senses you try to recall how you got here", 2)
     P_STAT("\n You look around the room", 2)
     P_STAT("\n Its big but cold and damp, you notice a window", 2)
     P_STAT("\n A large wooden door is in front of you", 2)
     P_STAT("\n Not a lot of choice", 2)
     P_STAT("\n So, do you have the guts to try and escape? (Escape or Stay)", 2)
     # convert the player's input to lower_case
-    answer = input("> \n").lower().strip()
+    answer = input("=> \n").lower().strip()
 
     if answer == "escape":
         small_window()
@@ -89,6 +90,25 @@ def small_window():
     else:
         P_STAT("\n You ignore the window", 1)
         P_STAT("\n and head for the door", 1)
+
+
+def try_door():
+    """
+    The player approcahes the large door and is offered
+    various choices in which way to go
+    """
+    P_STAT("\n Reaching the door tou try the handle", 2)
+    P_STAT("\n It opens, how odd you think", 2)
+    P_STAT("\n Do you take a look outside? (Y or N)", 2)
+
+    look_outside = input("=> \n").lower().strip()
+
+    if look_outside == "y" or look_outside == "yes":
+        P_STAT("\n You open the door as silently as you can", 2)
+        P_STAT("\n Looking outside you notice a door at either end", 2)
+        P_STAT("\n of a long corridor", 2)
+        P_STAT("\n A table just outside cathes your eye, it has a drawer inset", 2)
+        P_STAT("\n Do you try the drawer in the table? (Y or N)", 2)
 
 
 def play_again():
