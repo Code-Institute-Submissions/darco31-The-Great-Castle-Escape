@@ -107,10 +107,38 @@ def try_door():
         P_STAT("\n You open the door as silently as you can", 2)
         P_STAT("\n Looking outside you notice a door at either end", 2)
         P_STAT("\n of a long corridor", 2)
-        P_STAT("\n A table just outside cathes your eye, it has a drawer inset", 2)
+        P_STAT("\n A table outside cathes your eye, it has a drawer inset", 2)
         P_STAT("\n Do you try the drawer in the table? (Y or N)", 2)
 
+        open_drawer = input("=> \n").lower().strip()
 
+        if open_drawer == "y" or look_outside == "yes":
+            P_STAT("\n You pull out the drawer and find a key and a knife", 2)
+            take_items()
+        else:
+            P_STAT("\n They may notice they are taken", 2)
+            P_STAT("\n Best to keep going", 2)
+            direction_choice()
+
+
+def take_items():
+    """
+    Player decide to take items from the drawer or leave them
+    """
+    "\n Do you pick up the two items (Y or N)",1
+    pickup_items = input("=> \n").lower().strip()
+
+    if pickup_items == "y" or pickup_items == "yes":
+
+        P_STAT("\n You reeach in quickly and pick up both items", 2)
+        P_STAT("\n You stuff them in your pockets and close the drawer", 2)
+        P_STAT("\n You think maybe the knife will open the window", 1)
+        back_to_window()
+
+    else:
+        P_STAT("\n You shut the drawer and leave the items", 1)
+
+        
 def play_again():
     """
     Asks the player if they would like to play again
