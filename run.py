@@ -428,10 +428,28 @@ def bottom_floor():
         play_again()
     
     elif path_choice == "l":
-        
+        P_STAT("\n You decide to take the left path ahead", 2)
+        P_STAT("\n You are in a small room with a vent on the wall", 2)
+        print("\n Do you open the vent? (Y or N)")
 
+        open_vent = input("=> ").lower().strip()
 
+        if open_vent == "y" or open_vent == "yes":
+            P_STAT("\n You pry the vent open and enter", 2)
+            P_STAT("\n You crawl forward and can see another vent in the distance", 2)
+            P_STAT("\n As you reach the next vent you can see below you a gurad on his own", 2)
+            print("\n Try kill the guard? (Y or N)")
 
+        else:
+            return()
+
+        kill_guard = input("=> ").lower().strip()
+
+        if kill_guard == "y" or "yes":
+            P_STAT("\n You pry the vent open and ready your knife", 2)
+            P_STAT("\n You jump down surprising the guard", 2)
+            P_STAT("\n YWith one stroke you cut his throat", 2)
+            P_STAT("\n Quickly you search him and find keys.", 2)
 
 
 def play_again():
