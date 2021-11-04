@@ -92,8 +92,8 @@ def small_window():
     else:
         P_STAT("\n You ignore the window", 1)
         P_STAT("\n and head for the door", 1)
-        direction_choice()
-
+        take_items()
+        
 
 def try_door():
     """
@@ -110,37 +110,45 @@ def try_door():
         P_STAT("\n You open the door as silently as you can", 2)
         P_STAT("\n Looking outside you notice a door at either end", 2)
         P_STAT("\n of a long corridor", 2)
-        P_STAT("\n A table outside catches your eye, it has a drawer inset", 2)
-        print("\n Do you try the drawer in the table? (Y or N)")
-
-        open_drawer = input("=> ").lower().strip()
-
-        if open_drawer == "y" or open_drawer == "yes":
-            P_STAT("\n You pull out the drawer and find a key and a knife", 2)
-            take_items()
-        else:
-            P_STAT("\n They may notice they are taken", 2)
-            P_STAT("\n Best to keep going", 2)
-            direction_choice()
+        take_items()
 
 
 def take_items():
     """
     Player decide to take items from the drawer or leave them
     """
-    P_STAT("\n Do you pick up the two items (Y or N)", 1)
-    pickup_items = input("=> \n").lower().strip()
+    P_STAT("\n A table outside catches your eye, it has a drawer inset", 2)
+    print("\n Do you try the drawer in the table? (Y or N)")
 
-    if pickup_items == "y" or pickup_items == "yes":
+    open_drawer = input("=> ").lower().strip()
 
+    if open_drawer == "y" or open_drawer == "yes":
+        P_STAT("\n You pull out the drawer and find a key and a knife", 2)
         P_STAT("\n You reach in quickly and pick up both items", 2)
         P_STAT("\n You stuff them in your pockets and close the drawer", 2)
         P_STAT("\n You think maybe the knife will open the window", 1)
-        back_to_window()
+        print("\n Do you try the window or go on? (Try or Go on)")
 
-    else:
-        P_STAT("\n You shut the drawer and leave the items", 1)
+    elif open_drawer == "n" or open_drawer == "no":
+        P_STAT("\n Prbably best not to disturb anything", 2)
         direction_choice()
+
+    p_decision = input("=> ").lower().strip()
+
+    if p_decision == "try":
+        back_to_window()
+    else:
+        direction_choice()
+
+
+def return_to_table():
+    """
+    Player returns to the table from the locked door
+    """
+    P_STAT("\n You go back to the table and pull drawer open", 2)
+    P_STAT("\n You reach in quickly and pick up both items", 2)
+    P_STAT("\n You stuff them in your pockets and close the drawer", 2)
+    go_right_back()
 
 
 def back_to_window():
@@ -178,6 +186,15 @@ def back_to_window():
         P_STAT("\n you decide its best not to try and make your", 2)
         P_STAT("\n way back to the large door opening", 2)
         direction_choice()
+
+
+def direction_choice_two():
+    """
+    Second direction choice id player takes nothing from the drawer
+    """
+    P_STAT("\n You reach the door to the right and try open it", 2)
+    P_STAT("\n Its locked, damn it, you remember the key in the drawer", 2)
+    return_to_table()
 
 
 def direction_choice():
@@ -271,6 +288,58 @@ def proceed_down_stairs():
     else:
         P_STAT("\n You put your back against the wall", 2)
         P_STAT("\n and sneak as quietly as you can passed them", 2)
+
+
+def go_right_back():
+    P_STAT("\n You get back to the door and use the key", 2)
+    P_STAT("\n Looking around this lavish room you notice what looks like", 2)
+    P_STAT("\n three levers on the wall", 2)
+    P_STAT("\n You decide to try the levers", 1)
+
+    try_lever = input("=> Pick a number from '1', '2' and '3':  ").lower().strip()
+
+    if try_lever == "1":
+        P_STAT("\n You pull the first lever, you hear a groan", 1.2)
+        P_STAT("\n looking around a large object comes at you ...", 2)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
+    elif try_lever == "2":
+        P_STAT("\n You pull the first lever, you hear a groan", 1.2)
+        P_STAT("\n looking around a large object comes at you ...", 2)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
+    elif try_lever == "3":
+
+        P_STAT("\n You pull the third lever ", 1.2)
+        P_STAT("\n you hear a creaking and aconcealed door opens", 2)
+        P_STAT("\n You look around the room and ", 1.2)
+        P_STAT("\n see a candle on the side table, picking it up", 2)
+        P_STAT("\n You crouch down and make your way into the opening", 2)
+        P_STAT("\n Holding the candle up the passage looks long and unused", 2)
+
+        P_STAT("\n You proceed forward carful as it is sloping down", 2)
+        P_STAT("\n You eventyually reach the end and reappear in a room", 2)
+
+        P_STAT("\n You hear voices but they are coming from behind you", 2)
+
 
 
 def go_right():
