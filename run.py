@@ -62,7 +62,7 @@ def start():
     P_STAT("\n Not a lot of choice", 2)
     P_STAT("\n So, do you have the guts to try and escape?(Escape or Stay)", 2)
     # convert the player's input to lower_case
-    answer = input("=> \n").lower().strip()
+    answer = input("=>").lower().strip()
 
     if answer == "escape":
         small_window()
@@ -84,7 +84,7 @@ def small_window():
     P_STAT("\n You peer out an can only see darkness", 1)
     P_STAT("\n Do you try open the window? Y or N", 2)
 
-    try_window = input("=> \n").lower().strip()
+    try_window = input("=>").lower().strip()
     if try_window == "y" or try_window == "yes":
         P_STAT("\n You try the window, nothing.", 1)
         P_STAT("\n Urggh its sealed shut", 1)
@@ -101,10 +101,10 @@ def try_door():
     various choices in which way to go
     """
     P_STAT("\n Reaching the door you try the handle", 2)
-    P_STAT("\n It opens, how odd you think", 2)
+    P_STAT("\n It opens, thats odd", 2)
     P_STAT("\n Do you take a look outside? (Y or N)", 2)
 
-    look_outside = input("=> \n").lower().strip()
+    look_outside = input("=>").lower().strip()
 
     if look_outside == "y" or look_outside == "yes":
         P_STAT("\n You open the door as silently as you can", 2)
@@ -115,7 +115,7 @@ def try_door():
 
         open_drawer = input("=> \n").lower().strip()
 
-        if open_drawer == "y" or look_outside == "yes":
+        if open_drawer == "y" or open_drawer == "yes":
             P_STAT("\n You pull out the drawer and find a key and a knife", 2)
             take_items()
         else:
@@ -301,6 +301,24 @@ def go_right():
                             ╚══╝╚══╝╚═══╝╚══╝
             ''', 2)
         play_again()
+
+    elif try_lever == "2":
+        P_STAT("\n You pull the first lever, you hear a groan", 1.2)
+        P_STAT("\n looking around a large object comes at you ...", 2)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
+    elif try_lever == "3":
+        P_STAT("\n You pull the third lever, you hear a groan", 1.2)
+        P_STAT("\n looking around a lsecret door creaks open ...", 2)
 
 
 def play_again():
