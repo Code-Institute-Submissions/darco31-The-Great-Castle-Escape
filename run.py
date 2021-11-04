@@ -131,7 +131,7 @@ def take_items():
 
     elif open_drawer == "n" or open_drawer == "no":
         P_STAT("\n Prbably best not to disturb anything", 2)
-        direction_choice()
+        direction_choice_two()
 
     p_decision = input("=> ").lower().strip()
 
@@ -291,6 +291,9 @@ def proceed_down_stairs():
 
 
 def go_right_back():
+    """
+    Return to the right hand door with the key
+    """
     P_STAT("\n You get back to the door and use the key", 2)
     P_STAT("\n Looking around this lavish room you notice what looks like", 2)
     P_STAT("\n three levers on the wall", 2)
@@ -339,7 +342,6 @@ def go_right_back():
         P_STAT("\n You eventyually reach the end and reappear in a room", 2)
 
         P_STAT("\n You hear voices but they are coming from behind you", 2)
-
 
 
 def go_right():
@@ -398,6 +400,38 @@ def go_right():
         P_STAT("\n You eventyually reach the end and reappear in a room", 2)
 
         P_STAT("\n You hear voices but they are coming from behind you", 2)
+
+
+def bottom_floor():
+    """
+    The player is in the place they sneak to from
+    the stairs and from the secret tunnel
+    """
+    P_STAT("\n Looking ahead you can see three paths", 2)
+    P_STAT("\n There is a straight path, left and right path", 2)
+    print("\n Do you go S - L - R?")
+
+    path_choice = input("=> ").lower().strip()
+
+    if path_choice == "s":
+        P_STAT("\n You decide to proceed straight ahead", 2)
+        P_STAT("\n Oh Shi.., a group of very angry men approach...", 2)
+
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+    
+    elif path_choice == "l":
+        
+
+
+
 
 
 def play_again():
