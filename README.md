@@ -1,7 +1,7 @@
 # The Great Catle Escape
 ## Designed and implemented by Stephen D'Arcy
 
-![Live code demo](assets/images/demo.gif)
+![Live code demo](assets/demo.gif)
 
 # Table of Contents
 
