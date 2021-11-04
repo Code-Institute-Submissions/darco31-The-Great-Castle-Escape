@@ -276,34 +276,21 @@ def proceed_down_stairs():
 def go_right():
     """
     Player returns to the corridor and goes to the right
-    hand door from the starting room. This will also be the go right from the 
+    hand door from the starting room. This will also be the go right from the
     room the player initially makes.
     """
-    P_STAT("\n You decided to go back from the room with the stairs", 2)
-    P_STAT("\n You reach the door and try open it", 2)
-    P_STAT("\n You then remebr the key and try it, it works", 2)
+    P_STAT("\n You reach the door to the right and try open it", 2)
+    P_STAT("\n You then remember the key and try it, it works", 2)
     P_STAT("\n You push the door open and enter", 2)
-    P_STAT("\n Loking around this lavish room you notice what looks like", 2)
+    P_STAT("\n Looking around this lavish room you notice what looks like", 2)
     P_STAT("\n three levers on the wall", 2)
-    P_STAT("\n Do you try the levers? (Y or N", 1)
+    P_STAT("\n You decide to try the levers", 1)
 
-    try_lever = input("=> \n").lower().strip()
+    try_lever = input("=> Pick a number from '1', '2' and '3':  ").lower().strip()
 
-    if try_lever == "y" or try_lever == "yes":
-        P_STAT("\n You try the first lever, nothing happens", 1.2)
-        P_STAT("\n Maybe its a combination of the levers", 1.2)
-        P_STAT("\n Worth a go? (Y or N)", 2)
-
-    try_again = input("=> \n").lower().strip()
-    choice_one = 1
-    choice_two = 2
-    choice_three = 3
-
-    if try_again == "y" or try_again == "yes":
-
-        P_STAT(f"\n You pull {choice_one} and {choice_two}", 3)
-        P_STAT("\n You hear a loud groan , when you turn", 2)
-        P_STAT("\n you see a large object hurtling toward you...", 2)
+    if try_lever == "1":
+        P_STAT("\n You pull the first lever, you hear a groan", 1.2)
+        P_STAT("\n looking around a large object comes at you ...", 2)
 
         P_STAT(Fore.RED + '''
                               ╔╗           ╔╗

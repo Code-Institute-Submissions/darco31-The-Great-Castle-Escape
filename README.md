@@ -1,7 +1,7 @@
 # The Great Catle Escape
 ## Designed and implemented by Stephen D'Arcy
 
-![Live code demo](assets/demo.mp4)
+![Live code demo](assets/demo1.gif)
 
 # Table of Contents
 
@@ -13,7 +13,6 @@
    * [Design](#Design)
    * [User Stories](#User-Stories)
    * [Target Audience](#Target-Audience)
-   * [Wireframes](#Wireframes)
 3. [Features](#Features)
    * [Home Page](#Home-Page)
 4. [Technology Used In Design](#Technology-Used-In-Design)
@@ -47,8 +46,6 @@
 ## Target Audience
 
 * The target audience for the game is everyone young and old who enjoy games and would like to test themselves and have fun doing so.
-
-## Wire Frames
 
 #### [Back to content](#table-of-contents)
 
