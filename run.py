@@ -92,6 +92,7 @@ def small_window():
     else:
         P_STAT("\n You ignore the window", 1)
         P_STAT("\n and head for the door", 1)
+        direction_choice()
 
 
 def try_door():

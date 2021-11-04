@@ -5,34 +5,83 @@
 
 # Table of Contents
 
-1.[Introduction](#introduction)
-2.[Technologies_Used](#tech)
-3.[Testing](#testing)
-4.[Bugs](#bugs)
-5.[Fixes](#fixes)
-6.[Deployment](#deployment)
-7.[Credits](#credits)
+1. [The Great Castle Escape](#The-Great-Castle-Escape)
+   * [About](#About)
+   * [The customer goals](#The-customer-goals)
+2. [User Experience](#User-Experience)
+   * [Project goals](#Project-goals)
+   * [Design](#Design)
+   * [User Stories](#User-Stories)
+   * [Target Audience](#Target-Audience)
+   * [Wireframes](#Wireframes)
+3. [Features](#Features)
+   * [Home Page](#Home-Page)
+4. [Technology Used In Design](#Technology-Used-In-Design)
+   * [Python](#Python)
+   * [Libraries](#Libraries)
+5. [Testing](#Testing)
+   * [User Stories](#User-Stories-Testing)
+   * [Manual Testing](#Manual-Testing)
+   * [Additional Testing ](#Additional-Testing)
+6. [Deployment](#Deployment)
+7. [Credits](#Credits)
+   * [Code](#Code)
+   * [Content](#Content)
+8. [Bugs](#Bugs)
 
 
 # Introduction
 
-## Basic Design
+## About
 
 ## Main goals of the project
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+#### [Back to content](#table-of-contents)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+# User Experience
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Project Goals
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Target Audience
 
-Connect your GitHub repository and deploy as normal.
+## Wire Frames
 
-# Technologies used
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### [Back to content](#table-of-contents)
 
------
-Happy coding!
+# Features
+
+## Home Page#### [Back to content](#table-of-contents)
+
+# Technology Used In Design
+
+## Python
+
+## Libraires/Modules
+
+#### [Back to content](#table-of-contents)
+
+# Testing
+
+## User Stories
+
+*
+
+## Manual Testing
+
+## Additional Testing
+
+# Deployment
+
+#### [Back to content](#table-of-contents)
+
+# Credits
+
+## Code
+
+## Content
+
+#### [Back to content](#table-of-contents)
+
+# Bugs
+
+#### [Back to content](#table-of-contents)
