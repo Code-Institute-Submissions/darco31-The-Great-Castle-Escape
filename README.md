@@ -1,16 +1,24 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Great Catle Escape
+## Designed and implemented by Stephen D'Arcy
 
-The Great Castle Escape
+![Live code demo](assets/images/live_demo.gif)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Table of Contents
 
-## Reminders
+1.[Introduction](#introduction)
+2.[Technologies_Used](#tech)
+3.[Testing](#testing)
+4.[Bugs](#bugs)
+5.[Fixes](#fixes)
+6.[Deployment](#deployment)
+7.[Credits](#credits)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+# Introduction
+
+## Basic Design
+
+## Main goals of the project
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
@@ -23,8 +31,7 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 
 Connect your GitHub repository and deploy as normal.
 
-## Constraints
-
+# Technologies used
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 -----
