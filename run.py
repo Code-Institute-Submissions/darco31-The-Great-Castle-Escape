@@ -60,9 +60,9 @@ def start():
     P_STAT("\n Its big but cold and damp, you notice a window", 2)
     P_STAT("\n A large wooden door is in front of you", 2)
     P_STAT("\n Not a lot of choice", 2)
-    P_STAT("\n So, do you have the guts to try and escape?(Escape or Stay)", 2)
+    print("\n So, do you have the guts to try and escape?(Escape or Stay)")
     # convert the player's input to lower_case
-    answer = input("=>").lower().strip()
+    answer = input("=> ").lower().strip()
 
     if answer == "escape":
         small_window()
@@ -82,9 +82,9 @@ def small_window():
     """
     P_STAT("\n You get up and walk towards the window", 1)
     P_STAT("\n You peer out an can only see darkness", 1)
-    P_STAT("\n Do you try open the window? Y or N", 2)
+    print("\n Do you try open the window? Y or N")
 
-    try_window = input("=>").lower().strip()
+    try_window = input("=> ").lower().strip()
     if try_window == "y" or try_window == "yes":
         P_STAT("\n You try the window, nothing.", 1)
         P_STAT("\n Urggh its sealed shut", 1)
@@ -111,9 +111,9 @@ def try_door():
         P_STAT("\n Looking outside you notice a door at either end", 2)
         P_STAT("\n of a long corridor", 2)
         P_STAT("\n A table outside catches your eye, it has a drawer inset", 2)
-        P_STAT("\n Do you try the drawer in the table? (Y or N)", 2)
+        print("\n Do you try the drawer in the table? (Y or N)")
 
-        open_drawer = input("=> \n").lower().strip()
+        open_drawer = input("=> ").lower().strip()
 
         if open_drawer == "y" or open_drawer == "yes":
             P_STAT("\n You pull out the drawer and find a key and a knife", 2)
@@ -151,9 +151,9 @@ def back_to_window():
     P_STAT(Fore.RED + "\n You return to the first room", 3)
 
     P_STAT("\n You look out the window again", 2)
-    P_STAT("\n Do you try the window with the knife? (Y or N)", 1)
+    print("\n Do you try the window with the knife? (Y or N)")
 
-    open_window = input("=> \n").lower().strip()
+    open_window = input("=> ").lower().strip()
 
     if open_window == "y" or open_window == "yes":
         P_STAT("\n You jam the knife into the gap of the window pane", 2)
@@ -186,9 +186,9 @@ def direction_choice():
     out of the doorway.
     """
     P_STAT("\n Standing in the doorway you need to make a choice", 1)
-    P_STAT("\n Do you go left or go right? (Left or Right)", 2)
+    print("\n Do you go left or go right? (Left or Right)")
 
-    player_choice = input("=> \n").lower().strip()
+    player_choice = input("=> ").lower().strip()
 
     if player_choice == "left":
         go_left()
@@ -210,9 +210,9 @@ def go_left():
     P_STAT("\n You walk inside, at the far end there is an opening", 2)
     P_STAT("\n You approach the opening and see a staircase going down", 2)
     P_STAT("\n You look around the room", 2)
-    P_STAT("\n Do you explore ,proceed down stairs or go back?", 2)
+    print("\n Do you explore ,proceed down stairs or go back?")
 
-    decision = input("=> \n").lower().strip()
+    decision = input("=> ").lower().strip()
 
     if decision == "explore":
         explore_room()
@@ -252,7 +252,7 @@ def proceed_down_stairs():
     P_STAT("\n Their backs are to you", 2)
     P_STAT("\n Hmmm attack or sneak? Your choice - Attack or Sneak", 2)
 
-    attack = input("=> \n").lower().strip()
+    attack = input("=> ").lower().strip()
 
     if attack == "attack":
         P_STAT("\n You charge at the men who are surprised", 2)
@@ -317,8 +317,18 @@ def go_right():
         play_again()
 
     elif try_lever == "3":
-        P_STAT("\n You pull the third lever, you hear a groan", 1.2)
-        P_STAT("\n looking around a lsecret door creaks open ...", 2)
+
+        P_STAT("\n You pull the third lever ", 1.2)
+        P_STAT("\n you hear a creaking and aconcealed door opens", 2)
+        P_STAT("\n You look around the room and ", 1.2)
+        P_STAT("\n see a candle on the side table, picking it up", 2)
+        P_STAT("\n You crouch down and make your way into the opening", 2)
+        P_STAT("\n Holding the candle up the passage looks long and unused", 2)
+
+        P_STAT("\n You proceed forward carful as it is sloping down", 2)
+        P_STAT("\n You eventyually reach the end and reappear in a room", 2)
+
+        P_STAT("\n You hear voices but they are coming from behind you", 2)
 
 
 def play_again():
