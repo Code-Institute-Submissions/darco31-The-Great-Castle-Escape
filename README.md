@@ -1,7 +1,7 @@
 # The Great Catle Escape
 ## Designed and implemented by Stephen D'Arcy
 
-![Live code demo](assets/images/live_demo.gif)
+![Live code demo](assets/images/demo.gif)
 
 # Table of Contents
 
@@ -34,15 +34,19 @@
 
 ## About
 
+* This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out.
+
 ## Main goals of the project
+
+* To design a fun interactive game for players to enjoy while improving my understanding of the Python language in applications.
 
 #### [Back to content](#table-of-contents)
 
 # User Experience
 
-## Project Goals
-
 ## Target Audience
+
+* The target audience for the game is everyone young and old who enjoy games and would like to test themselves and have fun doing so.
 
 ## Wire Frames
 
@@ -50,7 +54,9 @@
 
 # Features
 
-## Home Page#### [Back to content](#table-of-contents)
+## Home Page
+
+#### [Back to content](#table-of-contents)
 
 # Technology Used In Design
 
