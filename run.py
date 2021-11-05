@@ -411,7 +411,7 @@ def go_right():
 def bottom_floor():
     """
     The player is in the place they sneak to from
-    the stairs and from the secret tunnel
+    the stairs and from the secret tunnel and has a choice of 3 paths
     """
     P_STAT("\n Looking ahead you can see three paths", 2)
     P_STAT("\n There is a straight path, left and right path", 2)
@@ -432,7 +432,7 @@ def bottom_floor():
                             ╚══╝╚══╝╚═══╝╚══╝
             ''', 2)
         play_again()
-    
+
     elif path_choice == "l":
         P_STAT("\n You decide to take the left path ahead", 2)
         P_STAT("\n You are in a small room with a vent on the wall", 2)
@@ -449,7 +449,7 @@ def bottom_floor():
             print("\n Try kill the guard? (Y or N)")
 
         else:
-            return()
+            bottom_floor()
 
         kill_guard = input("=> ").lower().strip()
 
@@ -461,16 +461,83 @@ def bottom_floor():
             P_STAT("\n Looking up there is a door ahead.", 2)
             print("\n Proceed through door? (Y or N)", 2)
 
+        else:
+            bottom_floor()
+
         go_to_door = input("=> ").lower().strip()
 
         if go_to_door == "yes" or go_to_door == "y":
             P_STAT("\n You fumble through the keys anmd find the right one", 2)
             P_STAT("\n You open the door and find yourself outside", 2)
             P_STAT("\n Pitch black and raining heavily yo walk forward", 2)
-            P_STAT("\n Getting to the front of th building you can make out.", 2)
+            P_STAT("\n you go to the front of the building you can make out", 2)
             P_STAT("\n a gate ahead , guarded by two men", 2)
-            P_STAT("\n There are high railings all around but they look climable", 2)
-            print("\n Proceed through door? (Y or N)", 2)
+            P_STAT("\n There are high railings all around but", 2)
+            P_STAT("\n you think you could climb them", 2)
+            print("\n Distract or Climb? (D or C)", 2)
+
+        new_choice = input("=> ").lower().strip()
+
+        if new_choice == "d":
+            P_STAT("\n You look around for something to distract them", 2)
+            P_STAT("\n picking up a stone you throw it towards the railing", 2)
+            P_STAT("\n perfect shot, it makes a loud bang alerting them", 2)
+            P_STAT("\n The two guards leace their post and got investigate", 2)
+            P_STAT("\n This is your chance, you move as quickly", 2)
+            P_STAT("\n and queitly as you can. You are out, you run!!!", 2)
+
+        elif new_choice == "c":
+            P_STAT("\n You decide to climb the railings", 2)
+            P_STAT("\n You put one foot up and pull yourself up to the", 2)
+            P_STAT("\n top of them, you raise your other foot but", 2)
+            P_STAT("\n to your surprise it slips and you impale yourself", 2)
+            P_STAT("\n You letout an anguished cry which alerts the guards", 2)
+            P_STAT("\n AS they approach, weapons readied, one slice and ..", 2)
+
+            P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+            play_again()
+
+    elif path_choice == "r":
+        P_STAT("\n You veer right to an ampty room", 2)
+        P_STAT("\n more dorrs, two of them", 2)
+        print("\n Left or Right? (L or R)", 2)
+
+        way_forward = input("=> ").lower().strip()
+
+        if way_forward == "left" or way_forward == "l":
+            P_STAT("\n You open the left hand door", 2)
+            P_STAT("\n You walk right into a room that is full of guards", 2)
+    
+        P_STAT(Fore.RED + '''
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+            ''', 2)
+        play_again()
+
+    elif way_forward == "left" or way_forward == "l":
+
+        P_STAT("\n You open the right hand door", 2)
+        P_STAT("\n Dogs? and guard dogs..", 2)
+            
+        P_STAT(Fore.RED + '''
+                                    ╔╗           ╔╗
+                                    ║║           ║║
+                                    ╔═╝║╔══╗╔══╗ ╔═╝║
+                                    ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                                    ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                                    ╚══╝╚══╝╚═══╝╚══╝
+                    ''', 2)
 
 
 def play_again():
