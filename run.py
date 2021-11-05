@@ -60,7 +60,7 @@ def start():
     P_STAT("\n Its big but cold and damp, you notice a window", 2)
     P_STAT("\n A large wooden door is in front of you", 2)
     P_STAT("\n Not a lot of choice", 2)
-    print("\n So, do you have the guts to try and escape?(Escape or Stay)")
+    print("\n So, do you have the guts to try and escape?(E or S)")
     # convert the player's input to lower_case
     answer = input("=> ").lower().strip()
 
@@ -127,7 +127,7 @@ def take_items():
         P_STAT("\n You reach in quickly and pick up both items", 2)
         P_STAT("\n You stuff them in your pockets and close the drawer", 2)
         P_STAT("\n You think maybe the knife will open the window", 1)
-        print("\n Do you try the window or go on? (Try or Go on)")
+        print("\n Do you try the window or go on? (T or G)")
 
     elif open_drawer == "n" or open_drawer == "no":
         P_STAT("\n Prbably best not to disturb anything", 2)
@@ -135,14 +135,13 @@ def take_items():
 
     p_decision = input("=> ").lower().strip()
 
-    if p_decision == "try":
+    if p_decision == "try" or p_decision == "t":
         back_to_window()
-    elif p_decision == "go on":
+    elif p_decision == "go on" or p_decision == "g":
         direction_choice()
     else:
-        P_STAT("\n Error, please enter a valid choice (Try or Go on) ", 2)
-        play_again()
-
+        P_STAT("\n Error, please enter a valid choice (T or G) ", 2)
+    
 
 def return_to_table():
     """
@@ -230,13 +229,13 @@ def go_left():
     P_STAT("\n You walk inside, at the far end there is an opening", 2)
     P_STAT("\n You approach the opening and see a staircase going down", 2)
     P_STAT("\n You look around the room", 2)
-    print("\n Do you explore ,proceed downstairs or go back?")
+    print("\n Do you explore ,proceed downstairs or go back? (E - P - G")
 
     decision = input("=> ").lower().strip()
 
-    if decision == "explore":
+    if decision == "explore" or decision =="e":
         explore_room()
-    elif decision == "proceed":
+    elif decision == "proceed" or decision =="p":
         proceed_down_stairs()
     else:
         P_STAT("\n You decide it would be better to check the other door", 2)
@@ -303,7 +302,7 @@ def go_right_back():
     P_STAT("\n three levers on the wall", 2)
     P_STAT("\n You decide to try the levers", 1)
 
-    try_lever = input("=> Pick a number from '1', '2' and '3':  ").lower().strip()
+    try_lever = input("=> Pick a lever from '1', '2' and '3':  ").lower().strip()
 
     if try_lever == "1":
         P_STAT("\n You pull the first lever, you hear a groan", 1.2)
@@ -517,7 +516,7 @@ def bottom_floor():
             play_again()
 
     elif path_choice == "r":
-        P_STAT("\n You veer right to an ampty room", 2)
+        P_STAT("\n You veer right to an empty room", 2)
         P_STAT("\n more doors, two of them", 2)
         print("\n Left or Right? (L or R)", 2)
 
@@ -534,7 +533,7 @@ def bottom_floor():
                             ║╔╗║║╔╗║╚ ╗║ ║╔╗║
                             ║╚╝║║║═╣║╚╝╚╗║╚╝║
                             ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        ''', 2)
         play_again()
 
     elif way_forward == "right" or way_forward == "r":
@@ -543,13 +542,13 @@ def bottom_floor():
         P_STAT("\n Dogs? and guard dogs..", 2)
 
         P_STAT(Fore.RED + '''
-                                    ╔╗           ╔╗
-                                    ║║           ║║
-                                    ╔═╝║╔══╗╔══╗ ╔═╝║
-                                    ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-                                    ║╚╝║║║═╣║╚╝╚╗║╚╝║
-                                    ╚══╝╚══╝╚═══╝╚══╝
-                    ''', 2)
+                              ╔╗           ╔╗
+                              ║║           ║║
+                            ╔═╝║╔══╗╔══╗ ╔═╝║
+                            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
+                            ║╚╝║║║═╣║╚╝╚╗║╚╝║
+                            ╚══╝╚══╝╚═══╝╚══╝
+        ''', 2)
         play_again()
 
 

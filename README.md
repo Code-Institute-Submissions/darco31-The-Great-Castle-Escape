@@ -33,7 +33,8 @@
 
 ## About
 
-* This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out.
+* This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out and
+   many ways to die.
 
 ## Main goals of the project
 
@@ -42,6 +43,12 @@
 #### [Back to content](#table-of-contents)
 
 # User Experience
+
+## Design
+
+![Flow Chart](assets/p3_flow_chart.vpd)
+
+## User Stories
 
 ## Target Audience
 
