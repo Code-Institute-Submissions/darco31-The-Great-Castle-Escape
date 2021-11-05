@@ -68,7 +68,7 @@ def start():
         small_window()
     elif answer == "stay":
         P_STAT("\n Shame", 1)
-        P_STAT(f"\n Enjoy the solitude and loneliness of the tower {P_NAME}", 2)
+        P_STAT(f"\n Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
     else:
         P_STAT("\n Error, please enter a valid choice (Escape or Stay) ", 2)
@@ -77,7 +77,7 @@ def start():
 
 def small_window():
     """
-    Player goes to investigte small window
+    Player goes to investigate small window
     and decides next course of action
     """
     P_STAT("\n You get up and walk towards the window", 1)
@@ -130,7 +130,7 @@ def take_items():
         print("\n Do you try the window or go on? (T or G)")
 
     elif open_drawer == "n" or open_drawer == "no":
-        P_STAT("\n Prbably best not to disturb anything", 2)
+        P_STAT("\n Probably best not to disturb anything", 2)
         direction_choice_two()
 
     p_decision = input("=> ").lower().strip()
@@ -141,7 +141,7 @@ def take_items():
         direction_choice()
     else:
         P_STAT("\n Error, please enter a valid choice (T or G) ", 2)
-    
+
 
 def return_to_table():
     """
@@ -233,9 +233,9 @@ def go_left():
 
     decision = input("=> ").lower().strip()
 
-    if decision == "explore" or decision =="e":
+    if decision == "explore" or decision == "e":
         explore_room()
-    elif decision == "proceed" or decision =="p":
+    elif decision == "proceed" or decision == "p":
         proceed_down_stairs()
     else:
         P_STAT("\n You decide it would be better to check the other door", 2)
@@ -456,7 +456,7 @@ def bottom_floor():
             P_STAT("\n You pry the vent open and ready your knife", 2)
             P_STAT("\n You jump down surprising the guard", 2)
             P_STAT("\n With one stroke you cut his throat", 2)
-            P_STAT("\n Quickly you search him and find keys and take the sword.", 2)
+            P_STAT("\n Quickly you search him and find keys and a sword.", 2)
             P_STAT("\n Looking up there is a door ahead.", 2)
             print("\n Proceed through door? (Y or N)", 2)
 
@@ -469,7 +469,8 @@ def bottom_floor():
             P_STAT("\n You fumble through the keys and find the right one", 2)
             P_STAT("\n You open the door and find yourself outside", 2)
             P_STAT("\n Pitch black and raining heavily you walk forward", 2)
-            P_STAT("\n you go to the front of the building you can make out", 2)
+            P_STAT("\n you go to the front of the building", 2)
+            P_STAT("\n you can make out", 2)
             P_STAT("\n a gate ahead , guarded by two men", 2)
             P_STAT("\n There are high railings all around but", 2)
             P_STAT("\n you think you could climb them", 2)
@@ -502,7 +503,8 @@ def bottom_floor():
             P_STAT("\n You put one foot up and pull yourself up to the", 2)
             P_STAT("\n top of them, you raise your other foot but", 2)
             P_STAT("\n to your surprise it slips, and you impale yourself", 2)
-            P_STAT("\n You let out an anguished cry which alerts the guards", 2)
+            P_STAT("\n You let out an anguished cry", 2)
+            P_STAT("\n which alerts the guards", 2)
             P_STAT("\n AS they approach, weapons readied, one slice and ..", 2)
 
             P_STAT(Fore.RED + '''

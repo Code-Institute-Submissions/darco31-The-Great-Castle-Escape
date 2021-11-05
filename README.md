@@ -1,4 +1,4 @@
-# The Great Catle Escape
+# The Great Castle Escape
 ## Designed and implemented by Stephen D'Arcy
 
 ![Live code demo](assets/demo1.gif)
@@ -34,7 +34,7 @@
 ## About
 
 * This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out and
-   many ways to die.
+   many ways to die. We use a command line interface to let the user interact with the game.
 
 ## Main goals of the project
 
@@ -77,15 +77,32 @@
 
 # Technology Used In Design
 
-## Python
-
-## Libraires/Modules
+- [Python](https://www.python.org/)
+    - Python is the core programming language used to write all of the code in this application to make it fully functional.
+    - In addition to core Python I have used the following Python modules:
+        - [Colorama](https://pypi.org/project/colorama/)
+            - Used to add colours to the printed terminal messages
+        - [Time](https://docs.python.org/3/library/time.html)
+            - Used for the timing functions to delay scripts being run.
+- [GitHub](https://github.com/)
+    - Used to store code for the project after being pushed.
+- [Git](https://git-scm.com/)
+    - Used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Gitpod](https://www.gitpod.io/)
+    - Used as the development environment.
+- [Heroku](https://dashboard.heroku.com/apps)
+    - Used to deploy my application.
+- [Visual Paradigm](https://www.visual-paradigm.com/)
+    - Used to create the flowchart for the project.
+- [Pep8](http://pep8online.com/)
+    - Used to check my code against Pep8 requirements..
+---
 
 #### [Back to content](#table-of-contents)
 
 # Testing
 
-## User Stories
+## User Stories Tested
 
 *
 
@@ -95,6 +112,24 @@
 
 # Deployment
 
+### Gitpod and GitHub
+
+To use the terminal designed by The Code Institute I used the [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template).
+This allows the code that is used to run the terminal be viewed in the browser.
+
+### Steps:
+
+* Click create new repository.
+* Give the repository a name.
+* Under Repository template pick the [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/python-essentials-template).
+* Click create repository
+- Use GIT ADD .
+- GIT COMMIT -m "Comments"
+- GIT PUSH
+- To commit the code and push to Github
+
+### Creating an Application with Heroku
+
 #### [Back to content](#table-of-contents)
 
 # Credits
@@ -103,8 +138,16 @@
 
 ## Content
 
+- [ASCII Art Castle](https://www.asciiart.eu/buildings-and-places/castles)
+- [ASCII Art DEAD and Escaped](https://ascii.co.uk/)
+
 #### [Back to content](#table-of-contents)
 
 # Bugs
+
+# Errors
+
+* There are a total of 76 problems.
+* All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
 
 #### [Back to content](#table-of-contents)
