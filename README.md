@@ -46,7 +46,7 @@
 
 ## Design
 
-![Flow Chart](assets/p3_flow_chart.vpd)
+![Flow Chart](assets/p3_flow_chart.vpd.png)
 
 ## User Stories
 
