@@ -51,7 +51,7 @@
 
 ## User Stories
 
-* As a user I would like to know what game i am playing
+* As a user I would like to know what game I am playing
 * As a user I want to be able to interact with the game.
 * As a user I want to be able to distinguish between the choices I must make in the game.
 * As a user I would want to know if I win or lose the game
@@ -104,7 +104,15 @@
 
 ## User Stories Tested
 
-*
+* As a user I would like to know what game I am playing
+
+* As a user I want to be able to interact with the game.
+
+* As a user I want to be able to distinguish between the choices I must make in the game.
+
+* As a user I would want to know if I win or lose the game
+
+* As a user I would like the option to play again or quit the game
 
 ## Manual Testing
 
@@ -130,11 +138,30 @@ This allows the code that is used to run the terminal be viewed in the browser.
 
 ### Creating an Application with Heroku
 
+I used the video tutorial provided by The Code Institute to create a Heroku account, add the details of the app and deploy the application to a live environment.
+
+- Log in to Heroku [Heroku](https://dashboard.heroku.com/)
+- Click New 
+- Give the app a name and choose the region
+- Click on settings first and set the Reveal Config Vars
+- PORT  = Key 8000 = Value
+- If using a 
+- Add build pack include Python and Node.js
+- Click Deploy
+- Choose GiHub as the deployment method
+- Search for your app and connect
+- Use Automatic deploys if you would like a new build when changes are pushed to GitHub from Gitpod
+- Use Manual deploy for a new build every time this button is clicked.
+- Once completed click View App
+
 #### [Back to content](#table-of-contents)
 
 # Credits
 
 ## Code
+
+* All code has been written by Stephen D'arcy. Some inspiration was taken from W3 schools [W3 Schools](https://www.w3schools.com/python/)
+* Stack overflow to learn how to use and initialize Colorama [Stack Overflow](https://stackoverflow.com/questions/49841315/how-to-clear-screen-using-colorama)
 
 ## Content
 
