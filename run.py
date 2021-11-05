@@ -93,7 +93,7 @@ def small_window():
         P_STAT("\n You ignore the window", 1)
         P_STAT("\n and head for the door", 1)
         take_items()
-        
+
 
 def try_door():
     """
@@ -486,6 +486,18 @@ def bottom_floor():
             P_STAT("\n This is your chance, you move as quickly", 2)
             P_STAT("\n and queitly as you can. You are out, you run!!!", 2)
 
+            P_STAT(Fore.BLUE + '''
+                            __   __            _____                             _ 
+                            \ \ / /           |  ___|                           | |
+                             \ V /___  _   _  | |__ ___  ___ __ _ _ __   ___  __| |
+                              \ // _ \| | | | |  __/ __|/ __/ _` | '_ \ / _ \/ _` |
+                              | | (_) | |_| | | |__\__ \ (_| (_| | |_) |  __/ (_| |
+                              \_/\___/ \__,_| \____/___/\___\__,_| .__/ \___|\__,_|
+                                                                 | |               
+                                                                 |_|               
+                               ''', 2)
+            play_again()
+
         elif new_choice == "c":
             P_STAT("\n You decide to climb the railings", 2)
             P_STAT("\n You put one foot up and pull yourself up to the", 2)
@@ -514,7 +526,7 @@ def bottom_floor():
         if way_forward == "left" or way_forward == "l":
             P_STAT("\n You open the left hand door", 2)
             P_STAT("\n You walk right into a room that is full of guards", 2)
-    
+
         P_STAT(Fore.RED + '''
                               ╔╗           ╔╗
                               ║║           ║║
@@ -525,11 +537,11 @@ def bottom_floor():
             ''', 2)
         play_again()
 
-    elif way_forward == "left" or way_forward == "l":
+    elif way_forward == "right" or way_forward == "r":
 
         P_STAT("\n You open the right hand door", 2)
         P_STAT("\n Dogs? and guard dogs..", 2)
-            
+
         P_STAT(Fore.RED + '''
                                     ╔╗           ╔╗
                                     ║║           ║║
@@ -538,6 +550,7 @@ def bottom_floor():
                                     ║╚╝║║║═╣║╚╝╚╗║╚╝║
                                     ╚══╝╚══╝╚═══╝╚══╝
                     ''', 2)
+        play_again()
 
 
 def play_again():
