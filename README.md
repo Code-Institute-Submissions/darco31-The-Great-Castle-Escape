@@ -45,10 +45,17 @@
 # User Experience
 
 ## Design
+* Flow chart for story lines
 
 ![Flow Chart](assets/p3_flow_chart.vpd.png)
 
 ## User Stories
+
+* As a user I would like to know what game i am playing
+* As a user I want to be able to interact with the game.
+* As a user I want to be able to distinguish between the choices I must make in the game.
+* As a user I would want to know if I win or lose the game
+* As a user I would like the option to play again or quit the game
 
 ## Target Audience
 
