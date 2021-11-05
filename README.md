@@ -67,6 +67,12 @@
 
 ## Home Page
 
+* The home page is the only page on the application. It features a background image of a castle to make the program a bit 
+   more immersive for the user. The terminal has been placed in the center of the screen for an easier visual experience. The button
+   is located above the terminal and coloured so as to stick out to the player. 
+
+*  Terminal design by The Code Institute
+
 #### [Back to content](#table-of-contents)
 
 # Technology Used In Design
