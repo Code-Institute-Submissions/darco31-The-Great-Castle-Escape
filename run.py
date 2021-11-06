@@ -82,7 +82,7 @@ def small_window():
     """
     P_STAT("\n You get up and walk towards the window", 1)
     P_STAT("\n You peer out and can only see darkness", 1)
-    print("\n Do you try open the window? y or n")
+    print("\n Do you try open the window? (y or n)")
 
     try_window = input("=> ").lower().strip()
     if try_window == "y" or try_window == "yes":
@@ -123,7 +123,7 @@ def take_items():
     The function gives the player the option to check a discovered drawer
     """
     P_STAT("\n A table outside catches your eye, it has a drawer inset", 2)
-    print("\n Do you try the drawer in the table? (y or n")
+    print("\n Do you try the drawer in the table? (y or n)")
 
     open_drawer = input("=> ").lower().strip()
 
