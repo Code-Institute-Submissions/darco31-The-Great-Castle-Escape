@@ -19,7 +19,7 @@ def start():
     if the player would like to play or not. The function also asks
     the players name
     """
-    print(Fore.RED + Back.YELLOW + Style.BRIGHT + "\nThe Great Castle Escape")
+    print(Fore.RED + Back.YELLOW + Style.BRIGHT + "\n The Great Castle Escape")
     time.sleep(TIME_ELAPSED)
     print(Fore.CYAN + '''
                                      T~~
@@ -44,14 +44,14 @@ def start():
         Set P-NAME to global variable
         """
         global P_NAME
-        P_NAME = input("\nPlease enter a username: \n")
+        P_NAME = input("\n               Please enter a username: \n\n")
         print()
         if P_NAME == "":
-            print("You need to enter a username to continue...\n")
+            print(" You need to enter a username to continue...\n")
             continue
         else:
             break
-    P_STAT(f"Welcome {P_NAME}, good luck, you will need it\n", 2)
+    P_STAT(f"       Welcome {P_NAME}, good luck, you will need it\n", 2)
     P_STAT(" You awake a little dazed and confused", 2)
     P_STAT(" You find yourself in a dimly lit room", 2)
     P_STAT(" You can hear the rain crashing down outside", 2)
@@ -80,18 +80,18 @@ def small_window():
     Function called to let the player explore the 
     small window in the room
     """
-    P_STAT("You get up and walk towards the window", 1)
-    P_STAT("You peer out and can only see darkness", 1)
-    print("Do you try open the window? (y or n)")
+    P_STAT(" You get up and walk towards the window", 1)
+    P_STAT(" You peer out and can only see darkness", 1)
+    print(" Do you try open the window? (y or n)")
 
     try_window = input("=> ").lower().strip()
     if try_window == "y" or try_window == "yes":
-        P_STAT("You try the window, nothing.", 1)
-        P_STAT("Urggh its sealed shut", 1)
+        P_STAT(" You try the window, nothing.", 1)
+        P_STAT(" Urggh its sealed shut", 1)
         try_door()
     else:
-        P_STAT("You ignore the window", 1)
-        P_STAT("and head for the door", 1)
+        P_STAT(" You ignore the window", 1)
+        P_STAT(" and head for the door", 1)
         try_door()
 
 
@@ -100,21 +100,21 @@ def try_door():
     The function offers the player the choice of
     opening the door or not.
     """
-    P_STAT("Reaching the door you try the handle", 2)
-    P_STAT("It opens, thats odd you think", 2)
-    P_STAT("Do you take a look outside? (y or n)", 2)
+    P_STAT(" Reaching the door you try the handle", 2)
+    P_STAT(" It opens, thats odd you think", 2)
+    P_STAT(" Do you take a look outside? (y or n)", 2)
 
     look_outside = input("=>").lower().strip()
 
     if look_outside == "y" or look_outside == "yes":
-        P_STAT("You open the door as silently as you can", 2)
-        P_STAT("Looking outside you notice a door at either end", 2)
-        P_STAT("of a long corridor", 2)
+        P_STAT(" You open the door as silently as you can", 2)
+        P_STAT(" Looking outside you notice a door at either end", 2)
+        P_STAT(" of a long corridor", 2)
         take_items()
     
     else:
-        P_STAT("You are too terrified to go on, shame", 1)
-        P_STAT(f"Enjoy the solitude and loneliness {P_NAME}", 2)
+        P_STAT(" You are too terrified to go on, shame", 1)
+        P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
 
 
