@@ -51,16 +51,16 @@ def start():
             continue
         else:
             break
-    P_STAT(f'Welcome {P_NAME}, good luck, you will need it\n', 2)
-    P_STAT('{:*^10}'.format(' You awake a little dazed and confused'), 2)
-    P_STAT('{:*^10}'.format('You find yourself in a dimly lit room'), 2)
-    P_STAT('You can hear the rain crashing down outside', 2)
-    P_STAT('Gathering your senses you try to recall how you got here', 2)
-    P_STAT('You look around the room', 2)
-    P_STAT('Its big but cold and damp, you notice a window', 2)
-    P_STAT('A large wooden door is in front of you', 2)
-    P_STAT('Not a lot to choose from', 2)
-    print('\n So, do you have the guts to try and escape?(e or s)')
+    P_STAT(f"Welcome {P_NAME}, good luck, you will need it\n", 2)
+    P_STAT(" You awake a little dazed and confused", 2)
+    P_STAT(" You find yourself in a dimly lit room", 2)
+    P_STAT(" You can hear the rain crashing down outside", 2)
+    P_STAT(" Gathering your senses you try to recall how you got here", 2)
+    P_STAT(" You look around the room", 2)
+    P_STAT(" Its big but cold and damp, you notice a window", 2)
+    P_STAT(" A large wooden door is in front of you", 2)
+    P_STAT(" Not a lot to choose from", 2)
+    print("\n So, do you have the guts to try and escape?(e or s)")
     # convert the player's input to lower_case
     answer = input("=> ").lower().strip()
 
