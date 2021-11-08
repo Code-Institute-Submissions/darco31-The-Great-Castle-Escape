@@ -2,7 +2,7 @@
 # Date:
 # Project 3 - The code Institute
 
-from functions import P_STAT
+from functions import P_STAT, game_over, player_died
 import time
 import colorama
 from colorama import Fore, Back, Style
@@ -44,14 +44,14 @@ def start():
         Set P-NAME to global variable
         """
         global P_NAME
-        P_NAME = input("\n               Please enter a username: \n\n")
+        P_NAME = input(" Please enter a username: \n\n")
         print()
         if P_NAME == "":
             print(" You need to enter a username to continue...\n")
             continue
         else:
             break
-    P_STAT(f"       Welcome {P_NAME}, good luck, you will need it\n", 2)
+    P_STAT(f" Welcome {P_NAME}, good luck, you will need it\n", 2)
     P_STAT(" You awake a little dazed and confused", 2)
     P_STAT(" You find yourself in a dimly lit room", 2)
     P_STAT(" You can hear the rain crashing down outside", 2)
@@ -72,7 +72,8 @@ def start():
         play_again()
     else:
         P_STAT("\n Error, please enter a valid choice (e or s) ", 2)
-        start()
+        play_again()
+# Player has the option to check the window or ignore it
 
 
 def small_window():
@@ -111,7 +112,7 @@ def try_door():
         P_STAT(" Looking outside you notice a door at either end", 2)
         P_STAT(" of a long corridor", 2)
         take_items()
-    
+
     else:
         P_STAT(" You are too terrified to go on, shame", 1)
         P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
@@ -178,14 +179,8 @@ def back_to_window():
         P_STAT("make out the sloping roof. You jump and to your horror ", 2)
         P_STAT("the tile gives way and you fall to your death.", 3)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     else:
@@ -218,7 +213,8 @@ def direction_choice():
         go_left()
     elif player_choice == "r" or player_choice == "right":
         go_right()
-
+    else:
+        print("That it not a valid option, please enter l or r")
 # Section 2 player goes left
 
 
@@ -282,14 +278,8 @@ def proceed_down_stairs():
         P_STAT("You charge at the men who are surprised", 2)
         P_STAT("but alas, one fouls swipe and you are....", 1)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     else:
@@ -302,39 +292,29 @@ def go_right_back():
     """
     Return to the righthand door with the key
     """
-    P_STAT("You get back to the door and use the key", 2)
+    P_STAT("You reach the door to the right and try open it", 2)
+    P_STAT("You then remember the key and try it, it works", 2)
+    P_STAT("You push the door open and enter", 2)
     P_STAT("Looking around this lavish room you notice what looks like", 2)
     P_STAT("three levers on the wall", 2)
     P_STAT("You decide to try the levers", 1)
 
-    try_lever = input("=> Pick a lever from '1', '2' and '3':  ").lower().strip()
+    try_lever = input("=> Pick a number from '1', '2' and '3':  ").lower().strip()
 
     if try_lever == "1":
         P_STAT("You pull the first lever, you hear a groan", 1.2)
         P_STAT("looking around a large object comes at you ...", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     elif try_lever == "2":
         P_STAT("You pull the first lever, you hear a groan", 1.2)
         P_STAT("looking around a large object comes at you ...", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     elif try_lever == "3":
@@ -349,8 +329,11 @@ def go_right_back():
         P_STAT("You proceed forward carful as it is sloping down", 2)
         P_STAT("You eventually reach the end and reappear in a room", 2)
 
-        P_STAT("You hear voices but they are coming from behind you", 2)
+        P_STAT("You hear voices, but they are coming from behind you", 2)
         bottom_floor()
+
+    else:
+        print("That it not a valid option, please pick '1', '2' or '3'")
 
 
 def go_right():
@@ -372,28 +355,16 @@ def go_right():
         P_STAT("You pull the first lever, you hear a groan", 1.2)
         P_STAT("looking around a large object comes at you ...", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     elif try_lever == "2":
         P_STAT("You pull the first lever, you hear a groan", 1.2)
         P_STAT("looking around a large object comes at you ...", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     elif try_lever == "3":
@@ -411,6 +382,9 @@ def go_right():
         P_STAT("You hear voices, but they are coming from behind you", 2)
         bottom_floor()
 
+    else:
+        print("That it not a valid option, please pick '1', '2' or '3'")
+
 
 def bottom_floor():
     """
@@ -427,14 +401,8 @@ def bottom_floor():
         P_STAT("You decide to proceed straight ahead", 2)
         P_STAT("Oh Shi.., a group of very angry men approach...", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-            ''', 2)
+        player_died()
+        game_over()
         play_again()
 
     elif path_choice == "l" or path_choice == "left":
@@ -462,7 +430,7 @@ def bottom_floor():
 
         elif open_vent == "n" or open_vent == "no":
             bottom_floor()
-           
+        
     elif path_choice == "r" or path_choice == "right":
         P_STAT("\n You veer right to an empty room", 2)
         P_STAT("\n more doors, two of them", 2)
@@ -474,14 +442,8 @@ def bottom_floor():
             P_STAT("\n You open the lefthand door", 2)
             P_STAT("\n You walk right into a room that is full of guards", 2)
 
-            P_STAT(Fore.RED + '''
-              ╔╗           ╔╗
-              ║║           ║║
-            ╔═╝║╔══╗╔══╗ ╔═╝║
-            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-            ║╚╝║║║═╣║╚╝╚╗║╚╝║
-            ╚══╝╚══╝╚═══╝╚══╝
-                                ''', 2)
+            player_died()
+            game_over()
             play_again()
 
         elif way_forward == "right" or way_forward == "r":
@@ -489,15 +451,12 @@ def bottom_floor():
             P_STAT("\n You open the right hand door", 2)
             P_STAT("\n Dogs? and guard dogs..", 2)
 
-            P_STAT(Fore.RED + '''
-              ╔╗           ╔╗
-              ║║           ║║
-            ╔═╝║╔══╗╔══╗ ╔═╝║
-            ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-            ║╚╝║║║═╣║╚╝╚╗║╚╝║
-            ╚══╝╚══╝╚═══╝╚══╝
-                                ''', 2)
+            player_died()
+            game_over()
             play_again()
+
+        else:
+            print("That it not a valid option, please pick 'l', 'r' or 's'")
 # Player choices for outside the castle
 
 
@@ -553,17 +512,15 @@ def outside():
         P_STAT("which alerts the guards", 2)
         P_STAT("AS they approach, weapons readied, one slice and ..", 2)
 
-        P_STAT(Fore.RED + '''
-          ╔╗           ╔╗
-          ║║           ║║
-        ╔═╝║╔══╗╔══╗ ╔═╝║
-        ║╔╗║║╔╗║╚ ╗║ ║╔╗║
-        ║╚╝║║║═╣║╚╝╚╗║╚╝║
-        ╚══╝╚══╝╚═══╝╚══╝
-                          ''', 2)
+        player_died()
+        game_over()
         play_again()
+    
+    else:
+        print("That it not a valid option, please pick d or c'")
 
 
+# Play again function called at end of game or when player dies
 def play_again():
     """
     Asks the player if they would like to play again
