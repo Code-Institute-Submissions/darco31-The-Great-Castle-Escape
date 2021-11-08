@@ -103,7 +103,7 @@ def try_door():
     """
     P_STAT(Fore.BLUE + " Reaching the door you try the handle", 2)
     P_STAT(Fore.BLUE + " It opens, thats odd you think", 2)
-    P_STAT(Fore.YELLOW + " Do you take a look outside? (y or n)", 2)
+    print(Fore.YELLOW + " Do you take a look outside? (y or n)")
 
     look_outside = input("=>").lower().strip()
 
@@ -144,6 +144,7 @@ def take_items():
 
     else:
         print(Fore.RED + " Error, please enter a valid choice (y or n) ")
+    take_items()
 
 
 def return_to_table():
@@ -259,7 +260,7 @@ def go_left():
         proceed_down_stairs()
     else:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
-        direction_choice_three()
+    direction_choice_three()
 
 
 def explore_room():
@@ -295,7 +296,7 @@ def proceed_down_stairs():
 
     if attack == "attack" or attack == "a":
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
-        P_STAT(Fore.BLUE + " but alas, one fouls swipe and you are....", 1)
+        P_STAT(Fore.BLUE + " but alas, one foul swipe and you are....", 1)
 
         player_died()
         game_over()
@@ -351,6 +352,7 @@ def go_right_back():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick 1,2,3")
+    go_right_back()
 
 
 def go_right():
@@ -401,6 +403,7 @@ def go_right():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick 1,2,3")
+    go_right_back()
 
 
 def bottom_floor():
@@ -442,7 +445,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick y or n")
-            play_again()
+        bottom_floor()
 
         kill_guard = input("=> ").lower().strip()
 
@@ -458,7 +461,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick y or n")
-            play_again()
+        bottom_floor()
 
     elif path_choice == "r" or path_choice == "right":
         P_STAT(Fore.BLUE + " You veer right to an empty room", 2)
@@ -486,6 +489,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick l,r,s")
+        bottom_floor()
 # Player choices for outside the castle
 
 
@@ -558,7 +562,7 @@ def outside():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick d or c'")
-
+    outside()
 
 # Play again function called at end of game or when player dies
 def play_again():
