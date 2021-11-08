@@ -44,14 +44,14 @@ def start():
         Set P-NAME to global variable
         """
         global P_NAME
-        P_NAME = input(" Please enter a username: \n\n")
+        P_NAME = input(Fore.YELLOW + " Please enter a username: \n\n")
         print()
         if P_NAME == "":
-            print(" You need to enter a username to continue...\n")
+            print(Fore.YELLOW + " You need to enter a username to continue...")
             continue
         else:
             break
-    P_STAT(f" Welcome {P_NAME}, good luck, you will need it\n", 2)
+    P_STAT(Fore.YELLOW + f" Welcome {P_NAME}, good luck, you will need it", 2)
     P_STAT(Fore.YELLOW + " You awake a little dazed and confused", 2)
     P_STAT(Fore.YELLOW + " You find yourself in a dimly lit room", 2)
     P_STAT(Fore.YELLOW + " You can hear the rain crashing down outside", 2)
@@ -72,7 +72,7 @@ def start():
         play_again()
     else:
         P_STAT(Fore.RED + " Error, please enter a valid choice (e or s) ", 2)
-        play_again()
+        start()
 # Player has the option to check the window or ignore it
 
 
@@ -115,7 +115,7 @@ def try_door():
 
     else:
         P_STAT(Fore.BLUE + " You are too terrified to go on, shame", 1)
-        P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
+        P_STAT(Fore.BLUE + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
 
 
@@ -563,6 +563,7 @@ def outside():
     else:
         print(Fore.RED + " That it not a valid option, please pick d or c'")
     outside()
+
 
 # Play again function called at end of game or when player dies
 def play_again():
