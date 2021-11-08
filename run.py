@@ -193,7 +193,7 @@ def back_to_window():
 def direction_choice():
     """
     Player will make a choice to go left or right
-    out of the doorway and they will have the 
+    out of the doorway and they will have the
     objects from the drawer
     """
     P_STAT(Fore.BLUE + " Standing in the doorway you need to make a choice", 1)
@@ -215,7 +215,6 @@ def direction_choice_two():
     """
     P_STAT(Fore.BLUE + " Standing in the doorway you need to make a choice", 1)
     print(Fore.YELLOW + " Do you go left or go right? (l or r)")
-    
     player_choice_two = input("=> ").lower().strip()
 
     if player_choice_two == "l" or player_choice_two == "left":
