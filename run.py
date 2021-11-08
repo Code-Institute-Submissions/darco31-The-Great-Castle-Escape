@@ -99,7 +99,7 @@ def small_window():
 def try_door():
     """
     The function offers the player the choice of
-    opening the door or not.
+    opening the door or not in the first room.
     """
     P_STAT(" Reaching the door you try the handle", 2)
     P_STAT(" It opens, thats odd you think", 2)
@@ -133,20 +133,14 @@ def take_items():
         P_STAT("You reach in quickly and pick up both items", 2)
         P_STAT("You stuff them in your pockets and close the drawer", 2)
         P_STAT("You think maybe the knife will open the window", 1)
-        print("Do you try the window or go on? (t or g)")
+        back_to_window()
 
     elif open_drawer == "n" or open_drawer == "no":
         P_STAT("Probably best not to disturb anything", 2)
         direction_choice_two()
 
-    p_decision = input("=> ").lower().strip()
-
-    if p_decision == "try" or p_decision == "t":
-        back_to_window()
-    elif p_decision == "go on" or p_decision == "g":
-        direction_choice()
     else:
-        P_STAT("Error, please enter a valid choice (t or g) ", 2)
+        print("Error, please enter a valid choice (y or n) ")
 
 
 def return_to_table():
@@ -156,6 +150,7 @@ def return_to_table():
     P_STAT("You go back to the table and pull drawer open", 2)
     P_STAT("Result, a key and a knife?", 2)
     P_STAT("You stuff them in your pockets and close the drawer", 2)
+    P_STAT("You quickly get back to the right hand door", 2)
     go_right_back()
 
 
@@ -190,19 +185,11 @@ def back_to_window():
         direction_choice()
 
 
-def direction_choice_two():
-    """
-    Second direction choice id player takes nothing from the drawer
-    """
-    P_STAT("You reach the door to the right and try open it", 2)
-    P_STAT("Its locked, damn it, you remember the drawer, maybe?", 2)
-    return_to_table()
-
-
 def direction_choice():
     """
     Player will make a choice to go left or right
-    out of the doorway.
+    out of the doorway and they will have the 
+    objects from the drawer
     """
     P_STAT("Standing in the doorway you need to make a choice", 1)
     print("Do you go left or go right? (l or r)")
@@ -215,7 +202,25 @@ def direction_choice():
         go_right()
     else:
         print("That it not a valid option, please enter l or r")
-# Section 2 player goes left
+
+
+def direction_choice_two():
+    """
+    Second direction choice if player takes nothing from the drawer
+    """
+    P_STAT("Standing in the doorway you need to make a choice", 1)
+    print("Do you go left or go right? (l or r)")
+    
+    player_choice_two = input("=> ").lower().strip()
+
+    if player_choice_two == "l" or player_choice_two == "left":
+        go_left()
+    elif player_choice_two == "r" or player_choice_two == "right":
+        P_STAT("You reach the door to the right and try open it", 2)
+        P_STAT("Its locked, damn it, you remember the drawer, maybe?", 2)
+    else:
+        print("That it not a valid option, please enter l or r")
+    return_to_table()
 
 
 def go_left():
@@ -292,9 +297,7 @@ def go_right_back():
     """
     Return to the righthand door with the key
     """
-    P_STAT("You reach the door to the right and try open it", 2)
-    P_STAT("You then remember the key and try it, it works", 2)
-    P_STAT("You push the door open and enter", 2)
+    P_STAT("Using the key you push the door open and enter", 2)
     P_STAT("Looking around this lavish room you notice what looks like", 2)
     P_STAT("three levers on the wall", 2)
     P_STAT("You decide to try the levers", 1)
@@ -478,6 +481,7 @@ def return_to_paths():
     """
     P_STAT("You decide to return to secret tunnel opening", 2)
     bottom_floor()
+
 
 def outside():
     """
