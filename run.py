@@ -78,7 +78,7 @@ def start():
 
 def small_window():
     """
-    Function called to let the player explore the 
+    Function called to let the player explore the
     small window in the room
     """
     P_STAT(" You get up and walk towards the window", 1)
@@ -420,6 +420,13 @@ def bottom_floor():
             P_STAT("you can see below you a guard on his own", 2)
             print("Try kill the guard? (y or n)")
 
+        elif open_vent == "n" or open_vent == "no":
+            return_to_paths()
+
+        else:
+            print("That it not a valid option, please pick y or n")
+            play_again()
+
         kill_guard = input("=> ").lower().strip()
 
         if kill_guard == "y" or kill_guard == "yes":
@@ -428,9 +435,14 @@ def bottom_floor():
             P_STAT("With one stroke you cut his throat", 2)
             outside()
 
-        elif open_vent == "n" or open_vent == "no":
-            bottom_floor()
-        
+        elif kill_guard == "n" or kill_guard == "no":
+            P_STAT("You decide to spare his life... for now.", 2)
+            return_to_paths()
+
+        else:
+            print("That it not a valid option, please pick y or n")
+            play_again()
+
     elif path_choice == "r" or path_choice == "right":
         P_STAT("\n You veer right to an empty room", 2)
         P_STAT("\n more doors, two of them", 2)
@@ -459,6 +471,13 @@ def bottom_floor():
             print("That it not a valid option, please pick 'l', 'r' or 's'")
 # Player choices for outside the castle
 
+
+def return_to_paths():
+    """
+    Function returns palyers to path choices
+    """
+    P_STAT("You decide to return to secret tunnel opening", 2)
+    bottom_floor()
 
 def outside():
     """
@@ -515,7 +534,7 @@ def outside():
         player_died()
         game_over()
         play_again()
-    
+
     else:
         print("That it not a valid option, please pick d or c'")
 
