@@ -34,7 +34,8 @@
 ## About
 
 * This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out and
-   many ways to die. We use a command line interface to let the user interact with the game.
+   many ways to die. We use a command line interface to let the user interact with the game. The user will make their decisions based 
+   on the scenario they find them selves in and their decisions will ultimately win the game or lose the game.
 
 ## Main goals of the project
 
