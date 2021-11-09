@@ -103,18 +103,23 @@
 # Testing
 
 ## User Stories Tested
+## Manual Testing
 
 * As a user I would like to know what game I am playing
 
+## ![Start Game](User_stories/start_game.PNG)
 * As a user I want to be able to interact with the game.
 
+## ![User Input](User_stories/input.PNG)
 * As a user I want to be able to distinguish between the choices I must make in the game.
 
+## ![User Choice](User_stories/choices.PNG)
 * As a user I would want to know if I win or lose the game
 
+## ![Game Win](User_stories/game_won.PNG)
 * As a user I would like the option to play again or quit the game
 
-## Manual Testing
+## ![Game Lose](User_stories/game_over.PNG)
 
 ## Additional Testing
 
@@ -174,7 +179,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 
 # Errors
 
-* There are a total of 76 problems.
+* There are a total of 76 problems highlighted in the terminal as per the below screen shots.
 * All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
 
 #### [Back to content](#table-of-contents)
