@@ -15,29 +15,13 @@
     <style>
         body {
             font-family: Arial;
-            /* background-color: rgba(56, 54, 54, 0.548); */
+            background-color: rgba(56, 54, 54, 0.548);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 98%;
             height: 75vh;
-        }
-
-        #background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -10;
-            height: 100vh;
-            width: 100%;
-        }
-
-        img {
-            height: 100%;
-            position: relative;
-            left: 50%;
-            transform: translate(-50%, 0);
         }
 
         /**
@@ -200,10 +184,6 @@
 </head>
 
 
-<div>@{body}</div>
-
-<div id="background">
-    <img src="views/castle_two.jpg" alt="castle pic">
-</div>
+@{body}
 
 </html>
