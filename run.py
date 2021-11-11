@@ -5,7 +5,7 @@
 from functions import P_STAT, game_over, player_died
 import time
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 TIME_ELAPSED = 2
@@ -19,7 +19,7 @@ def start():
     if the player would like to play or not. The function also asks
     the players name
     """
-    print(C(Fore.RED + Back.YELLOW + Style.BRIGHT + "  The Great Castle Escape"))
+    print(C(Fore.RED + Style.BRIGHT + "  The Great Castle Escape"))
     time.sleep(TIME_ELAPSED)
     print(Fore.CYAN + '''
                                      T~~
@@ -86,14 +86,20 @@ def small_window():
     print(Fore.YELLOW + " Do you try open the window? (y or n)")
 
     try_window = input("=> ").lower().strip()
-    if try_window == "y" or try_window == "yes":
+
+    if try_window == "y":
         P_STAT(Fore.BLUE + " You try the window, nothing.", 1)
         P_STAT(Fore.BLUE + " Urggh its sealed shut", 1)
         try_door()
-    else:
+
+    elif try_window == "n":
         P_STAT(Fore.BLUE + " You ignore the window", 1)
         P_STAT(Fore.BLUE + " and head for the door", 1)
         try_door()
+
+    else:
+        P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 1)
+        small_window()
 
 
 def try_door():
@@ -113,10 +119,14 @@ def try_door():
         P_STAT(Fore.BLUE + " of a long corridor", 2)
         take_items()
 
-    else:
+    elif look_outside == "n" or look_outside == "no":
         P_STAT(Fore.BLUE + " You are too terrified to go on, shame", 1)
         P_STAT(Fore.BLUE + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
+
+    else:
+        P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 1)
+        try_door()
 
 
 def take_items():
@@ -143,7 +153,7 @@ def take_items():
         direction_choice_two()
 
     else:
-        print(Fore.RED + " Error, please enter a valid choice (y or n) ")
+        P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 2)
         take_items()
 
 
@@ -183,12 +193,16 @@ def back_to_window():
         player_died()
         game_over()
         play_again()
-
-    else:
+    
+    elif open_window == "n" or open_window == "no":
         P_STAT(Fore.BLUE + " Looking down into the dark bleak night", 2)
         P_STAT(Fore.BLUE + " you decide its best not to try and make your", 2)
         P_STAT(Fore.BLUE + " way back to the large door opening", 2)
         direction_choice()
+
+    else:
+        P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 2)
+        back_to_window()
 
 
 def direction_choice():
@@ -507,7 +521,7 @@ def outside():
     """
     P_STAT(Fore.BLUE + " Quickly you search him and find keys and a sword.", 2)
     P_STAT(Fore.BLUE + " Looking up there is a door ahead.", 2)
-    print(Fore.YELLOW + " Proceed through door? (y or n)", 2)
+    print(Fore.YELLOW + " Proceed through door? (y or n)")
 
     go_to_door = input("=> ").lower().strip()
 
@@ -521,7 +535,7 @@ def outside():
         P_STAT(Fore.BLUE + " a gate ahead , guarded by two men", 2)
         P_STAT(Fore.BLUE + " There are high railings all around but", 2)
         P_STAT(Fore.BLUE + " you think you could climb them", 2)
-        print(Fore.YELLOW + " Distract or Climb? (d or c)", 2)
+        print(Fore.YELLOW + " Distract or Climb? (d or c)")
 
     new_choice = input("=> ").lower().strip()
 
@@ -577,10 +591,10 @@ def play_again():
     if answer == "y" or answer == "yes":
         start()
     elif answer == "n" or answer == "no":
-        print(f" Sorry to see you go {P_NAME}")
-        print(Fore.YELLOW + " Please do comeback again")
+        P_STAT(Fore.YELLOW + f" Sorry to see you go {P_NAME}", 1)
+        P_STAT(Fore.YELLOW + " Please do comeback again", 1)
     else:
-        print(Fore.RED + " That it not a valid option, please pick y or n")
+        P_STAT(Fore.RED + " That it not a valid option, please pick y or n", 1)
         start()
 
 
