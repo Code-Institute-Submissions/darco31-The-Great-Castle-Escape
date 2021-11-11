@@ -15,7 +15,7 @@
     <style>
         body {
             font-family: Arial;
-            background-color: rgba(56, 54, 54, 0.548);
+            /* background-color: rgba(56, 54, 54, 0.548); */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -24,8 +24,17 @@
             height: 75vh;
         }
 
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            height: 100vh;
+            width: 100%;
+        }
+
         #audio {
-            z-index: 14;
+            z-index: -10;
         }
 
         /**
@@ -187,12 +196,16 @@
     </style>
 </head>
 
-@{body
 
-<div id="audio">
-    <audio controls="controls">
-        <source src="creepy.mp3" type="audio/mpeg" /></audio>
+<div>@{body}</div>
+
+<div class="audio">
+    <audio controls src="creepy.mp3"></audio>
 </div>
-}
+
+
+<div id="background">
+    <img src="castle_two.jpg" alt="castle pic">
+</div>
 
 </html>
