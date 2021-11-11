@@ -16,9 +16,7 @@
         body {
             font-family: Arial;
             /* background-color: rgba(56, 54, 54, 0.548); */
-            background-image: url('svgcastle.svg');
-            background-repeat: no-repeat;
-            background-position: center;
+            /* background-image: url('svgcastle.svg'); */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -26,6 +24,24 @@
             width: 98%;
             height: 75vh;
         }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            height: 100vh;
+            width: 100%;
+        }
+
+        svg {
+            height: 100%;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+
 
         /**
         * Default styles for xterm.js
@@ -186,7 +202,11 @@
     </style>
 </head>
 
+<div>@{body}</div>
 
-@{body}
+
+<div id="background">
+    <img src="svgcastle.svg" alt="">
+</div>
 
 </html>
