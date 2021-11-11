@@ -9,7 +9,7 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 TIME_ELAPSED = 2
-
+C = '{:^80}'.format
 # Start the game and gives initial choices to the player
 
 
@@ -19,7 +19,7 @@ def start():
     if the player would like to play or not. The function also asks
     the players name
     """
-    print(Fore.RED + Back.YELLOW + Style.BRIGHT + "  The Great Castle Escape")
+    print(C(Fore.RED + Back.YELLOW + Style.BRIGHT + "  The Great Castle Escape"))
     time.sleep(TIME_ELAPSED)
     print(Fore.CYAN + '''
                                      T~~
@@ -144,7 +144,7 @@ def take_items():
 
     else:
         print(Fore.RED + " Error, please enter a valid choice (y or n) ")
-    take_items()
+        take_items()
 
 
 def return_to_table():
@@ -260,7 +260,7 @@ def go_left():
         proceed_down_stairs()
     else:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
-    direction_choice_three()
+        direction_choice_three()
 
 
 def explore_room():
@@ -352,7 +352,7 @@ def go_right_back():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick 1,2,3")
-    go_right_back()
+        go_right_back()
 
 
 def go_right():
@@ -403,7 +403,7 @@ def go_right():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick 1,2,3")
-    go_right_back()
+        go_right_back()
 
 
 def bottom_floor():
@@ -445,7 +445,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick y or n")
-        bottom_floor()
+            bottom_floor()
 
         kill_guard = input("=> ").lower().strip()
 
@@ -461,7 +461,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick y or n")
-        bottom_floor()
+            bottom_floor()
 
     elif path_choice == "r" or path_choice == "right":
         P_STAT(Fore.BLUE + " You veer right to an empty room", 2)
@@ -489,7 +489,7 @@ def bottom_floor():
 
         else:
             print(Fore.RED + " That it not a valid option, please pick l,r,s")
-        bottom_floor()
+            bottom_floor()
 # Player choices for outside the castle
 
 
@@ -562,7 +562,7 @@ def outside():
 
     else:
         print(Fore.RED + " That it not a valid option, please pick d or c'")
-    outside()
+        outside()
 
 
 # Play again function called at end of game or when player dies
@@ -580,6 +580,7 @@ def play_again():
         print(f" Sorry to see you go {P_NAME}")
         print(Fore.YELLOW + " Please do comeback again")
     else:
+        print(Fore.RED + " That it not a valid option, please pick y or n")
         start()
 
 
