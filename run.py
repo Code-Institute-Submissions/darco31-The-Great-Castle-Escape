@@ -7,7 +7,7 @@ import time
 import colorama
 from colorama import Fore, Style
 colorama.init(autoreset=True)
-
+# Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
 # Start the game and gives initial choices to the player
@@ -73,7 +73,11 @@ def start():
     else:
         P_STAT(Fore.RED + " Error, please enter a valid choice (e or s) ", 2)
         start()
-# Player has the option to check the window or ignore it
+
+
+"""
+Player has the option to check the window or ignore it
+"""
 
 
 def small_window():
@@ -100,6 +104,12 @@ def small_window():
     else:
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 1)
         small_window()
+
+
+"""
+The player will have the option to try the door
+where they can choose to leave or stay
+"""
 
 
 def try_door():
@@ -193,7 +203,7 @@ def back_to_window():
         player_died()
         game_over()
         play_again()
-    
+
     elif open_window == "n" or open_window == "no":
         P_STAT(Fore.BLUE + " Looking down into the dark bleak night", 2)
         P_STAT(Fore.BLUE + " you decide its best not to try and make your", 2)
