@@ -2,7 +2,7 @@
 # Date:
 # Project 3 - The code Institute
 
-from functions import P_STAT, game_over, player_died
+from functions import P_STAT, game_over, player_died, you_escaped
 import time
 import colorama
 from colorama import Fore, Style
@@ -559,16 +559,7 @@ def outside():
         P_STAT(Fore.BLUE + " you move as quickly and quietly as you can.", 2)
         P_STAT(Fore.BLUE + " You are out, you run!!!", 2)
 
-        P_STAT(Fore.BLUE + '''
-      __   __           _____                              _ 
-      \ \ / /          |  ___|                            | |
-       \ V /___  _   _ | |__ ___  ___ __ _ _ __   ___  __ | |
-        \ // _ \| | | | |  __/ __|/ __/ _` | '_ \ / _ \/ _` |
-        | | (_) | |_| | | |__\__ \ (_| (_| | |_) |  __/ (_| |
-        \_/\___/ \__,_| \____/___/\___\__,_| .__/ \___|\__,_|
-                                           | |               
-                                           |_|               
-                           ''', 2)
+        you_escaped()
         play_again()
 
     elif new_choice == "c":
