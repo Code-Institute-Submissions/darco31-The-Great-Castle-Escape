@@ -60,14 +60,14 @@ def start():
     P_STAT(Fore.YELLOW + " Its big cold and damp, you notice a window", 2)
     P_STAT(Fore.YELLOW + " A large wooden door is in front of you", 2)
     P_STAT(Fore.YELLOW + " Not a lot to choose from", 2)
-    print(Fore.BLUE + " So, do you have the guts to try and escape?(e or s)")
+    print(Fore.BLUE + " So, do you have the guts to try and escape?(y or n)")
     # convert the player's input to lower_case
     answer = input("=> ").lower().strip()
 
-    if answer == "escape" or answer == "e":
+    if answer == "yes" or answer == "y":
         clr_terminal()
         small_window()
-    elif answer == "stay" or answer == "s":
+    elif answer == "no" or answer == "n":
         clr_terminal()
         P_STAT(Fore.RED + " Shame", 1)
         P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
