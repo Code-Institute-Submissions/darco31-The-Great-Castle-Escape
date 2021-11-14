@@ -1,7 +1,7 @@
 # Creator: Stephen Darcy
 # Date:
 # Project 3 - The code Institute
-
+from clear import clr_terminal
 from functions import P_STAT, game_over, player_died, you_escaped
 import time
 import colorama
@@ -65,8 +65,10 @@ def start():
     answer = input("=> ").lower().strip()
 
     if answer == "escape" or answer == "e":
+        clr_terminal()
         small_window()
     elif answer == "stay" or answer == "s":
+        clr_terminal()
         P_STAT(Fore.RED + " Shame", 1)
         P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
@@ -92,11 +94,13 @@ def small_window():
     try_window = input("=> ").lower().strip()
 
     if try_window == "y":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You try the window, nothing.", 1)
         P_STAT(Fore.BLUE + " Urggh its sealed shut", 1)
         try_door()
 
     elif try_window == "n":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You ignore the window", 1)
         P_STAT(Fore.BLUE + " and head for the door", 1)
         try_door()
@@ -124,12 +128,14 @@ def try_door():
     look_outside = input("=>").lower().strip()
 
     if look_outside == "y" or look_outside == "yes":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You open the door as silently as you can", 2)
         P_STAT(Fore.BLUE + " Looking outside you see a door at either end", 2)
         P_STAT(Fore.BLUE + " of a long corridor", 2)
         take_items()
 
     elif look_outside == "n" or look_outside == "no":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You are too terrified to go on, shame", 1)
         P_STAT(Fore.BLUE + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
@@ -150,6 +156,7 @@ def take_items():
     open_drawer = input("=> ").lower().strip()
 
     if open_drawer == "y" or open_drawer == "yes":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You pull out the drawer", 2)
         P_STAT(Fore.BLUE + " and find a key and a knife", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
@@ -159,6 +166,7 @@ def take_items():
         back_to_window()
 
     elif open_drawer == "n" or open_drawer == "no":
+        clr_terminal()
         P_STAT(Fore.BLUE + " Probably best not to disturb anything", 2)
         direction_choice_two()
 
@@ -192,6 +200,7 @@ def back_to_window():
     open_window = input("=> ").lower().strip()
 
     if open_window == "y" or open_window == "yes":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You jam the knife into the gap ", 2)
         P_STAT(Fore.BLUE + " of the windowpane the timber comes loose ", 2)
         P_STAT(Fore.BLUE + " and the window pops open. Success, ", 2)
@@ -205,6 +214,7 @@ def back_to_window():
         play_again()
 
     elif open_window == "n" or open_window == "no":
+        clr_terminal()
         P_STAT(Fore.BLUE + " Looking down into the dark bleak night", 2)
         P_STAT(Fore.BLUE + " you decide its best not to try and make your", 2)
         P_STAT(Fore.BLUE + " way back to the large door opening", 2)
@@ -227,8 +237,10 @@ def direction_choice():
     player_choice = input("=> ").lower().strip()
 
     if player_choice == "l" or player_choice == "left":
+        clr_terminal()
         go_left()
     elif player_choice == "r" or player_choice == "right":
+        clr_terminal()
         go_right()
     else:
         print(Fore.RED + "That it not a valid option, please enter l or r")
@@ -243,8 +255,10 @@ def direction_choice_two():
     player_choice_two = input("=> ").lower().strip()
 
     if player_choice_two == "l" or player_choice_two == "left":
+        clr_terminal()
         go_left()
     elif player_choice_two == "r" or player_choice_two == "right":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You reach the door and try open it", 2)
         P_STAT(Fore.BLUE + " Its locked, you remember the drawer, maybe?", 2)
     else:
@@ -279,8 +293,10 @@ def go_left():
     decision = input("=> ").lower().strip()
 
     if decision == "explore" or decision == "e":
+        clr_terminal()
         explore_room()
     elif decision == "proceed" or decision == "p":
+        clr_terminal()
         proceed_down_stairs()
     else:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
@@ -319,6 +335,7 @@ def proceed_down_stairs():
     attack = input("=> ").lower().strip()
 
     if attack == "attack" or attack == "a":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
         P_STAT(Fore.BLUE + " but alas, one foul swipe and you are....", 1)
 
@@ -344,6 +361,7 @@ def go_right_back():
     try_lever = input("=> Pick a number from '1', '2', '3':  ").lower().strip()
 
     if try_lever == "1":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
@@ -352,6 +370,7 @@ def go_right_back():
         play_again()
 
     elif try_lever == "2":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
@@ -360,6 +379,7 @@ def go_right_back():
         play_again()
 
     elif try_lever == "3":
+        clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
         P_STAT(Fore.BLUE + " you hear a noise and a concealed door opens", 2)
@@ -395,6 +415,7 @@ def go_right():
     try_lever = input("=> Pick a number from 1,2,3:  ").lower().strip()
 
     if try_lever == "1":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
@@ -403,6 +424,7 @@ def go_right():
         play_again()
 
     elif try_lever == "2":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
@@ -411,6 +433,7 @@ def go_right():
         play_again()
 
     elif try_lever == "3":
+        clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
         P_STAT(Fore.BLUE + " you hear a noise and a concealed door opens", 2)
@@ -442,6 +465,7 @@ def bottom_floor():
     path_choice = input("=> ").lower().strip()
 
     if path_choice == "s" or path_choice == "straight":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You decide to proceed straight ahead", 2)
         P_STAT(Fore.BLUE + " Oh sugar..,a group of angry men approach..", 2)
 
@@ -450,6 +474,7 @@ def bottom_floor():
         play_again()
 
     elif path_choice == "l" or path_choice == "left":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You decide to take the left path ahead", 2)
         P_STAT(Fore.BLUE + " You are in a room with a vent on the wall", 2)
         print(Fore.YELLOW + " Do you open the vent? (y or n)")
@@ -457,6 +482,7 @@ def bottom_floor():
         open_vent = input("=> ").lower().strip()
 
         if open_vent == "y" or open_vent == "yes":
+            clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and enter", 2)
             P_STAT(Fore.BLUE + " You crawl forward and can ", 2)
             P_STAT(Fore.BLUE + " see another vent in the distance", 2)
@@ -465,6 +491,7 @@ def bottom_floor():
             print(Fore.YELLOW + " Try kill the guard? (y or n)")
 
         elif open_vent == "n" or open_vent == "no":
+            clr_terminal()
             return_to_paths()
 
         else:
@@ -474,12 +501,14 @@ def bottom_floor():
         kill_guard = input("=> ").lower().strip()
 
         if kill_guard == "y" or kill_guard == "yes":
+            clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and ready the knife", 2)
             P_STAT(Fore.BLUE + " You jump down surprising the guard", 2)
             P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
             outside()
 
         elif kill_guard == "n" or kill_guard == "no":
+            clr_terminal()
             P_STAT(Fore.BLUE + " You decide to spare his life... for now.", 2)
             return_to_paths()
 
@@ -495,6 +524,7 @@ def bottom_floor():
         way_forward = input("=> ").lower().strip()
 
         if way_forward == "left" or way_forward == "l":
+            clr_terminal()
             P_STAT(Fore.BLUE + " You open the lefthand door", 2)
             P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
 
@@ -503,6 +533,7 @@ def bottom_floor():
             play_again()
 
         elif way_forward == "right" or way_forward == "r":
+            clr_terminal()
 
             P_STAT(Fore.BLUE + " You open the right hand door", 2)
             P_STAT(Fore.BLUE + " Dogs? and guard dogs..", 2)
@@ -536,6 +567,7 @@ def outside():
     go_to_door = input("=> ").lower().strip()
 
     if go_to_door == "yes" or go_to_door == "y":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You fumble through the keys", 2)
         P_STAT(Fore.BLUE + " and find the right one", 2)
         P_STAT(Fore.BLUE + " You open the door and find yourself outside", 2)
@@ -550,6 +582,7 @@ def outside():
     new_choice = input("=> ").lower().strip()
 
     if new_choice == "d":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You look around for something to distract", 2)
         P_STAT(Fore.BLUE + " them,picking up a stone you throw", 2)
         P_STAT(Fore.BLUE + " it at the railing,perfect shot,", 2)
@@ -563,6 +596,7 @@ def outside():
         play_again()
 
     elif new_choice == "c":
+        clr_terminal()
         P_STAT(Fore.BLUE + " You decide to climb the railings", 2)
         P_STAT(Fore.BLUE + " You put one foot up and pull yourself up", 2)
         P_STAT(Fore.BLUE + " to the top of them, you raise your other foot", 2)
@@ -590,8 +624,10 @@ def play_again():
     answer = input("=> \n").lower().strip()
 
     if answer == "y" or answer == "yes":
+        clr_terminal()
         start()
     elif answer == "n" or answer == "no":
+        clr_terminal()
         P_STAT(Fore.YELLOW + f" Sorry to see you go {P_NAME}", 1)
         P_STAT(Fore.YELLOW + " Please do comeback again", 1)
     else:
