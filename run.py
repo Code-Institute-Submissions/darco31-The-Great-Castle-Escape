@@ -5,11 +5,13 @@ from clear import clr_terminal
 from functions import P_STAT, game_over, player_died, you_escaped
 import time
 import colorama
+import random
 from colorama import Fore, Style
 colorama.init(autoreset=True)
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
+# levers = ['1', '2', '3']
 # Start the game and gives initial choices to the player
 
 
@@ -261,9 +263,10 @@ def direction_choice_two():
         clr_terminal()
         P_STAT(Fore.BLUE + " You reach the door and try open it", 2)
         P_STAT(Fore.BLUE + " Its locked, you remember the drawer, maybe?", 2)
+        return_to_table()
     else:
         print(Fore.RED + " That it not a valid option, please enter l or r")
-    return_to_table()
+        return_to_table()
 
 
 def direction_choice_three():
@@ -358,9 +361,10 @@ def go_right_back():
     P_STAT(Fore.BLUE + " what looks like three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-    try_lever = input("=> Pick a number from '1', '2', '3':  ").lower().strip()
+    # try_lever = input("=> Pick a number from '1', '2', '3':  ").lower().strip()
+    try_lever = random.randint(1, 3)
 
-    if try_lever == "1":
+    if try_lever == random.randint(1, 3):
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -369,7 +373,7 @@ def go_right_back():
         game_over()
         play_again()
 
-    elif try_lever == "2":
+    elif try_lever == random.randint(1, 3):
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -378,7 +382,7 @@ def go_right_back():
         game_over()
         play_again()
 
-    elif try_lever == "3":
+    elif try_lever == random.randint(1, 3):
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
@@ -412,9 +416,10 @@ def go_right():
     P_STAT(Fore.BLUE + " three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-    try_lever = input("=> Pick a number from 1,2,3:  ").lower().strip()
+    # try_lever = input("=> Pick a number from 1,2,3:  ").lower().strip()
+    try_lever = {random.randint}
 
-    if try_lever == "1":
+    if try_lever == random.randint(1, 3):
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -423,7 +428,7 @@ def go_right():
         game_over()
         play_again()
 
-    elif try_lever == "2":
+    elif try_lever == random.randint(1, 3):
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -432,7 +437,7 @@ def go_right():
         game_over()
         play_again()
 
-    elif try_lever == "3":
+    elif try_lever == random.randint(1, 3):
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
@@ -630,6 +635,7 @@ def play_again():
         clr_terminal()
         P_STAT(Fore.YELLOW + f" Sorry to see you go {P_NAME}", 1)
         P_STAT(Fore.YELLOW + " Please do comeback again", 1)
+        game_over()
     else:
         P_STAT(Fore.RED + " That it not a valid option, please pick y or n", 1)
         start()
