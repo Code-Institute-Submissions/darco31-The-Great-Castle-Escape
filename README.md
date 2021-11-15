@@ -48,7 +48,7 @@
 ## Design
 * Flow chart for story lines
 
-![Flow Chart](assets/p3_flow_chart.vpd.png)
+![Flow Chart](assets/P3_Flow.vpd.png)
 
 ## User Stories
 

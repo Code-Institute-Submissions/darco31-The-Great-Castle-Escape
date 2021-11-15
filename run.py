@@ -1,6 +1,7 @@
 # Creator: Stephen Darcy
-# Date:
+# Date: 01-11-21
 # Project 3 - The code Institute
+
 # Calls the function from clear.py to clear the terminal
 # after some not all interactions
 from clear import clr_terminal
@@ -215,6 +216,7 @@ def back_to_window():
         player_died()
         game_over()
         play_again()
+        clr_terminal()
 
     elif open_window == "n" or open_window == "no":
         clr_terminal()
