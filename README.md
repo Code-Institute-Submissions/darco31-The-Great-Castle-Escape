@@ -48,6 +48,9 @@
 ## Design
 * Flow chart for story lines
 
+* The main design idea was to lead the user/player on a simple text adventure that will only have one winning outcome but many ways for the user/player
+    to die. 
+
 ![Flow Chart](assets/P3_Flow.vpd.png)
 
 ## User Stories
@@ -85,6 +88,8 @@
             - Used to add colours to the printed terminal messages
         - [Time](https://docs.python.org/3/library/time.html)
             - Used for the timing functions to delay scripts being run.
+        - [Random](https://docs.python.org/3/library/random.html)
+            - Used for the random number generator.
 - [GitHub](https://github.com/)
     - Used to store code for the project after being pushed.
 - [Git](https://git-scm.com/)
@@ -107,9 +112,12 @@
 ## Manual Testing
 
 * As a user I would like to know what game I am playing
+    - The game will open up a terminal window in the Heroku application with the title of the game on top. 
 
 ## ![Start Game](User_stories/start_game.PNG)
 * As a user I want to be able to interact with the game.
+    - The player will be asked to input their name. Once this has been done they will move on. If they enter nothing the game will prompt them 
+       to input their name and will only proceed when this input is completed.
 
 ## ![User Input](User_stories/input.PNG)
 * As a user I want to be able to distinguish between the choices I must make in the game.
@@ -151,9 +159,10 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 - Give the app a name and choose the region
 - Click on settings first and set the Reveal Config Vars
 - PORT  = Key 8000 = Value
-- If using a 
+- If using CREDS please make sure this has been added to the requirements file.
 - Add build pack include Python and Node.js
-- Click Deploy
+- The order of the buildpacks is important, in the list Python should be first with Node.js second. If they are not in this order, you can click and drag them to rearrange.
+- Click Deploy at the top to go to the Deployment settings
 - Choose GiHub as the deployment method
 - Search for your app and connect
 - Use Automatic deploys if you would like a new build when changes are pushed to GitHub from Gitpod
@@ -164,6 +173,12 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 
 # Credits
 
+I owe thanks to:
+
+* My mentor Miguel Martinez
+* Ben Kavanagh's webinar on Python
+* Deanna Sale for her help on centering the text in the terminal window. 
+
 ## Code
 
 * All code has been written by Stephen D'arcy. Some inspiration was taken from W3 schools [W3 Schools](https://www.w3schools.com/python/)
@@ -172,15 +187,18 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 ## Content
 
 - [ASCII Art Castle](https://www.asciiart.eu/buildings-and-places/castles)
-- [ASCII Art DEAD and Escaped](https://ascii.co.uk/)
+- [ASCII Art DEAD and Escaped and Game Over](https://ascii.co.uk/)
 
 #### [Back to content](#table-of-contents)
 
 # Bugs
 
+* There was a bug present in the code, when a player decided to not play again there was a function running to put the player back to the middle of the game. This
+was fixed by placing the function call to the correct indentation.
+
 # Errors
 
-* There are a total of 76 problems highlighted in the terminal as per the below screen shots.
+* There are a total of 76 problems highlighted in the terminal.
 * All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
 
 #### [Back to content](#table-of-contents)
