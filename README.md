@@ -121,12 +121,17 @@
 
 ## ![User Input](User_stories/input.PNG)
 * As a user I want to be able to distinguish between the choices I must make in the game.
+    - The players choices will be clearly marked in yellow text for clarity and they will be given a choice of Y or N or other options when required.
+      If a wrong character is input this will raise an error.
 
 ## ![User Choice](User_stories/choices.PNG)
 * As a user I would want to know if I win or lose the game
+    - The player will be given a text alert on screen along with a visual ASCII art design to alert them to the result of their current game.
 
 ## ![Game Win](User_stories/game_won.PNG)
-* As a user I would like the option to play again or quit the game
+* As a user I would like the option to play again or quit the game.
+    - The player will after wining or losing the game be given a choice to play again or not. If they decide not to play or play
+      again the game will finish.
 
 ## ![Game Lose](User_stories/game_over.PNG)
 

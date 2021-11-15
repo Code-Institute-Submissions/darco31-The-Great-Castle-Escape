@@ -62,3 +62,7 @@ def you_escaped():
                                            | |
                                            |_|
                         ''', 2)
+
+
+def quit_game():
+    

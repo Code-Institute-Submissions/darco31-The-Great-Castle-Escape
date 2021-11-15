@@ -17,7 +17,7 @@ colorama.init(autoreset=True)
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
-# levers = ['1', '2', '3']
+
 # Start the game and gives initial choices to the player
 
 
@@ -78,7 +78,7 @@ def start():
     elif answer == "no" or answer == "n":
         clr_terminal()
         P_STAT(Fore.RED + " Shame", 1)
-        P_STAT(f" Enjoy the solitude and loneliness {P_NAME}", 2)
+        P_STAT(Fore.RED + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
     else:
         P_STAT(Fore.RED + " Error, please enter a valid choice (e or s) ", 2)
@@ -114,12 +114,8 @@ def small_window():
         small_window()
 
 
-"""
-The player will have the option to try the door
-where they can choose to leave or stay
-"""
-
-
+# The player will have the option to try the door
+# where they can choose to leave or stay
 def try_door():
     """
     The function offers the player the choice of
@@ -547,9 +543,9 @@ def bottom_floor():
             game_over()
             play_again()
 
-        else:
-            print(Fore.RED + " That it not a valid option, please pick l,r,s")
-            bottom_floor()
+    else:
+        print(Fore.RED + " That it not a valid option, please pick l,r,s")
+        bottom_floor()
 # Player choices for outside the castle
 
 
