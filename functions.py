@@ -1,3 +1,7 @@
+"""
+Imports the time module to allow time delay
+in the test print out
+"""
 import time
 
 import colorama

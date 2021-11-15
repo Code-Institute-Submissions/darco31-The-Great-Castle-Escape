@@ -1,8 +1,13 @@
 # Creator: Stephen Darcy
 # Date:
 # Project 3 - The code Institute
+# Calls the function from clear.py to clear the terminal
+# after some not all interactions
 from clear import clr_terminal
+#  Calls the functions from functions.py to give
+# visual help to the player on end game scenarios
 from functions import P_STAT, game_over, player_died, you_escaped
+# Imports the time, random and colorama modules
 import time
 import colorama
 import random
@@ -79,11 +84,7 @@ def start():
         start()
 
 
-"""
-Player has the option to check the window or ignore it
-"""
-
-
+# Player has the option to check the window or ignore it
 def small_window():
     """
     Function called to let the player explore the
@@ -262,7 +263,7 @@ def direction_choice_two():
     elif player_choice_two == "r" or player_choice_two == "right":
         clr_terminal()
         P_STAT(Fore.BLUE + " You reach the door and try open it", 2)
-        P_STAT(Fore.BLUE + " Its locked, you remember the drawer, maybe?", 2)
+        P_STAT(Fore.RED + " Its locked, you remember the drawer, maybe?", 2)
         return_to_table()
     else:
         print(Fore.RED + " That it not a valid option, please enter l or r")
@@ -361,7 +362,7 @@ def go_right_back():
     P_STAT(Fore.BLUE + " what looks like three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-    # try_lever = input("=> Pick a number from '1', '2', '3':  ").lower().strip()
+# Player will get a random choice of lever and this will decide the outcome
     try_lever = random.randint(1, 3)
 
     if try_lever == 1:
@@ -410,13 +411,14 @@ def go_right():
     room the player initially makes.
     """
     P_STAT(Fore.BLUE + " You reach the door to the right and try open it", 2)
+    P_STAT(Fore.RED + " Locked!!", 2)
     P_STAT(Fore.BLUE + " You then remember the key and try it, it works", 2)
     P_STAT(Fore.BLUE + " You push the door open and enter", 2)
     P_STAT(Fore.BLUE + " Looking around this lavish room you notice", 2)
     P_STAT(Fore.BLUE + " three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-    # try_lever = input("=> Pick a number from 1,2,3:  ").lower().strip()
+    # Player will get a random choice of lever and this will decide the outcome
     try_lever = {random.randint}
 
     if try_lever == 1:
@@ -452,10 +454,6 @@ def go_right():
         P_STAT(Fore.BLUE + " reappear in a room.You hear voices,", 2)
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor()
-
-    # else:
-    #     print(Fore.RED + " That it not a valid option, please pick 1,2,3")
-    #     go_right_back()
 
 
 def bottom_floor():
@@ -615,7 +613,7 @@ def outside():
         play_again()
 
     else:
-        P_STAT(Fore.RED + " That it not a valid option, please pick d or c'", 1)
+        P_STAT(Fore.RED + " That it not a valid option, please pick d or c", 1)
         outside()
 
 
