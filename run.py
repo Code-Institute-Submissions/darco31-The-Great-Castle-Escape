@@ -364,7 +364,7 @@ def go_right_back():
     # try_lever = input("=> Pick a number from '1', '2', '3':  ").lower().strip()
     try_lever = random.randint(1, 3)
 
-    if try_lever == random.randint(1, 3):
+    if try_lever == 1:
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -373,16 +373,16 @@ def go_right_back():
         game_over()
         play_again()
 
-    elif try_lever == random.randint(1, 3):
+    elif try_lever == 2:
         clr_terminal()
-        P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
+        P_STAT(Fore.BLUE + " You pull the second lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
         player_died()
         game_over()
         play_again()
 
-    elif try_lever == random.randint(1, 3):
+    elif try_lever == 3:
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
@@ -419,7 +419,7 @@ def go_right():
     # try_lever = input("=> Pick a number from 1,2,3:  ").lower().strip()
     try_lever = {random.randint}
 
-    if try_lever == random.randint(1, 3):
+    if try_lever == 1:
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
@@ -428,16 +428,16 @@ def go_right():
         game_over()
         play_again()
 
-    elif try_lever == random.randint(1, 3):
+    elif try_lever == 2:
         clr_terminal()
-        P_STAT(Fore.BLUE + " You pull the first lever, you hear a groan", 1.2)
+        P_STAT(Fore.BLUE + " You pull the second lever, you hear a groan", 1.2)
         P_STAT(Fore.BLUE + " as you turn a large object comes at you ...", 2)
 
         player_died()
         game_over()
         play_again()
 
-    elif try_lever == random.randint(1, 3):
+    elif try_lever == 3:
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
@@ -453,9 +453,9 @@ def go_right():
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor()
 
-    else:
-        print(Fore.RED + " That it not a valid option, please pick 1,2,3")
-        go_right_back()
+    # else:
+    #     print(Fore.RED + " That it not a valid option, please pick 1,2,3")
+    #     go_right_back()
 
 
 def bottom_floor():
@@ -615,7 +615,7 @@ def outside():
         play_again()
 
     else:
-        print(Fore.RED + " That it not a valid option, please pick d or c'")
+        P_STAT(Fore.RED + " That it not a valid option, please pick d or c'", 1)
         outside()
 
 
