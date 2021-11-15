@@ -132,6 +132,11 @@
 
 ## Additional Testing
 
+# PEP8 Testing
+## ![run.py](assets/PEP8.PNG)
+## ![clear.py](assets/PEP8_1.PNG)
+## ![functions.py](assets/PEP8_2.PNG)
+
 # Deployment
 
 ### Gitpod and GitHub
