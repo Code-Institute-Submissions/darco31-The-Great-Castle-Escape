@@ -193,6 +193,7 @@ I owe thanks to:
 
 * All code has been written by Stephen D'arcy. Some inspiration was taken from W3 schools [W3 Schools](https://www.w3schools.com/python/)
 * Stack overflow to learn how to use and initialize Colorama [Stack Overflow](https://stackoverflow.com/questions/49841315/how-to-clear-screen-using-colorama)
+* I picked up advice and how to execute f strings with a class at [RealPython](https://realpython.com/python-f-strings/)
 
 ## Content
 

@@ -5,6 +5,7 @@
 # Calls the function from clear.py to clear the terminal
 # after some not all interactions
 from clear import clr_terminal
+from set_class import Weapon
 #  Calls the functions from functions.py to give
 # visual help to the player on end game scenarios
 from functions import P_STAT, game_over, player_died, you_escaped
@@ -17,7 +18,7 @@ colorama.init(autoreset=True)
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
-
+new_weapon = Weapon("knife", "rusty")
 # Start the game and gives initial choices to the player
 
 
@@ -158,7 +159,7 @@ def take_items():
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull out the drawer", 2)
-        P_STAT(Fore.BLUE + " and find a key and a knife", 2)
+        P_STAT(Fore.BLUE + f" and find a key and a {new_weapon}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
         P_STAT(Fore.BLUE + " and close the drawer", 2)
