@@ -4,4 +4,4 @@ class Weapon:
         self.condition = condition
 
     def __str__(self):
-        return f"a {self.weapon_type } but it's {self.condition}."
+        return "{self.weapon_type}, {self.condition}"

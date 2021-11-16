@@ -19,6 +19,7 @@ colorama.init(autoreset=True)
 TIME_ELAPSED = 2
 C = '{:^80}'.format
 new_weapon = Weapon("knife", "rusty")
+new_weapon_two = Weapon("sword", "razor sharp")
 # Start the game and gives initial choices to the player
 
 
@@ -159,7 +160,7 @@ def take_items():
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull out the drawer", 2)
-        P_STAT(Fore.BLUE + f" and find a key and there is {new_weapon}", 2)
+        P_STAT(Fore.BLUE + f" and find a key and there is a {new_weapon.weapon_type}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
         P_STAT(Fore.BLUE + " and close the drawer", 2)
@@ -181,7 +182,7 @@ def return_to_table():
     Player returns to the table from the locked door
     """
     P_STAT(Fore.BLUE + " You go back to the table and pull drawer open", 2)
-    P_STAT(Fore.BLUE + f" Result, a key and {new_weapon}", 2)
+    P_STAT(Fore.BLUE + f" Result, a key and {new_weapon.weapon_type}", 2)
     P_STAT(Fore.BLUE + " You stuff them in your pockets ", 2)
     P_STAT(Fore.BLUE + " and close the drawer", 2)
     P_STAT(Fore.BLUE + " you quickly get back to the right hand door", 2)
@@ -196,7 +197,7 @@ def back_to_window():
     P_STAT(Fore.RED + "\n You return to the first room", 2)
 
     P_STAT(Fore.BLUE + " You look out the window again", 2)
-    print(Fore.YELLOW + " Do you try the window with the knife? (y or n)")
+    print(Fore.YELLOW + f" Do you try the window with the {new_weapon.weapon_type}? (y or n)")
 
     open_window = input("=> ").lower().strip()
 
@@ -331,7 +332,8 @@ def proceed_down_stairs():
     P_STAT(Fore.BLUE + " You reach the bottom and as you listen", 2)
     P_STAT(Fore.BLUE + " you can hear what appears to be two voices", 2)
     P_STAT(Fore.BLUE + " Holding your breath you peek around the corner", 2)
-    P_STAT(Fore.BLUE + " and see two large men with swords?", 2)
+    P_STAT(Fore.BLUE + " and see two large men,", 2)
+    P_STAT(Fore.BLUE + f" both with {new_weapon_two.weapon_type}'s?", 2)
     P_STAT(Fore.BLUE + " Their backs are to you", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
