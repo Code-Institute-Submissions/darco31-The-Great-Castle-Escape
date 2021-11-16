@@ -159,7 +159,7 @@ def take_items():
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull out the drawer", 2)
-        P_STAT(Fore.BLUE + f" and find a key and a {new_weapon}", 2)
+        P_STAT(Fore.BLUE + f" and find a key and there is {new_weapon}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
         P_STAT(Fore.BLUE + " and close the drawer", 2)
@@ -181,7 +181,7 @@ def return_to_table():
     Player returns to the table from the locked door
     """
     P_STAT(Fore.BLUE + " You go back to the table and pull drawer open", 2)
-    P_STAT(Fore.BLUE + " Result, a key and a knife?", 2)
+    P_STAT(Fore.BLUE + f" Result, a key and {new_weapon}", 2)
     P_STAT(Fore.BLUE + " You stuff them in your pockets ", 2)
     P_STAT(Fore.BLUE + " and close the drawer", 2)
     P_STAT(Fore.BLUE + " you quickly get back to the right hand door", 2)
