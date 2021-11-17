@@ -159,12 +159,13 @@ def take_items():
 
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
-        P_STAT(Fore.BLUE + " You pull out the drawer", 2)
-        P_STAT(Fore.BLUE + f" and find a key and there is a {new_weapon.weapon_type}", 2)
+        P_STAT(Fore.BLUE + " You pull out the drawerand find a", 2)
+        P_STAT(Fore.BLUE + f" key and there is a {new_weapon.weapon_type}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
         P_STAT(Fore.BLUE + " and close the drawer", 2)
-        P_STAT(Fore.BLUE + " Maybe the knife will open the window", 3)
+        P_STAT(Fore.BLUE + f" Maybe the {new_weapon.weapon_type}", 3)
+        P_STAT(Fore.BLUE + " will open the window", 2)
         back_to_window()
 
     elif open_drawer == "n" or open_drawer == "no":
@@ -196,15 +197,15 @@ def back_to_window():
     """
     P_STAT(Fore.RED + "\n You return to the first room", 2)
 
-    P_STAT(Fore.BLUE + " You look out the window again", 2)
-    print(Fore.YELLOW + f" Do you try the window with the {new_weapon.weapon_type}? (y or n)")
+    P_STAT(Fore.BLUE + "You look out the window again.Do you try open the ", 2)
+    print(Fore.YELLOW + f" window with the {new_weapon.weapon_type}? (y or n)")
 
     open_window = input("=> ").lower().strip()
 
     if open_window == "y" or open_window == "yes":
         clr_terminal()
-        P_STAT(Fore.BLUE + " You jam the knife into the gap ", 2)
-        P_STAT(Fore.BLUE + " of the windowpane the timber comes loose ", 2)
+        P_STAT(Fore.BLUE + f"You jam the {new_weapon.weapon_type} into the", 2)
+        P_STAT(Fore.BLUE + " gap of the windowpane the timber comes loose ", 2)
         P_STAT(Fore.BLUE + " and the window pops open. Success, ", 2)
         P_STAT(Fore.BLUE + " you climb up and outside and as you peer", 2)
         P_STAT(Fore.BLUE + " through the dark you can just make out the", 2)
@@ -316,7 +317,8 @@ def explore_room():
     P_STAT(Fore.BLUE + " You see a bowl with fruit in it, you are starving", 2)
     P_STAT(Fore.BLUE + " so you pick it up and eat while", 2)
     P_STAT(Fore.BLUE + " continuing to explore. You find a belt, ", 2)
-    P_STAT(Fore.BLUE + " you wrap it around you and slip the knife in", 2)
+    P_STAT(Fore.BLUE + " you wrap it around you and slip the ", 2)
+    P_STAT(Fore.BLUE + f"{new_weapon.weapon_type} in", 2)
     P_STAT(Fore.BLUE + " As there is nothing else left to check ", 2)
     P_STAT(Fore.BLUE + " you decide to go downstairs", 2)
 
@@ -506,7 +508,8 @@ def bottom_floor():
 
         if kill_guard == "y" or kill_guard == "yes":
             clr_terminal()
-            P_STAT(Fore.BLUE + " You pry the vent open and ready the knife", 2)
+            P_STAT(Fore.BLUE + "You pry the vent open and ready the ", 2)
+            P_STAT(Fore.BLUE + f"{new_weapon.weapon_type}", 2)
             P_STAT(Fore.BLUE + " You jump down surprising the guard", 2)
             P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
             outside()
@@ -564,7 +567,8 @@ def outside():
     """
     Players choices for outside the castle
     """
-    P_STAT(Fore.BLUE + " Quickly you search him and find keys and a sword.", 2)
+    P_STAT(Fore.BLUE + " Quickly you search him and find keys and a", 2)
+    P_STAT(Fore.BLUE + f"{new_weapon_two.weapon_type}", 2)
     P_STAT(Fore.BLUE + " Looking up there is a door ahead.", 2)
     print(Fore.YELLOW + " Proceed through door? (y or n)")
 
