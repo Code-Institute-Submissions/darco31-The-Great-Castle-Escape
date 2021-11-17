@@ -136,11 +136,14 @@
 ## ![Game Lose](User_stories/game_over.PNG)
 
 ## Additional Testing
+# ![Excel Testing](assets/test_one.PNG)
+# ![Excel Testing](assets/test_two.PNG)
 
-# PEP8 Testing
-## ![run.py](assets/PEP8.PNG)
-## ![clear.py](assets/PEP8_1.PNG)
-## ![functions.py](assets/PEP8_2.PNG)
+
+## PEP8 Testing
+# ![run.py](assets/PEP8.PNG)
+# ![clear.py](assets/PEP8_1.PNG)
+# ![functions.py](assets/PEP8_2.PNG)
 
 # Deployment
 
