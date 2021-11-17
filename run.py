@@ -159,8 +159,8 @@ def take_items():
 
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
-        P_STAT(Fore.BLUE + " You pull out the drawerand find a", 2)
-        P_STAT(Fore.BLUE + f" key and there is a {new_weapon.weapon_type}", 2)
+        P_STAT(Fore.BLUE + " You pull out the drawer and find a", 2)
+        P_STAT(Fore.BLUE + f" key and a {new_weapon.weapon_type}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
         P_STAT(Fore.BLUE + " and close the drawer", 2)
@@ -422,7 +422,7 @@ def go_right():
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
     # Player will get a random choice of lever and this will decide the outcome
-    try_lever = {random.randint}
+    try_lever = random.randint(1, 3)
 
     if try_lever == 1:
         clr_terminal()
