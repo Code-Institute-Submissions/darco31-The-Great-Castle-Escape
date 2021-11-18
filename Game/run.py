@@ -6,20 +6,24 @@
 # after some not all interactions
 from clear import clr_terminal
 from set_class import Weapon
+
 #  Calls the functions from functions.py to give
 # visual help to the player on end game scenarios
 from functions import P_STAT, game_over, player_died, you_escaped
+
 # Imports the time, random and colorama modules
 import time
 import colorama
 import random
 from colorama import Fore, Style
 colorama.init(autoreset=True)
+
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
 new_weapon = Weapon("knife", "rusty")
 new_weapon_two = Weapon("sword", "razor sharp")
+
 # Start the game and gives initial choices to the player
 
 
@@ -86,8 +90,9 @@ def start():
         P_STAT(Fore.RED + " Error, please enter a valid choice (e or s) ", 2)
         start()
 
-
 # Player has the option to check the window or ignore it
+
+
 def small_window():
     """
     Function called to let the player explore the
@@ -115,9 +120,10 @@ def small_window():
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 1)
         small_window()
 
-
 # The player will have the option to try the door
 # where they can choose to leave or stay
+
+
 def try_door():
     """
     The function offers the player the choice of
@@ -146,6 +152,8 @@ def try_door():
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 1)
         try_door()
 
+# The player can choose to search the drawer or leave it.
+
 
 def take_items():
     """
@@ -159,7 +167,7 @@ def take_items():
 
     if open_drawer == "y" or open_drawer == "yes":
         clr_terminal()
-        P_STAT(Fore.BLUE + " You pull out the drawer and find a", 2)
+        P_STAT(Fore.BLUE + " You pull out the drawer and find a", 1)
         P_STAT(Fore.BLUE + f" key and a {new_weapon.weapon_type}", 2)
         P_STAT(Fore.BLUE + " You reach in quickly and pick up both items", 2)
         P_STAT(Fore.BLUE + " You stuff them in your pockets", 2)
@@ -177,6 +185,8 @@ def take_items():
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 2)
         take_items()
 
+# Player returns to the table form locked door to retrive items.
+
 
 def return_to_table():
     """
@@ -188,6 +198,8 @@ def return_to_table():
     P_STAT(Fore.BLUE + " and close the drawer", 2)
     P_STAT(Fore.BLUE + " you quickly get back to the right hand door", 2)
     go_right_back()
+
+# Player goes back to the first room to try the window with knife.
 
 
 def back_to_window():
@@ -205,7 +217,7 @@ def back_to_window():
     if open_window == "y" or open_window == "yes":
         clr_terminal()
         P_STAT(Fore.BLUE + f"You jam the {new_weapon.weapon_type} into the", 2)
-        P_STAT(Fore.BLUE + " gap of the windowpane the timber comes loose ", 2)
+        P_STAT(Fore.BLUE + " gap of the window, the timber comes loose ", 2)
         P_STAT(Fore.BLUE + " and the window pops open. Success, ", 2)
         P_STAT(Fore.BLUE + " you climb up and outside and as you peer", 2)
         P_STAT(Fore.BLUE + " through the dark you can just make out the", 2)
@@ -228,6 +240,8 @@ def back_to_window():
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 2)
         back_to_window()
 
+# First direction choice 
+
 
 def direction_choice():
     """
@@ -248,6 +262,9 @@ def direction_choice():
         go_right()
     else:
         print(Fore.RED + "That it not a valid option, please enter l or r")
+        direction_choice()
+
+# If player ignores the drawer ans decides to move on
 
 
 def direction_choice_two():
@@ -269,6 +286,9 @@ def direction_choice_two():
     else:
         print(Fore.RED + " That it not a valid option, please enter l or r")
         return_to_table()
+
+# Player decides to return from left hand room 
+# or goes to right hand door without key.
 
 
 def direction_choice_three():
@@ -300,29 +320,39 @@ def go_left():
     if decision == "explore" or decision == "e":
         clr_terminal()
         explore_room()
+
     elif decision == "proceed" or decision == "p":
         clr_terminal()
         proceed_down_stairs()
-    else:
+
+    elif decision == "go back" or decision == "g":
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
+        clr_terminal()
         direction_choice_three()
+    else:
+        print(Fore.RED + " That it not a valid option, please enter (e-p-g)")
+        go_left()
+
+# The player can explore the right hand side room
 
 
 def explore_room():
     """
     Player decides to explore room
     """
-    P_STAT(Fore.BLUE + " As you look around the room the idea you are", 2)
+    P_STAT(Fore.BLUE + " As you look around the room, the idea you are", 2)
     P_STAT(Fore.BLUE + " in a castle still leaves you feeling confused", 2)
     P_STAT(Fore.BLUE + " You see a bowl with fruit in it, you are starving", 2)
     P_STAT(Fore.BLUE + " so you pick it up and eat while", 2)
-    P_STAT(Fore.BLUE + " continuing to explore. You find a belt, ", 2)
-    P_STAT(Fore.BLUE + " you wrap it around you and slip the ", 2)
-    P_STAT(Fore.BLUE + f"{new_weapon.weapon_type} in", 2)
-    P_STAT(Fore.BLUE + " As there is nothing else left to check ", 2)
+    P_STAT(Fore.BLUE + " continuing to explore. You find a belt,", 2)
+    P_STAT(Fore.BLUE + " you wrap it around you and slip the", 2)
+    P_STAT(Fore.BLUE + f" {new_weapon.weapon_type} in", 2)
+    P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
     P_STAT(Fore.BLUE + " you decide to go downstairs", 2)
 
     proceed_down_stairs()
+
+# The player decides to ignore the room and movedown the stairs.
 
 
 def proceed_down_stairs():
@@ -339,9 +369,9 @@ def proceed_down_stairs():
     P_STAT(Fore.BLUE + " Their backs are to you", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
-    attack = input("=> ").lower().strip()
+    next_move = input("=> ").lower().strip()
 
-    if attack == "attack" or attack == "a":
+    if next_move == "attack" or next_move == "a":
         clr_terminal()
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
         P_STAT(Fore.BLUE + " but alas, one foul swipe and you are....", 1)
@@ -350,10 +380,16 @@ def proceed_down_stairs():
         game_over()
         play_again()
 
-    else:
+    elif next_move == "sneak" or next_move == "s":
         P_STAT(Fore.BLUE + " You put your back against the wall", 2)
         P_STAT(Fore.BLUE + " and sneak as quietly as you can passed them", 2)
         bottom_floor()
+
+    else:
+        print(Fore.RED + " That it not a valid option, please enter (e-p-g)")
+        proceed_down_stairs()
+
+# Player returns to the right hand door after searching the drawer
 
 
 def go_right_back():
@@ -458,6 +494,8 @@ def go_right():
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor()
 
+# The player will get a choice of three paths that lie ahead.
+
 
 def bottom_floor():
     """
@@ -509,9 +547,9 @@ def bottom_floor():
         if kill_guard == "y" or kill_guard == "yes":
             clr_terminal()
             P_STAT(Fore.BLUE + "You pry the vent open and ready the ", 2)
-            P_STAT(Fore.BLUE + f"{new_weapon.weapon_type}", 2)
-            P_STAT(Fore.BLUE + " You jump down surprising the guard", 2)
-            P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
+            P_STAT(Fore.BLUE + f" {new_weapon.weapon_type}", 2)
+            P_STAT(Fore.BLUE + "You jump down surprising the guard.", 2)
+            P_STAT(Fore.BLUE + "With one stroke you cut his throat", 2)
             outside()
 
         elif kill_guard == "n" or kill_guard == "no":
@@ -552,7 +590,8 @@ def bottom_floor():
     else:
         print(Fore.RED + " That it not a valid option, please pick l,r,s")
         bottom_floor()
-# Player choices for outside the castle
+
+# Player decides to return to the 3 paths
 
 
 def return_to_paths():
@@ -562,13 +601,15 @@ def return_to_paths():
     P_STAT(Fore.BLUE + " You decide to return to the secret tunnel opening", 2)
     bottom_floor()
 
+# Player choices for outside the castle
+
 
 def outside():
     """
     Players choices for outside the castle
     """
     P_STAT(Fore.BLUE + " Quickly you search him and find keys and a", 2)
-    P_STAT(Fore.BLUE + f"{new_weapon_two.weapon_type}", 2)
+    P_STAT(Fore.BLUE + f" {new_weapon_two.weapon_type}", 2)
     P_STAT(Fore.BLUE + " Looking up there is a door ahead.", 2)
     print(Fore.YELLOW + " Proceed through door? (y or n)")
 
@@ -586,6 +627,13 @@ def outside():
         P_STAT(Fore.BLUE + " There are high railings all around but", 2)
         P_STAT(Fore.BLUE + " you think you could climb them", 2)
         print(Fore.YELLOW + " Distract or Climb? (d or c)")
+
+    elif go_to_door == "no" or go_to_door == "n":
+        P_STAT(Fore.BLUE + " You decide to go back to the pathways", 2)
+        bottom_floor()
+    else:
+        P_STAT(Fore.RED + " That it not a valid option, please pick y or n", 1)
+        outside()
 
     new_choice = input("=> ").lower().strip()
 
@@ -621,8 +669,9 @@ def outside():
         P_STAT(Fore.RED + " That it not a valid option, please pick d or c", 1)
         outside()
 
-
 # Play again function called at end of game or when player dies
+
+
 def play_again():
     """
     Asks the player if they would like to play again
