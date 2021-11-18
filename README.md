@@ -35,7 +35,7 @@
 
 * This a small interactive adventure game that challenges the player to try and escape from a castle. There is only one way out and
    many ways to die. We use a command line interface to let the user interact with the game. The user will make their decisions based 
-   on the scenario they find them selves in and their decisions will ultimately win the game or lose the game.
+   on the scenario they find them selves in and their decisions will ultimately win the game or lose the game. I attempted to introduce the use of OOP in the form of two classes but I don't fully understand the concept just yet to be comfortable using classes to build out a full application.
 
 ## Main goals of the project
 
@@ -186,11 +186,12 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 
 # Credits
 
-I owe thanks to:
+# I owe thanks to:
 
 * My mentor Miguel Martinez
-* Ben Kavanagh's webinar on Python
+* Ben Kavanagh's webinar on Python.
 * Deanna Sale for her help on centering the text in the terminal window. 
+* [Mike Dane OOP You Tube Videos](https://www.youtube.com/watch?v=6chvxajS3yc)
 
 ## Code
 
@@ -207,12 +208,14 @@ I owe thanks to:
 
 # Bugs
 
+* At the end of the game in one scenario the player dies at the outside railings. Once the player chooses not to play again the game over credit runs but does not exit correctly. This is not present anywhere else in the game.
+
 * There was a bug present in the code, when a player decided to not play again there was a function running to put the player back to the middle of the game. This
 was fixed by placing the function call to the correct indentation.
 
 # Errors
 
-* There are a total of 76 problems highlighted in the terminal.
+* There are a total of 30 problems highlighted in the terminal.
 * All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
 
 #### [Back to content](#table-of-contents)

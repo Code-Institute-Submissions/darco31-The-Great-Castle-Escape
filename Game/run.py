@@ -240,7 +240,7 @@ def back_to_window():
         P_STAT(Fore.RED + " Error, please enter a valid choice (y or n)", 2)
         back_to_window()
 
-# First direction choice 
+# First direction choice
 
 
 def direction_choice():
@@ -287,7 +287,7 @@ def direction_choice_two():
         print(Fore.RED + " That it not a valid option, please enter l or r")
         return_to_table()
 
-# Player decides to return from left hand room 
+# Player decides to return from left hand room.
 # or goes to right hand door without key.
 
 
