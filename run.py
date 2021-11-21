@@ -210,6 +210,7 @@ def back_to_window():
     P_STAT(Fore.RED + "\n You return to the first room", 2)
 
     P_STAT(Fore.BLUE + "You look out the window again.Do you try open the ", 2)
+    P_STAT(Fore.BLUE + "You look out the window again.Do you try open the ", 2)
     print(Fore.YELLOW + f" window with the {new_weapon.weapon_type}? (y or n)")
 
     open_window = input("=> ").lower().strip()
