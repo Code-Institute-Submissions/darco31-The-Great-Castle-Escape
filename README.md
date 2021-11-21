@@ -220,7 +220,7 @@ was fixed by placing the function call to the correct indentation.
 
 # Errors
 
-* There are a total of 30 problems highlighted in the terminal.
+* There are a total of 66 problems highlighted in the terminal. 35 for functions.py and 31 for run.py.
 * All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
 
 #### [Back to content](#table-of-contents)
