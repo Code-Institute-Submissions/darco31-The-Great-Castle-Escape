@@ -209,9 +209,9 @@ def back_to_window():
     """
     P_STAT(Fore.RED + "\n You return to the first room", 2)
 
-    P_STAT(Fore.BLUE + "You look out the window again.Do you try open the ", 2)
-    P_STAT(Fore.BLUE + "You look out the window again.Do you try open the ", 2)
-    print(Fore.YELLOW + f" window with the {new_weapon.weapon_type}? (y or n)")
+    P_STAT(Fore.BLUE + "You look out the window again.", 2)
+    print(Fore.YELLOW + f" Open the window with the {new_weapon.weapon_type}?")
+    print(Fore.YELLOW + "(y or n)")
 
     open_window = input("=> ").lower().strip()
 
@@ -548,7 +548,8 @@ def bottom_floor():
         if kill_guard == "y" or kill_guard == "yes":
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
-            P_STAT(Fore.BLUE + f" {new_weapon.weapon_type}", 2)
+            P_STAT(Fore.BLUE + f" {new_weapon.weapon_type},it may be a bit", 2)
+            P_STAT(Fore.BLUE + f" {new_weapon.weight} to kill him", 1)
             P_STAT(Fore.BLUE + " You jump down surprising the guard.", 2)
             P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
             outside()
@@ -660,7 +661,13 @@ def outside():
         P_STAT(Fore.BLUE + " but to your surprise it slips, and you ", 2)
         P_STAT(Fore.BLUE + " impale yourself.You let out an anguished cry", 2)
         P_STAT(Fore.BLUE + " which alerts the guards, as they approach,", 2)
-        P_STAT(Fore.BLUE + " weapons readied, one slice and ..", 2)
+        P_STAT(Fore.BLUE + " weapons readied, they slice at you", 2)
+        P_STAT(Fore.BLUE + f" with their {new_weapon_two}'s'", 2)
+        P_STAT(Fore.BLUE + f" you raise the {new_weapon_two} you found", 2)
+        P_STAT(Fore.BLUE + f" {new_weapon_two.condition}", 2)
+        P_STAT(Fore.BLUE + " you think you have a chance", 2)
+        P_STAT(Fore.BLUE + " but the pain is too much,", 2)
+        P_STAT(Fore.BLUE + " and they cut you down", 2)
 
         player_died()
         game_over()

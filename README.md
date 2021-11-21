@@ -102,6 +102,8 @@
     - Used to create the flowchart for the project.
 - [Pep8](http://pep8online.com/)
     - Used to check my code against Pep8 requirements..
+- [Google Fonts](https://fonts.google.com/)
+    - Used to insert a custom font on the play button
 ---
 
 #### [Back to content](#table-of-contents)
@@ -144,7 +146,7 @@
 # ![run.py](assets/PEP8.PNG)
 # ![clear.py](assets/PEP8_1.PNG)
 # ![functions.py](assets/PEP8_2.PNG)
-# ![functions.py](assets/PEP8_2.PNG)
+# ![functions.py](assets/PEP8_3.PNG)
 
 # Deployment
 
@@ -211,7 +213,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 
 # Bugs
 
-* At the end of the game in one scenario the player dies at the outside railings. Once the player chooses not to play again the game over credit runs but does not exit correctly. This is not present anywhere else in the game.
+* At the end of the game in one scenario the player dies at the outside railings. Once the player chooses not to play again the game over credit runs but does not exit correctly, this only happens sporadically. This is not present anywhere else in the game.
 
 * There was a bug present in the code, when a player decided to not play again there was a function running to put the player back to the middle of the game. This
 was fixed by placing the function call to the correct indentation.
