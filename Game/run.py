@@ -21,8 +21,8 @@ colorama.init(autoreset=True)
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
-new_weapon = Weapon("knife", "rusty")
-new_weapon_two = Weapon("sword", "razor sharp")
+new_weapon = Weapon("knife", "rusty", "light")
+new_weapon_two = Weapon("sword", "razor sharp", "heavy")
 
 # Start the game and gives initial choices to the player
 
@@ -87,7 +87,7 @@ def start():
         P_STAT(Fore.RED + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         play_again()
     else:
-        P_STAT(Fore.RED + " Error, please enter a valid choice (e or s) ", 2)
+        P_STAT(Fore.RED + " Error, please enter a valid choice (y or n) ", 2)
         start()
 
 # Player has the option to check the window or ignore it
@@ -546,10 +546,10 @@ def bottom_floor():
 
         if kill_guard == "y" or kill_guard == "yes":
             clr_terminal()
-            P_STAT(Fore.BLUE + "You pry the vent open and ready the ", 2)
+            P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
             P_STAT(Fore.BLUE + f" {new_weapon.weapon_type}", 2)
-            P_STAT(Fore.BLUE + "You jump down surprising the guard.", 2)
-            P_STAT(Fore.BLUE + "With one stroke you cut his throat", 2)
+            P_STAT(Fore.BLUE + " You jump down surprising the guard.", 2)
+            P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
             outside()
 
         elif kill_guard == "n" or kill_guard == "no":
@@ -678,7 +678,7 @@ def play_again():
     """
     print(Fore.YELLOW + " Would you like to play again? (Y or N)")
 
-    answer = input("=> \n").lower().strip()
+    answer = input("=> ").lower().strip()
 
     if answer == "y" or answer == "yes":
         clr_terminal()
