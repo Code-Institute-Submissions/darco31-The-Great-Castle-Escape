@@ -168,6 +168,21 @@ This allows the code that is used to run the terminal be viewed in the browser.
 - GIT PUSH
 - To commit the code and push to Github
 
+## Forking the Github Repository
+
+- Locate the desired Github repository.
+- In the top right corner click the Fork button.
+- The repository has been forked and you can now work 0on the copy.
+
+## Cloning a Github repository
+
+- Locate the desired Github repository.
+- Use the code button and copy the link.
+- Open Gitpod and select your directory where you want the clone to be created.
+- Type git clone in the terminal and paste the link in.
+- The clone will be created
+
+
 ### Creating an Application with Heroku
 
 I used the video tutorial provided by The Code Institute to create a Heroku account, add the details of the app and deploy the application to a live environment.
