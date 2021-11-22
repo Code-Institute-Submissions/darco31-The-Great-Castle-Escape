@@ -234,7 +234,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 
 # Bugs
 
-* At the end of the game in one scenario the player dies at the outside railings. Once the player chooses not to play again the game over credit runs but does not exit correctly, this only happens sporadically. This is not present anywhere else in the game.
+* At the end of the game in one scenario the player dies at the outside railings. Once the player chooses not to play again the game over credit runs but does not exit correctly, this only happens sporadically. This is not present anywhere else in the game or in the actual terminal out of Heroku.
 
 * There was a bug present in the code, when a player decided to not play again there was a function running to put the player back to the middle of the game. This
 was fixed by placing the function call to the correct indentation.
