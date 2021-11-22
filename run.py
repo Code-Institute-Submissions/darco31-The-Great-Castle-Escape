@@ -346,8 +346,8 @@ def explore_room():
     P_STAT(Fore.BLUE + " You see a bowl with fruit in it, you are starving", 2)
     P_STAT(Fore.BLUE + " so you pick it up and eat while", 2)
     P_STAT(Fore.BLUE + " continuing to explore. You find a belt,", 2)
-    P_STAT(Fore.BLUE + " you wrap it around you and slip the", 2)
-    P_STAT(Fore.BLUE + f" {new_weapon.weapon_type} in", 2)
+    P_STAT(Fore.BLUE + " you wrap it around you as it may", 2)
+    P_STAT(Fore.BLUE + " come in handy later on", 2)
     P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
     P_STAT(Fore.BLUE + " you decide to go downstairs", 2)
 
@@ -367,7 +367,7 @@ def proceed_down_stairs():
     P_STAT(Fore.BLUE + " Holding your breath you peek around the corner", 2)
     P_STAT(Fore.BLUE + " and see two large men,", 2)
     P_STAT(Fore.BLUE + f" both with {new_weapon_two.weapon_type}'s?", 2)
-    P_STAT(Fore.BLUE + " Their backs are to you", 2)
+    P_STAT(Fore.BLUE + " Their backs are to you and you are weaponless", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
     next_move = input("=> ").lower().strip()
@@ -612,7 +612,8 @@ def outside():
     """
     P_STAT(Fore.BLUE + " Quickly you search him and find keys and a", 2)
     P_STAT(Fore.BLUE + f" {new_weapon_two.weapon_type}", 2)
-    P_STAT(Fore.BLUE + " Looking up there is a door ahead.", 2)
+    P_STAT(Fore.BLUE + f" You put the {new_weapon_two.weapon_type}", 2)
+    P_STAT(Fore.BLUE + " in the belt, Looking up there is a door ahead.", 2)
     print(Fore.YELLOW + " Proceed through door? (y or n)")
 
     go_to_door = input("=> ").lower().strip()
