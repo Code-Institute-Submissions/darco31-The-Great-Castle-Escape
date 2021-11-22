@@ -53,6 +53,8 @@
 
 ![Flow Chart](assets/P3_Flow.vpd.png)
 
+- The below chart outlines the more precise flow of the players choices in the right hand room when the empty the drawer or ignore the drawer.
+
 ![Flow Chart](assets/flow_for_room_choices.PNG)
 
 ## User Stories
