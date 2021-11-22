@@ -21,6 +21,8 @@ colorama.init(autoreset=True)
 # Time elapsed variable and variable to center the text in the terminal
 TIME_ELAPSED = 2
 C = '{:^80}'.format
+
+# Variable for the classes
 new_weapon = Weapon("knife", "rusty", "light")
 new_weapon_two = Weapon("sword", "razor sharp", "heavy")
 
