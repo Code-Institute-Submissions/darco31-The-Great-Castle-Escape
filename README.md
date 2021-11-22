@@ -9,7 +9,6 @@
 
 1. [The Great Castle Escape](#The-Great-Castle-Escape)
    * [About](#About)
-   * [The customer goals](#The-customer-goals)
 2. [User Experience](#User-Experience)
    * [Project goals](#Project-goals)
    * [Design](#Design)
@@ -19,7 +18,6 @@
    * [Home Page](#Home-Page)
 4. [Technology Used In Design](#Technology-Used-In-Design)
    * [Python](#Python)
-   * [Libraries](#Libraries)
 5. [Testing](#Testing)
    * [User Stories](#User-Stories-Testing)
    * [Manual Testing](#Manual-Testing)
