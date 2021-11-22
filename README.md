@@ -1,5 +1,7 @@
 # The Great Castle Escape
 ## Designed and implemented by Stephen D'Arcy
+![Home Page](assets/responsive.PNG)
+
 
 ![Live code demo](assets/demo1.gif)
 
