@@ -257,7 +257,7 @@ def direction_choice():
 
     if player_choice == "l" or player_choice == "left":
         clr_terminal()
-        go_left()
+        go_left_with_items()
     elif player_choice == "r" or player_choice == "right":
         clr_terminal()
         go_right()
@@ -334,6 +334,67 @@ def go_left():
         print(Fore.RED + " That it not a valid option, please enter (e-p-g)")
         go_left()
 
+# Player goes to the left door but has the key for the right door
+
+
+def go_left_with_items():
+    """
+    The player goes left and will have to makes choices
+    in the next room but has items from drawer
+    """
+    P_STAT(Fore.BLUE + " You decide to turn left and head towards the door", 2)
+    P_STAT(Fore.BLUE + " as you approach the door you slow down", 2)
+    P_STAT(Fore.BLUE + " you push at the door and it creaks open", 2)
+    P_STAT(Fore.BLUE + " as your eyes adjust you make out a candle light.", 2)
+    P_STAT(Fore.BLUE + " You walk inside, at the far end there is an", 2)
+    P_STAT(Fore.BLUE + " opening.You approach it and see a staircase", 2)
+    P_STAT(Fore.BLUE + " going down.You look around the room", 2)
+    print(Fore.YELLOW + " Do you explore,proceed or go back? (e-p-g)")
+
+    decision = input("=> ").lower().strip()
+
+    if decision == "explore" or decision == "e":
+        clr_terminal()
+        explore_room_with_items()
+
+    elif decision == "proceed" or decision == "p":
+        clr_terminal()
+        proceed_down_stairs()
+
+    elif decision == "go back" or decision == "g":
+        P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
+        clr_terminal()
+        go_right()
+    else:
+        print(Fore.RED + " That it not a valid option, please enter (e-p-g)")
+        go_left()
+
+# The player can explore the right hand side room after taking items
+
+
+def explore_room_with_items():
+    """
+    Player decides to explore room but again has the items
+    """
+    P_STAT(Fore.BLUE + " As you look around the room, the idea you are", 2)
+    P_STAT(Fore.BLUE + " in a castle still leaves you feeling confused", 2)
+    P_STAT(Fore.BLUE + " You see a bowl with fruit in it, you are starving", 2)
+    P_STAT(Fore.BLUE + " so you pick it up and eat while", 2)
+    P_STAT(Fore.BLUE + " continuing to explore. You find a belt,", 2)
+    P_STAT(Fore.BLUE + " you wrap it around you as it may", 2)
+    P_STAT(Fore.BLUE + " come in handy later on", 2)
+    P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
+    print(Fore.YELLOW + " Do you proceed or go back? (p or g)")
+
+    new_direction = input("=> ").lower().strip()
+
+    if new_direction == 'p' or new_direction == 'proceed':
+        P_STAT(Fore.BLUE + " You decide to head downstairs", 2)
+        proceed_down_stairs()
+    elif new_direction == 'g' or new_direction == 'go back':
+        P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
+        go_right()
+
 # The player can explore the right hand side room
 
 
@@ -349,9 +410,16 @@ def explore_room():
     P_STAT(Fore.BLUE + " you wrap it around you as it may", 2)
     P_STAT(Fore.BLUE + " come in handy later on", 2)
     P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
-    P_STAT(Fore.BLUE + " you decide to go downstairs", 2)
+    print(Fore.YELLOW + " Do you proceed or go back? (p or g)")
 
-    proceed_down_stairs()
+    new_direction = input("=> ").lower().strip()
+
+    if new_direction == 'p' or new_direction == 'proceed':
+        P_STAT(Fore.BLUE + " You decide to head downstairs", 2)
+        proceed_down_stairs()
+    elif new_direction == 'g' or new_direction == 'go back':
+        P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
+        direction_choice_three()
 
 # The player decides to ignore the room and movedown the stairs.
 
