@@ -10,7 +10,7 @@
 1. [The Great Castle Escape](#The-Great-Castle-Escape)
    * [About](#About)
 2. [User Experience](#User-Experience)
-   * [Project goals](#Project-goals)
+   * [Project goals](#Main-goals-of-the-project)
    * [Design](#Design)
    * [User Stories](#User-Stories)
    * [Target Audience](#Target-Audience)
