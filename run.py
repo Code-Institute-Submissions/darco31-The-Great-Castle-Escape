@@ -209,7 +209,7 @@ def back_to_window():
     """
     P_STAT(Fore.RED + "\n You return to the first room", 2)
 
-    P_STAT(Fore.BLUE + "You look out the window again.", 2)
+    P_STAT(Fore.BLUE + " You look out the window again.", 2)
     print(Fore.YELLOW + f" Open the window with the {new_weapon.weapon_type}?")
     print(Fore.YELLOW + "(y or n)")
 
@@ -217,7 +217,7 @@ def back_to_window():
 
     if open_window == "y" or open_window == "yes":
         clr_terminal()
-        P_STAT(Fore.BLUE + f"You jam the {new_weapon.weapon_type} into the", 2)
+        P_STAT(Fore.BLUE + f" You jam the {new_weapon.weapon_type} in the", 2)
         P_STAT(Fore.BLUE + " gap of the window, the timber comes loose ", 2)
         P_STAT(Fore.BLUE + " and the window pops open. Success, ", 2)
         P_STAT(Fore.BLUE + " you climb up and outside and as you peer", 2)
