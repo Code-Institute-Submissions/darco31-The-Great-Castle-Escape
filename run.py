@@ -265,7 +265,7 @@ def direction_choice():
         print(Fore.RED + "That it not a valid option, please enter l or r")
         direction_choice()
 
-# If player ignores the drawer ans decides to move on
+# If player ignores the drawer and decides to move on
 
 
 def direction_choice_two():
@@ -359,7 +359,7 @@ def go_left_with_items():
 
     elif decision == "proceed" or decision == "p":
         clr_terminal()
-        proceed_down_stairs()
+        proceed_with_items()
 
     elif decision == "go back" or decision == "g":
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
@@ -390,10 +390,50 @@ def explore_room_with_items():
 
     if new_direction == 'p' or new_direction == 'proceed':
         P_STAT(Fore.BLUE + " You decide to head downstairs", 2)
-        proceed_down_stairs()
+        proceed_with_items()
     elif new_direction == 'g' or new_direction == 'go back':
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         go_right()
+
+# Go down stairs wih the items from the drawer
+
+
+def proceed_with_items():
+    """
+    Player proceeds down the spiral stairs with the items from
+    the drawer
+    """
+    P_STAT(Fore.BLUE + " You enter the doorway", 2)
+    P_STAT(Fore.BLUE + " Hugging the wall you make your way down", 2)
+    P_STAT(Fore.BLUE + " You reach the bottom and as you listen", 2)
+    P_STAT(Fore.BLUE + " you can hear what appears to be two voices", 2)
+    P_STAT(Fore.BLUE + " Holding your breath you peek around the corner", 2)
+    P_STAT(Fore.BLUE + " and see two large men,", 2)
+    P_STAT(Fore.BLUE + f" both with {new_weapon_two.weapon_type}'s?", 2)
+    P_STAT(Fore.BLUE + " Their backs are to you, you only have the knife", 2)
+    P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
+
+    next_move = input("=> ").lower().strip()
+
+    if next_move == "attack" or next_move == "a":
+        clr_terminal()
+        P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
+        P_STAT(Fore.BLUE + f" Raising their {new_weapon_two.weapon_type}'s", 2)
+        P_STAT(Fore.BLUE + " the knife seems meanignless", 1)
+        P_STAT(Fore.BLUE + " one foul swipe and you are....", 1)
+
+        player_died()
+        game_over()
+        play_again()
+
+    elif next_move == "sneak" or next_move == "s":
+        P_STAT(Fore.BLUE + " You put your back against the wall", 2)
+        P_STAT(Fore.BLUE + " and sneak as quietly as you can passed them", 2)
+        bottom_floor_with_knife()
+
+    else:
+        print(Fore.RED + " That it not a valid option, please enter (e-p-g)")
+        proceed_down_stairs()
 
 # The player can explore the right hand side room
 
@@ -563,6 +603,104 @@ def go_right():
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor()
 
+# Player reached the bottom floor with the items
+
+
+def bottom_floor_with_knife():
+    """
+    The player is in the place they sneak to from
+    the stairs and from the secret tunnel and has a choice of 3 paths
+    but has the items
+    """
+    P_STAT(Fore.BLUE + " Looking ahead you can see three paths", 2)
+    P_STAT(Fore.BLUE + " There is a straight path, left and right path", 2)
+    print(Fore.YELLOW + " Do you go s - l - r")
+
+    path_choice = input("=> ").lower().strip()
+
+    if path_choice == "s" or path_choice == "straight":
+        clr_terminal()
+        P_STAT(Fore.BLUE + " You decide to proceed straight ahead", 2)
+        P_STAT(Fore.BLUE + " Oh sugar..,a group of angry men approach..", 2)
+
+        player_died()
+        game_over()
+        play_again()
+
+    elif path_choice == "l" or path_choice == "left":
+        clr_terminal()
+        P_STAT(Fore.BLUE + " You decide to take the left path ahead", 2)
+        P_STAT(Fore.BLUE + " You are in a room with a vent on the wall", 2)
+        print(Fore.YELLOW + " Do you open the vent? (y or n)")
+
+        open_vent = input("=> ").lower().strip()
+
+        if open_vent == "y" or open_vent == "yes":
+            clr_terminal()
+            P_STAT(Fore.BLUE + " You pry the vent open and enter", 2)
+            P_STAT(Fore.BLUE + " You crawl forward and can ", 2)
+            P_STAT(Fore.BLUE + " see another vent in the distance", 2)
+            P_STAT(Fore.BLUE + " as you reach the next vent ", 2)
+            P_STAT(Fore.BLUE + " you can see below you a guard on his own", 2)
+            print(Fore.YELLOW + " Try kill the guard? (y or n)")
+
+        elif open_vent == "n" or open_vent == "no":
+            clr_terminal()
+            return_to_paths()
+
+        else:
+            print(Fore.RED + " That it not a valid option, please pick y or n")
+            bottom_floor()
+
+        kill_guard = input("=> ").lower().strip()
+
+        if kill_guard == "y" or kill_guard == "yes":
+            clr_terminal()
+            P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
+            P_STAT(Fore.BLUE + f" {new_weapon.weapon_type},it may be a bit", 2)
+            P_STAT(Fore.BLUE + f" {new_weapon.weight} to kill him, however", 1)
+            P_STAT(Fore.BLUE + " You jump down surprising the guard.", 2)
+            P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
+            outside()
+
+        elif kill_guard == "n" or kill_guard == "no":
+            clr_terminal()
+            P_STAT(Fore.BLUE + " You decide to spare his life... for now.", 2)
+            return_to_paths()
+
+        else:
+            print(Fore.RED + " That it not a valid option, please pick y or n")
+            bottom_floor()
+
+    elif path_choice == "r" or path_choice == "right":
+        P_STAT(Fore.BLUE + " You veer right to an empty room", 2)
+        P_STAT(Fore.BLUE + " more doors, two of them", 2)
+        print(Fore.YELLOW + " Left or Right? (l or r)")
+
+        way_forward = input("=> ").lower().strip()
+
+        if way_forward == "left" or way_forward == "l":
+            clr_terminal()
+            P_STAT(Fore.BLUE + " You open the lefthand door", 2)
+            P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
+
+            player_died()
+            game_over()
+            play_again()
+
+        elif way_forward == "right" or way_forward == "r":
+            clr_terminal()
+
+            P_STAT(Fore.BLUE + " You open the right hand door", 2)
+            P_STAT(Fore.BLUE + " Dogs? and guard dogs..", 2)
+
+            player_died()
+            game_over()
+            play_again()
+
+    else:
+        print(Fore.RED + " That it not a valid option, please pick l,r,s")
+        bottom_floor()
 # The player will get a choice of three paths that lie ahead.
 
 
@@ -616,10 +754,10 @@ def bottom_floor():
         if kill_guard == "y" or kill_guard == "yes":
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
-            P_STAT(Fore.BLUE + f" {new_weapon.weapon_type},it may be a bit", 2)
-            P_STAT(Fore.BLUE + f" {new_weapon.weight} to kill him, however", 1)
+            P_STAT(Fore.BLUE + " the belt you found, ", 2)
             P_STAT(Fore.BLUE + " You jump down surprising the guard.", 2)
-            P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
+            P_STAT(Fore.BLUE + " You quickly wrap the belt around his neck", 2)
+            P_STAT(Fore.BLUE + " gasping he falls to the ground", 2)
             outside()
 
         elif kill_guard == "n" or kill_guard == "no":

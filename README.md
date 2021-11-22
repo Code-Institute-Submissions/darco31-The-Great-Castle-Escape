@@ -53,6 +53,8 @@
 
 ![Flow Chart](assets/P3_Flow.vpd.png)
 
+![Flow Chart](assets/flow_for_room_choices.PNG)
+
 ## User Stories
 
 * As a user I would like to know what game I am playing
@@ -92,6 +94,8 @@
             - Used for the timing functions to delay scripts being run.
         - [Random](https://docs.python.org/3/library/random.html)
             - Used for the random number generator.
+        - [OS](https://docs.python.org/3/library/os.html)
+            - Used to clear the text from the terminal after certain actions.
 - [GitHub](https://github.com/)
     - Used to store code for the project after being pushed.
 - [Git](https://git-scm.com/)
