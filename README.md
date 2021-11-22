@@ -77,6 +77,8 @@
 
 *  Terminal design by The Code Institute
 
+* I added some background color and re-centered the terminal. I put a custom font into the button. font-family: 'Creepster', cursive;
+
 #### [Back to content](#table-of-contents)
 
 # Technology Used In Design
@@ -150,7 +152,7 @@
 
 # Deployment
 
-The live deployed application can be found here [The Great Castle Escape]()
+The live deployed application can be found here [The Great Castle Escape](https://thegreatcastleescape.herokuapp.com/)
 
 ### Gitpod and GitHub
 
