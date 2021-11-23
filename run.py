@@ -67,16 +67,16 @@ def start():
             continue
         else:
             break
-    P_STAT(Fore.YELLOW + f" Welcome {P_NAME}, good luck, you will need it", 2)
-    P_STAT(Fore.YELLOW + " You awake a little dazed and confused", 2)
-    P_STAT(Fore.YELLOW + " You find yourself in a dimly lit room", 2)
-    P_STAT(Fore.YELLOW + " You can hear the rain crashing down outside", 2)
-    P_STAT(Fore.YELLOW + " You try to recall how you got here", 2)
-    P_STAT(Fore.YELLOW + " You look around the room", 2)
-    P_STAT(Fore.YELLOW + " Its big cold and damp, you notice a window", 2)
-    P_STAT(Fore.YELLOW + " A large wooden door is in front of you", 2)
-    P_STAT(Fore.YELLOW + " Not a lot to choose from", 2)
-    print(Fore.BLUE + " So, do you have the guts to try and escape?(y or n)")
+    P_STAT(Fore.BLUE + f" Welcome {P_NAME}, good luck, you will need it", 2)
+    P_STAT(Fore.BLUE + " You awake a little dazed and confused", 2)
+    P_STAT(Fore.BLUE + " You find yourself in a dimly lit room", 2)
+    P_STAT(Fore.BLUE + " You can hear the rain crashing down outside", 2)
+    P_STAT(Fore.BLUE + " You try to recall how you got here", 2)
+    P_STAT(Fore.BLUE + " You look around the room", 2)
+    P_STAT(Fore.BLUE + " Its big cold and damp, you notice a window", 2)
+    P_STAT(Fore.BLUE + " A large wooden door is in front of you", 2)
+    P_STAT(Fore.BLUE + " Not a lot to choose from", 2)
+    print(Fore.YELLOW + " So, do you have the guts to try and escape?(y or n)")
     # convert the player's input to lower_case
     answer = input("=> ").lower().strip()
 
