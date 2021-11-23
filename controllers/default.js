@@ -59,10 +59,5 @@ if (process.env.CREDS != null) {
     });
 }
 
-const correctSound = document.getElementById("correct-sound");
-
-function playSound() {
-    correctSound.play();
-}
 
 playSound()
