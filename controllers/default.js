@@ -58,6 +58,3 @@ if (process.env.CREDS != null) {
         }
     });
 }
-
-
-playSound()
