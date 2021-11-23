@@ -213,7 +213,7 @@ def back_to_window():
 
     P_STAT(Fore.BLUE + " You look out the window again.", 2)
     print(Fore.YELLOW + f" Open the window with the {new_weapon.weapon_type}?")
-    print(Fore.YELLOW + "(y or n)")
+    print(Fore.YELLOW + " (y or n)")
 
     open_window = input("=> ").lower().strip()
 
@@ -547,7 +547,7 @@ def go_right_back():
         P_STAT(Fore.BLUE + " You eventually reach the end and", 2)
         P_STAT(Fore.BLUE + " reappear in a room.You hear voices,", 2)
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
-        bottom_floor()
+        bottom_floor_with_knife()
 
     else:
         print(Fore.RED + " That it not a valid option, please pick 1,2,3")
@@ -603,7 +603,7 @@ def go_right():
         P_STAT(Fore.BLUE + " You eventually reach the end and", 2)
         P_STAT(Fore.BLUE + " reappear in a room.You hear voices,", 2)
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
-        bottom_floor()
+        bottom_floor_with_knife()
 
 # Player reached the bottom floor with the items
 

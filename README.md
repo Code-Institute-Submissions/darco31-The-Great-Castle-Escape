@@ -51,7 +51,7 @@
 * The main design idea was to lead the user/player on a simple text adventure that will only have one winning outcome but many ways for the user/player
     to die. 
 
-![Flow Chart](assets/P3_Flow.vpd.png)
+![Flow Chart](assets/full_flow_chart.drawio.png)
 
 - The below chart outlines the more precise flow of the players choices in the right hand room when the empty the drawer or ignore the drawer.
 
