@@ -79,8 +79,8 @@ def start():
         global P_NAME
         P_NAME = input(Fore.YELLOW + " Please enter a username: \n\n")
         print()
-        if P_NAME == "":
-            print(Fore.YELLOW + " You need to enter a username to continue...")
+        if not P_NAME.isalpha():
+            print(Fore.YELLOW + " Please use letters only...")
             continue
         else:
             break
