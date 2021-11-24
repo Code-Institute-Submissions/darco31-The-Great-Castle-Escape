@@ -22,7 +22,7 @@ colorama.init(autoreset=True)
 TIME_ELAPSED = 2
 C = '{:^80}'.format
 
-# Tuples containing the choices fpr the players answers
+# Tuples containing the choices fpr the players ANSWERs
 
 ANSWER = " "
 no_list = ("N", "n", "no", "No", "NO")
@@ -96,12 +96,12 @@ def start():
     print(Fore.YELLOW + " So, do you have the guts to try and escape?(y or n)")
     # convert the player's input to lower_case
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         small_window()
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.RED + " Shame", 1)
         P_STAT(Fore.RED + f" Enjoy the solitude and loneliness {P_NAME}", 2)
@@ -122,15 +122,15 @@ def small_window():
     P_STAT(Fore.BLUE + " You peer out and can only see darkness", 1)
     print(Fore.YELLOW + " Do you try open the window? (y or n)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You try the window, nothing.", 1)
         P_STAT(Fore.BLUE + " Urggh its sealed shut", 1)
         try_door()
 
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You ignore the window", 1)
         P_STAT(Fore.BLUE + " and head for the door", 1)
@@ -153,16 +153,16 @@ def try_door():
     P_STAT(Fore.BLUE + " It opens, thats odd you think", 2)
     print(Fore.YELLOW + " Do you take a look outside? (y or n)")
 
-    answer = input("=>").lower().strip()
+    ANSWER = input("=>").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You open the door as silently as you can", 2)
         P_STAT(Fore.BLUE + " Looking outside you see a door at either end", 2)
         P_STAT(Fore.BLUE + " of a long corridor", 2)
         take_items()
 
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You are too terrified to go on, shame", 1)
         P_STAT(Fore.BLUE + f" Enjoy the solitude and loneliness {P_NAME}", 2)
@@ -183,9 +183,9 @@ def take_items():
     P_STAT(Fore.BLUE + " it has a drawer inset", 2)
     print(Fore.YELLOW + " Do you try the drawer in the table? (y or n)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You pull out the drawer and find a", 1)
         P_STAT(Fore.BLUE + f" key and a {new_weapon.weapon_type}", 2)
@@ -196,7 +196,7 @@ def take_items():
         P_STAT(Fore.BLUE + " will open the window", 2)
         back_to_window()
 
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " Probably best not to disturb anything", 2)
         direction_choice_two()
@@ -233,9 +233,9 @@ def back_to_window():
     print(Fore.YELLOW + f" Open the window with the {new_weapon.weapon_type}?")
     print(Fore.YELLOW + " (y or n)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         P_STAT(Fore.BLUE + f" You jam the {new_weapon.weapon_type} in the", 2)
         P_STAT(Fore.BLUE + " gap of the window, the timber comes loose ", 2)
@@ -250,7 +250,7 @@ def back_to_window():
         play_again()
         clr_terminal()
 
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " Looking down into the dark bleak night", 2)
         P_STAT(Fore.BLUE + " you decide its best not to try and make your", 2)
@@ -273,12 +273,12 @@ def direction_choice():
     P_STAT(Fore.BLUE + " Standing in the doorway you need to make a choice", 1)
     print(Fore.YELLOW + " Do you go left or go right? (l or r)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in left_dir:
+    if ANSWER in left_dir:
         clr_terminal()
         go_left_with_items()
-    elif answer in right_dir:
+    elif ANSWER in right_dir:
         clr_terminal()
         go_right()
     else:
@@ -295,12 +295,12 @@ def direction_choice_two():
     P_STAT(Fore.BLUE + " Standing in the doorway you need to make a choice", 1)
     print(Fore.YELLOW + " Do you go left or go right? (l or r)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in left_dir:
+    if ANSWER in left_dir:
         clr_terminal()
         go_left()
-    elif answer in right_dir:
+    elif ANSWER in right_dir:
         clr_terminal()
         P_STAT(Fore.BLUE + " You reach the door and try open it", 2)
         P_STAT(Fore.RED + " Its locked, you remember the drawer, maybe?", 2)
@@ -337,17 +337,17 @@ def go_left():
     P_STAT(Fore.BLUE + " going down.You look around the room", 2)
     print(Fore.YELLOW + " Do you explore,proceed or go back? (e-p-g)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in explore:
+    if ANSWER in explore:
         clr_terminal()
         explore_room()
 
-    elif answer in proceed:
+    elif ANSWER in proceed:
         clr_terminal()
         proceed_down_stairs()
 
-    elif answer in go_back:
+    elif ANSWER in go_back:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         clr_terminal()
         direction_choice_three()
@@ -372,17 +372,17 @@ def go_left_with_items():
     P_STAT(Fore.BLUE + " going down.You look around the room", 2)
     print(Fore.YELLOW + " Do you explore,proceed or go back? (e-p-g)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in explore:
+    if ANSWER in explore:
         clr_terminal()
         explore_room_with_items()
 
-    elif answer in proceed:
+    elif ANSWER in proceed:
         clr_terminal()
         proceed_with_items()
 
-    elif answer in go_back:
+    elif ANSWER in go_back:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         clr_terminal()
         go_right()
@@ -407,12 +407,12 @@ def explore_room_with_items():
     P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
     print(Fore.YELLOW + " Do you proceed or go back? (p or g)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in proceed:
+    if ANSWER in proceed:
         P_STAT(Fore.BLUE + " You decide to head downstairs", 2)
         proceed_with_items()
-    elif answer in go_back:
+    elif ANSWER in go_back:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         go_right()
 
@@ -434,9 +434,9 @@ def proceed_with_items():
     P_STAT(Fore.BLUE + " Their backs are to you, you only have the knife", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in attack:
+    if ANSWER in attack:
         clr_terminal()
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
         P_STAT(Fore.BLUE + f" Raising their {new_weapon_two.weapon_type}'s", 2)
@@ -447,7 +447,7 @@ def proceed_with_items():
         game_over()
         play_again()
 
-    elif answer in sneak:
+    elif ANSWER in sneak:
         P_STAT(Fore.BLUE + " You put your back against the wall", 2)
         P_STAT(Fore.BLUE + " and sneak as quietly as you can passed them", 2)
         bottom_floor_with_knife()
@@ -473,12 +473,12 @@ def explore_room():
     P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
     print(Fore.YELLOW + " Do you proceed or go back? (p or g)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in proceed:
+    if ANSWER in proceed:
         P_STAT(Fore.BLUE + " You decide to head downstairs", 2)
         proceed_down_stairs()
-    elif answer in go_back:
+    elif ANSWER in go_back:
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         direction_choice_three()
 
@@ -499,9 +499,9 @@ def proceed_down_stairs():
     P_STAT(Fore.BLUE + " Their backs are to you and you are weaponless", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in attack:
+    if ANSWER in attack:
         clr_terminal()
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
         P_STAT(Fore.BLUE + " but alas, one foul swipe and you are....", 1)
@@ -510,7 +510,7 @@ def proceed_down_stairs():
         game_over()
         play_again()
 
-    if answer in sneak:
+    if ANSWER in sneak:
         P_STAT(Fore.BLUE + " You put your back against the wall", 2)
         P_STAT(Fore.BLUE + " and sneak as quietly as you can passed them", 2)
         bottom_floor()
@@ -637,9 +637,9 @@ def bottom_floor_with_knife():
     P_STAT(Fore.BLUE + " There is a straight path, left and right path", 2)
     print(Fore.YELLOW + " Do you go s - l - r")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in straight:
+    if ANSWER in straight:
         clr_terminal()
         P_STAT(Fore.BLUE + " You decide to proceed straight ahead", 2)
         P_STAT(Fore.BLUE + " Oh sugar..,a group of angry men approach..", 2)
@@ -648,15 +648,15 @@ def bottom_floor_with_knife():
         game_over()
         play_again()
 
-    elif answer in left_dir:
+    elif ANSWER in left_dir:
         clr_terminal()
         P_STAT(Fore.BLUE + " You decide to take the left path ahead", 2)
         P_STAT(Fore.BLUE + " You are in a room with a vent on the wall", 2)
         print(Fore.YELLOW + " Do you open the vent? (y or n)")
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in yes_list:
+        if ANSWER in yes_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and enter", 2)
             P_STAT(Fore.BLUE + " You crawl forward and can ", 2)
@@ -665,7 +665,7 @@ def bottom_floor_with_knife():
             P_STAT(Fore.BLUE + " you can see below you a guard on his own", 2)
             print(Fore.YELLOW + " Try kill the guard? (y or n)")
 
-        elif answer in no_list:
+        elif ANSWER in no_list:
             clr_terminal()
             return_to_paths()
 
@@ -673,9 +673,9 @@ def bottom_floor_with_knife():
             print(Fore.RED + " Incorrect choice, quitting game..")
             game_over()
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in yes_list:
+        if ANSWER in yes_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
             P_STAT(Fore.BLUE + f" {new_weapon.weapon_type},it may be a bit", 2)
@@ -684,7 +684,7 @@ def bottom_floor_with_knife():
             P_STAT(Fore.BLUE + " With one stroke you cut his throat", 2)
             outside()
 
-        elif answer in no_list:
+        elif ANSWER in no_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You decide to spare his life... for now.", 2)
             return_to_paths()
@@ -693,14 +693,14 @@ def bottom_floor_with_knife():
             print(Fore.RED + " Incorrect choice, quitting game..")
             game_over()
 
-    elif answer in right_dir:
+    elif ANSWER in right_dir:
         P_STAT(Fore.BLUE + " You veer right to an empty room", 2)
         P_STAT(Fore.BLUE + " more doors, two of them", 2)
         print(Fore.YELLOW + " Left or Right? (l or r)")
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in left_dir:
+        if ANSWER in left_dir:
             clr_terminal()
             P_STAT(Fore.BLUE + " You open the lefthand door", 2)
             P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
@@ -709,7 +709,7 @@ def bottom_floor_with_knife():
             game_over()
             play_again()
 
-        elif answer in right_dir:
+        elif ANSWER in right_dir:
             clr_terminal()
 
             P_STAT(Fore.BLUE + " You open the right hand door", 2)
@@ -734,9 +734,9 @@ def bottom_floor():
     P_STAT(Fore.BLUE + " There is a straight path, left and right path", 2)
     print(Fore.YELLOW + " Do you go s - l - r")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in straight:
+    if ANSWER in straight:
         clr_terminal()
         P_STAT(Fore.BLUE + " You decide to proceed straight ahead", 2)
         P_STAT(Fore.BLUE + " Oh sugar..,a group of angry men approach..", 2)
@@ -745,15 +745,15 @@ def bottom_floor():
         game_over()
         play_again()
 
-    elif answer in left_dir:
+    elif ANSWER in left_dir:
         clr_terminal()
         P_STAT(Fore.BLUE + " You decide to take the left path ahead", 2)
         P_STAT(Fore.BLUE + " You are in a room with a vent on the wall", 2)
         print(Fore.YELLOW + " Do you open the vent? (y or n)")
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in yes_list:
+        if ANSWER in yes_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and enter", 2)
             P_STAT(Fore.BLUE + " You crawl forward and can ", 2)
@@ -762,7 +762,7 @@ def bottom_floor():
             P_STAT(Fore.BLUE + " you can see below you a guard on his own", 2)
             print(Fore.YELLOW + " Try kill the guard? (y or n)")
 
-        elif answer in no_list:
+        elif ANSWER in no_list:
             clr_terminal()
             return_to_paths()
 
@@ -770,9 +770,9 @@ def bottom_floor():
             print(Fore.RED + " Incorrect choice, quitting game..")
             game_over()
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in yes_list:
+        if ANSWER in yes_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You pry the vent open and ready the ", 2)
             P_STAT(Fore.BLUE + " the belt you found, ", 2)
@@ -781,7 +781,7 @@ def bottom_floor():
             P_STAT(Fore.BLUE + " gasping he falls to the ground", 2)
             outside()
 
-        elif answer in no_list:
+        elif ANSWER in no_list:
             clr_terminal()
             P_STAT(Fore.BLUE + " You decide to spare his life... for now.", 2)
             return_to_paths()
@@ -790,14 +790,14 @@ def bottom_floor():
             print(Fore.RED + " Incorrect choice, quitting game..")
             game_over()
 
-    elif answer in right_dir:
+    elif ANSWER in right_dir:
         P_STAT(Fore.BLUE + " You veer right to an empty room", 2)
         P_STAT(Fore.BLUE + " more doors, two of them", 2)
         print(Fore.YELLOW + " Left or Right? (l or r)")
 
-        answer = input("=> ").lower().strip()
+        ANSWER = input("=> ").lower().strip()
 
-        if answer in left_dir:
+        if ANSWER in left_dir:
             clr_terminal()
             P_STAT(Fore.BLUE + " You open the lefthand door", 2)
             P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
@@ -806,7 +806,7 @@ def bottom_floor():
             game_over()
             play_again()
 
-        elif answer in right_dir:
+        elif ANSWER in right_dir:
             clr_terminal()
 
             P_STAT(Fore.BLUE + " You open the right hand door", 2)
@@ -843,9 +843,9 @@ def outside():
     P_STAT(Fore.BLUE + " in the belt, Looking up there is a door ahead.", 2)
     print(Fore.YELLOW + " Proceed through door? (y or n)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         P_STAT(Fore.BLUE + " You fumble through the keys", 2)
         P_STAT(Fore.BLUE + " and find the right one", 2)
@@ -858,16 +858,16 @@ def outside():
         P_STAT(Fore.BLUE + " you think you could climb them", 2)
         print(Fore.YELLOW + " Distract or Climb? (d or c)")
 
-    elif answer in no_list:
+    elif ANSWER in no_list:
         P_STAT(Fore.BLUE + " You decide to go back to the pathways", 2)
         bottom_floor()
     else:
         print(" Incorrect choice, quitting game..")
         game_over()
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in distract:
+    if ANSWER in distract:
         clr_terminal()
         P_STAT(Fore.BLUE + " You look around for something to distract", 2)
         P_STAT(Fore.BLUE + " them,picking up a stone you throw", 2)
@@ -881,7 +881,7 @@ def outside():
         you_escaped()
         play_again()
 
-    elif answer in climb:
+    elif ANSWER in climb:
         clr_terminal()
         P_STAT(Fore.BLUE + " You decide to climb the railings", 2)
         P_STAT(Fore.BLUE + " You put one foot up and pull yourself up", 2)
@@ -914,12 +914,12 @@ def play_again():
     """
     print(Fore.YELLOW + " Would you like to play again? (Y or N)")
 
-    answer = input("=> ").lower().strip()
+    ANSWER = input("=> ").lower().strip()
 
-    if answer in yes_list:
+    if ANSWER in yes_list:
         clr_terminal()
         start()
-    elif answer in no_list:
+    elif ANSWER in no_list:
         clr_terminal()
         P_STAT(Fore.YELLOW + f" Sorry to see you go {P_NAME}", 1)
         P_STAT(Fore.YELLOW + " Please do comeback again", 1)
