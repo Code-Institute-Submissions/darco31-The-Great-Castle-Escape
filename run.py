@@ -22,9 +22,9 @@ colorama.init(autoreset=True)
 TIME_ELAPSED = 2
 C = '{:^80}'.format
 
-# Lists for choice answers
+# Tuples containing the choices fpr the players answers
 
-answer = " "
+ANSWER = " "
 no_list = ("N", "n", "no", "No", "NO")
 yes_list = ("Y", "y", "yes", "Yes", "YES")
 left_dir = ("l", "L", "LEFT", "left")
