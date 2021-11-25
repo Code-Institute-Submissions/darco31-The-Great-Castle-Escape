@@ -12,6 +12,7 @@
 2. [User Experience](#User-Experience)
    * [Project goals](#Main-goals-of-the-project)
    * [Design](#Design)
+   * [Wireframes](#Wireframes)
    * [User Stories](#User-Stories)
    * [Target Audience](#Target-Audience)
 3. [Features](#Features)
@@ -56,6 +57,13 @@
 - The below chart outlines the more precise flow of the players choices in the right hand room when the empty the drawer or ignore the drawer.
 
 ![Flow Chart](assets/flow_for_room_choices.PNG)
+
+## Wireframes
+
+* Wireframe for application
+
+![Flow Chart](assets/wireframe.PNG)
+
 
 ## User Stories
 

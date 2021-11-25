@@ -110,6 +110,7 @@ def start():
         P_STAT(Fore.RED + " Shame", 1)
         P_STAT(Fore.RED + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         game_over()
+        play_again()
 
 # Player has the option to check the window or ignore it
 
