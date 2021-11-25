@@ -84,10 +84,10 @@ def start():
             continue
         else:
             break
-    P_STAT(Fore.BLUE + f" Welcome {P_NAME}, good luck, you will need it", 2)
-    P_STAT(Fore.BLUE + " You awake a little dazed and confused", 2)
-    P_STAT(Fore.BLUE + " You find yourself in a dimly lit room", 2)
-    P_STAT(Fore.BLUE + " You can hear the rain crashing down outside", 2)
+    P_STAT(Fore.GREEN + f" Welcome {P_NAME}, good luck, you will need it", 2)
+    P_STAT(Fore.GREEN + " You awake a little dazed and confused", 2)
+    P_STAT(Fore.GREEN + " You find yourself in a dimly lit room", 2)
+    P_STAT(Fore.GREEN + " You can hear the rain crashing down outside", 2)
     P_STAT(Fore.BLUE + " You try to recall how you got here", 2)
     P_STAT(Fore.BLUE + " You look around the room", 2)
     P_STAT(Fore.BLUE + " Its big cold and damp, you notice a window", 2)
