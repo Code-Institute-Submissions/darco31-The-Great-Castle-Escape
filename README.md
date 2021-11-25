@@ -219,6 +219,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 * My mentor Miguel Martinez
 * Ben Kavanagh's webinar on Python.
 * Deanna Sale for her help on centering the text in the terminal window. 
+* David Horricks for his help on python line legth warnings.
 * [Mike Dane OOP You Tube Videos](https://www.youtube.com/watch?v=6chvxajS3yc)
 
 ## Code
@@ -243,7 +244,7 @@ was fixed by placing the function call to the correct indentation.
 
 # Errors
 
-* There are a total of 66 problems highlighted in the terminal. 35 for functions.py and 31 for run.py.
-* All the problems being highlighted are concerned with that ASCII and the placement of back and forward slash's.
+* There are a total of 130 problems highlighted in the terminal. 35 for functions.py and 95 for run.py.
+
 
 #### [Back to content](#table-of-contents)

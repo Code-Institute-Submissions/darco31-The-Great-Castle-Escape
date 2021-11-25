@@ -344,7 +344,11 @@ def go_left():
 
     ANSWER = input("=> ").lower().strip()
 
-    while ANSWER not in explore and ANSWER not in proceed and ANSWER not in go_back:
+    while (
+        ANSWER not in explore
+        and ANSWER not in proceed
+        and ANSWER not in go_back
+    ):
         P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
         ANSWER = input("=> ").lower().strip()
 
@@ -380,7 +384,11 @@ def go_left_with_items():
 
     ANSWER = input("=> ").lower().strip()
 
-    while ANSWER not in explore and ANSWER not in proceed and ANSWER not in go_back:
+    while (
+        ANSWER not in explore
+        and ANSWER not in proceed
+        and ANSWER not in go_back
+    ):
         P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
         ANSWER = input("=> ").lower().strip()
 
