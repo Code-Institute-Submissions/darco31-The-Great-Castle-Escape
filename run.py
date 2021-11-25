@@ -658,7 +658,11 @@ def bottom_floor_with_knife():
 
     ANSWER = input("=> ").lower().strip()
 
-    while ANSWER not in straight and ANSWER not in left_dir:
+    while (
+        ANSWER not in straight and
+        ANSWER not in left_dir and
+        ANSWER not in right_dir
+    ):
         P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
         ANSWER = input("=> ").lower().strip()
 
@@ -670,6 +674,36 @@ def bottom_floor_with_knife():
         player_died()
         game_over()
         play_again()
+
+    elif ANSWER in right_dir:
+        P_STAT(Fore.GREEN + " You veer right to an empty room", 2)
+        P_STAT(Fore.GREEN + " more doors, two of them", 2)
+        print(Fore.YELLOW + " Left or Right? (l or r)")
+
+        ANSWER = input("=> ").lower().strip()
+
+        while ANSWER not in left_dir and ANSWER not in right_dir:
+            P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
+            ANSWER = input("=> ").lower().strip()
+
+        if ANSWER in left_dir:
+            clr_terminal()
+            P_STAT(Fore.GREEN + " You open the left hand door", 2)
+            P_STAT(Fore.GREEN + " Oh no!! A room full of guards", 2)
+
+            player_died()
+            game_over()
+            play_again()
+
+        elif ANSWER in right_dir:
+            clr_terminal()
+
+            P_STAT(Fore.GREEN + " You open the right-hand door", 2)
+            P_STAT(Fore.GREEN + " Dogs? and guard dogs..", 2)
+
+            player_died()
+            game_over()
+            play_again()
 
     elif ANSWER in left_dir:
         clr_terminal()
@@ -717,6 +751,37 @@ def bottom_floor_with_knife():
             P_STAT(Fore.GREEN + " You decide to spare his life... for now.", 2)
             return_to_paths()
 
+# The player will get a choice of three paths that lie ahead.
+
+
+def bottom_floor():
+    """
+    The player is in the place they sneak to from
+    the stairs and from the secret tunnel and have a choice of 3 paths
+    """
+    P_STAT(Fore.GREEN + " Looking ahead you can see three paths", 2)
+    P_STAT(Fore.GREEN + " There is a straight path, left and right path", 2)
+    print(Fore.YELLOW + " Do you go s - l - r")
+
+    ANSWER = input("=> ").lower().strip()
+
+    while (
+        ANSWER not in straight and
+        ANSWER not in left_dir and
+        ANSWER not in right_dir
+    ):
+        P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
+        ANSWER = input("=> ").lower().strip()
+
+    if ANSWER in straight:
+        clr_terminal()
+        P_STAT(Fore.GREEN + " You decide to proceed straight ahead", 2)
+        P_STAT(Fore.GREEN + " Oh sugar..,a group of angry men approach..", 2)
+
+        player_died()
+        game_over()
+        play_again()
+
     elif ANSWER in right_dir:
         P_STAT(Fore.GREEN + " You veer right to an empty room", 2)
         P_STAT(Fore.GREEN + " more doors, two of them", 2)
@@ -735,44 +800,17 @@ def bottom_floor_with_knife():
 
             player_died()
             game_over()
-            play_again()
+            start()
 
         elif ANSWER in right_dir:
             clr_terminal()
 
-            P_STAT(Fore.GREEN + " You open the right-hand door", 2)
+            P_STAT(Fore.GREEN + " You open the right hand door", 2)
             P_STAT(Fore.GREEN + " Dogs? and guard dogs..", 2)
 
             player_died()
             game_over()
-            play_again()
-
-# The player will get a choice of three paths that lie ahead.
-
-
-def bottom_floor():
-    """
-    The player is in the place they sneak to from
-    the stairs and from the secret tunnel and have a choice of 3 paths
-    """
-    P_STAT(Fore.GREEN + " Looking ahead you can see three paths", 2)
-    P_STAT(Fore.GREEN + " There is a straight path, left and right path", 2)
-    print(Fore.YELLOW + " Do you go s - l - r")
-
-    ANSWER = input("=> ").lower().strip()
-
-    while ANSWER not in straight and ANSWER not in left_dir:
-        P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
-        ANSWER = input("=> ").lower().strip()
-
-    if ANSWER in straight:
-        clr_terminal()
-        P_STAT(Fore.GREEN + " You decide to proceed straight ahead", 2)
-        P_STAT(Fore.GREEN + " Oh sugar..,a group of angry men approach..", 2)
-
-        player_died()
-        game_over()
-        play_again()
+            start()
 
     elif ANSWER in left_dir:
         clr_terminal()
@@ -818,36 +856,6 @@ def bottom_floor():
             clr_terminal()
             P_STAT(Fore.GREEN + " You decide to spare his life... for now.", 2)
             return_to_paths()
-
-    elif ANSWER in right_dir:
-        P_STAT(Fore.GREEN + " You veer right to an empty room", 2)
-        P_STAT(Fore.GREEN + " more doors, two of them", 2)
-        print(Fore.YELLOW + " Left or Right? (l or r)")
-
-        ANSWER = input("=> ").lower().strip()
-
-        while ANSWER not in left_dir and ANSWER not in right_dir:
-            P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
-            ANSWER = input("=> ").lower().strip()
-
-        if ANSWER in left_dir:
-            clr_terminal()
-            P_STAT(Fore.GREEN + " You open the left hand door", 2)
-            P_STAT(Fore.GREEN + " Oh no!! A room full of guards", 2)
-
-            player_died()
-            game_over()
-            start()
-
-        elif ANSWER in right_dir:
-            clr_terminal()
-
-            P_STAT(Fore.GREEN + " You open the right hand door", 2)
-            P_STAT(Fore.GREEN + " Dogs? and guard dogs..", 2)
-
-            player_died()
-            game_over()
-            start()
 
 # Player decides to return to the 3 paths
 
