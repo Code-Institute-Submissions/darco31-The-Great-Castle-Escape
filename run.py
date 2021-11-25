@@ -7,8 +7,8 @@
 from clear import clr_terminal
 from set_class import Weapon
 
-#  Calls the functions from functions.py to give
-# visual help to the player on end game scenarios
+# Calls the functions from functions.py to give
+# visual help to the player on end game scenarios.
 from functions import P_STAT, game_over, player_died, you_escaped
 
 # Imports the time, random and colorama modules
@@ -205,7 +205,7 @@ def take_items():
         P_STAT(Fore.RED + " Incorrect choice, quitting game..", 2)
         game_over()
 
-# Player returns to the table form locked door to retrive items.
+# Player returns to the table form locked door to retrieve items.
 
 
 def return_to_table():
@@ -216,7 +216,7 @@ def return_to_table():
     P_STAT(Fore.BLUE + f" Result, a key and {new_weapon.weapon_type}", 2)
     P_STAT(Fore.BLUE + " You stuff them in your pockets ", 2)
     P_STAT(Fore.BLUE + " and close the drawer", 2)
-    P_STAT(Fore.BLUE + " you quickly get back to the right hand door", 2)
+    P_STAT(Fore.BLUE + " you quickly get back to the right-hand door", 2)
     go_right_back()
 
 # Player goes back to the first room to try the window with knife.
@@ -243,7 +243,7 @@ def back_to_window():
         P_STAT(Fore.BLUE + " you climb up and outside and as you peer", 2)
         P_STAT(Fore.BLUE + " through the dark you can just make out the", 2)
         P_STAT(Fore.BLUE + " sloping roof. You jump but to your horror", 3)
-        P_STAT(Fore.BLUE + " the tile gives way and you fall to your death", 2)
+        P_STAT(Fore.BLUE + " the tile snaps, and you fall to your death", 2)
 
         player_died()
         game_over()
@@ -330,11 +330,11 @@ def go_left():
     """
     P_STAT(Fore.BLUE + " You decide to turn left and head towards the door", 2)
     P_STAT(Fore.BLUE + " as you approach the door you slow down", 2)
-    P_STAT(Fore.BLUE + " you push at the door and it creaks open", 2)
-    P_STAT(Fore.BLUE + " as your eyes adjust you make out a candle light.", 2)
+    P_STAT(Fore.BLUE + " you push at the door, and it creaks open", 2)
+    P_STAT(Fore.BLUE + " as your eyes adjust you make out a candlelight.", 2)
     P_STAT(Fore.BLUE + " You walk inside, at the far end there is an", 2)
-    P_STAT(Fore.BLUE + " opening.You approach it and see a staircase", 2)
-    P_STAT(Fore.BLUE + " going down.You look around the room", 2)
+    P_STAT(Fore.BLUE + " opening. You approach it and see a staircase", 2)
+    P_STAT(Fore.BLUE + " going down. You look around the room", 2)
     print(Fore.YELLOW + " Do you explore,proceed or go back? (e-p-g)")
 
     ANSWER = input("=> ").lower().strip()
@@ -365,11 +365,11 @@ def go_left_with_items():
     """
     P_STAT(Fore.BLUE + " You decide to turn left and head towards the door", 2)
     P_STAT(Fore.BLUE + " as you approach the door you slow down", 2)
-    P_STAT(Fore.BLUE + " you push at the door and it creaks open", 2)
-    P_STAT(Fore.BLUE + " as your eyes adjust you make out a candle light.", 2)
+    P_STAT(Fore.BLUE + " you push at the door, and it creaks open", 2)
+    P_STAT(Fore.BLUE + " as your eyes adjust you make out a candlelight.", 2)
     P_STAT(Fore.BLUE + " You walk inside, at the far end there is an", 2)
-    P_STAT(Fore.BLUE + " opening.You approach it and see a staircase", 2)
-    P_STAT(Fore.BLUE + " going down.You look around the room", 2)
+    P_STAT(Fore.BLUE + " opening. You approach it and see a staircase", 2)
+    P_STAT(Fore.BLUE + " going down. You look around the room", 2)
     print(Fore.YELLOW + " Do you explore,proceed or go back? (e-p-g)")
 
     ANSWER = input("=> ").lower().strip()
@@ -416,7 +416,7 @@ def explore_room_with_items():
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         go_right()
 
-# Go down stairs wih the items from the drawer
+# Go downstairs with the items from the drawer
 
 
 def proceed_with_items():
@@ -440,7 +440,7 @@ def proceed_with_items():
         clr_terminal()
         P_STAT(Fore.BLUE + " You charge at the men who are surprised", 2)
         P_STAT(Fore.BLUE + f" Raising their {new_weapon_two.weapon_type}'s", 2)
-        P_STAT(Fore.BLUE + " the knife seems meanignless", 1)
+        P_STAT(Fore.BLUE + " the knife seems meaningless", 1)
         P_STAT(Fore.BLUE + " one foul swipe and you are....", 1)
 
         player_died()
@@ -456,7 +456,7 @@ def proceed_with_items():
         print(Fore.RED + " Incorrect choice, quitting game..")
         game_over()
 
-# The player can explore the right hand side room
+# The player can explore the right-hand side room
 
 
 def explore_room():
@@ -482,7 +482,7 @@ def explore_room():
         P_STAT(Fore.BLUE + " You decide to go back to the other door", 2)
         direction_choice_three()
 
-# The player decides to ignore the room and movedown the stairs.
+# The player decides to ignore the room and move down the stairs.
 
 
 def proceed_down_stairs():
@@ -496,7 +496,7 @@ def proceed_down_stairs():
     P_STAT(Fore.BLUE + " Holding your breath you peek around the corner", 2)
     P_STAT(Fore.BLUE + " and see two large men,", 2)
     P_STAT(Fore.BLUE + f" both with {new_weapon_two.weapon_type}'s?", 2)
-    P_STAT(Fore.BLUE + " Their backs are to you and you are weaponless", 2)
+    P_STAT(Fore.BLUE + " Their backs are to you, and you are weaponless", 2)
     P_STAT(Fore.YELLOW + " Hmmm attack or sneak? Your choice - (a or s)", 2)
 
     ANSWER = input("=> ").lower().strip()
@@ -519,7 +519,7 @@ def proceed_down_stairs():
         print(Fore.RED + " Incorrect choice, quitting game..")
         proceed_down_stairs()
 
-# Player returns to the right hand door after searching the drawer
+# Player returns to the right-hand door after searching the drawer
 
 
 def go_right_back():
@@ -531,7 +531,7 @@ def go_right_back():
     P_STAT(Fore.BLUE + " what looks like three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-# Player will get a random choice of lever and this will decide the outcome
+# Player will get a random choice of lever, and this will decide the outcome
     try_lever = random.randint(1, 3)
 
     if try_lever == 1:
@@ -556,15 +556,15 @@ def go_right_back():
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
-        P_STAT(Fore.BLUE + " you hear a noise and a concealed door opens", 2)
+        P_STAT(Fore.BLUE + " you hear a noise, and a concealed door opens", 2)
         P_STAT(Fore.BLUE + " You look around the room and ", 1.2)
         P_STAT(Fore.BLUE + " see a candle on the side table, picking it up", 2)
-        P_STAT(Fore.BLUE + " You crouch down and walk into the opening", 2)
-        P_STAT(Fore.BLUE + " Holding the candle up the passage ", 2)
+        P_STAT(Fore.BLUE + " you crouch down and walk into the opening", 2)
+        P_STAT(Fore.BLUE + " Holding the candle up, the passage ", 2)
         P_STAT(Fore.BLUE + " looks long and unused. You proceed forward", 2)
         P_STAT(Fore.BLUE + " carful as it is sloping down", 2)
         P_STAT(Fore.BLUE + " You eventually reach the end and", 2)
-        P_STAT(Fore.BLUE + " reappear in a room.You hear voices,", 2)
+        P_STAT(Fore.BLUE + " reappear in a room. You hear voices,", 2)
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor_with_knife()
 
@@ -587,7 +587,7 @@ def go_right():
     P_STAT(Fore.BLUE + " three levers on the wall", 2)
     P_STAT(Fore.BLUE + " You decide to try the levers", 1)
 
-    # Player will get a random choice of lever and this will decide the outcome
+    # Player will get a random choice of lever, this will decide the outcome
     try_lever = random.randint(1, 3)
 
     if try_lever == 1:
@@ -612,15 +612,15 @@ def go_right():
         clr_terminal()
 
         P_STAT(Fore.BLUE + " You pull the third lever ", 1.2)
-        P_STAT(Fore.BLUE + " you hear a noise and a concealed door opens", 2)
+        P_STAT(Fore.BLUE + " you hear a noise, and a concealed door opens", 2)
         P_STAT(Fore.BLUE + " You look around the room and ", 1.2)
         P_STAT(Fore.BLUE + " see a candle on the side table, picking it up", 2)
-        P_STAT(Fore.BLUE + " You crouch down and walk into the opening", 2)
-        P_STAT(Fore.BLUE + " Holding the candle up the passage ", 2)
+        P_STAT(Fore.BLUE + " You crouch down and walk into the opening.", 2)
+        P_STAT(Fore.BLUE + " Holding the candle up, the passage ", 2)
         P_STAT(Fore.BLUE + " looks long and unused. You proceed forward", 2)
         P_STAT(Fore.BLUE + " carful as it is sloping down", 2)
         P_STAT(Fore.BLUE + " You eventually reach the end and", 2)
-        P_STAT(Fore.BLUE + " reappear in a room.You hear voices,", 2)
+        P_STAT(Fore.BLUE + " reappear in a room. You hear voices,", 2)
         P_STAT(Fore.BLUE + " but they are coming from behind you", 2)
         bottom_floor_with_knife()
 
@@ -630,7 +630,7 @@ def go_right():
 def bottom_floor_with_knife():
     """
     The player is in the place they sneak to from
-    the stairs and from the secret tunnel and has a choice of 3 paths
+    the stairs and from the secret tunnel and have a choice of 3 paths
     but has the items
     """
     P_STAT(Fore.BLUE + " Looking ahead you can see three paths", 2)
@@ -702,7 +702,7 @@ def bottom_floor_with_knife():
 
         if ANSWER in left_dir:
             clr_terminal()
-            P_STAT(Fore.BLUE + " You open the lefthand door", 2)
+            P_STAT(Fore.BLUE + " You open the left hand door", 2)
             P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
 
             player_died()
@@ -712,7 +712,7 @@ def bottom_floor_with_knife():
         elif ANSWER in right_dir:
             clr_terminal()
 
-            P_STAT(Fore.BLUE + " You open the right hand door", 2)
+            P_STAT(Fore.BLUE + " You open the right-hand door", 2)
             P_STAT(Fore.BLUE + " Dogs? and guard dogs..", 2)
 
             player_died()
@@ -728,7 +728,7 @@ def bottom_floor_with_knife():
 def bottom_floor():
     """
     The player is in the place they sneak to from
-    the stairs and from the secret tunnel and has a choice of 3 paths
+    the stairs and from the secret tunnel and have a choice of 3 paths
     """
     P_STAT(Fore.BLUE + " Looking ahead you can see three paths", 2)
     P_STAT(Fore.BLUE + " There is a straight path, left and right path", 2)
@@ -799,7 +799,7 @@ def bottom_floor():
 
         if ANSWER in left_dir:
             clr_terminal()
-            P_STAT(Fore.BLUE + " You open the lefthand door", 2)
+            P_STAT(Fore.BLUE + " You open the left hand door", 2)
             P_STAT(Fore.BLUE + " Oh no!! A room full of guards", 2)
 
             player_died()
@@ -840,7 +840,7 @@ def outside():
     P_STAT(Fore.BLUE + " Quickly you search him and find keys and a", 2)
     P_STAT(Fore.BLUE + f" {new_weapon_two.weapon_type}", 2)
     P_STAT(Fore.BLUE + f" You put the {new_weapon_two.weapon_type}", 2)
-    P_STAT(Fore.BLUE + " in the belt, Looking up there is a door ahead.", 2)
+    P_STAT(Fore.BLUE + " in the belt, looking up there is a door ahead.", 2)
     print(Fore.YELLOW + " Proceed through door? (y or n)")
 
     ANSWER = input("=> ").lower().strip()
@@ -870,11 +870,11 @@ def outside():
     if ANSWER in distract:
         clr_terminal()
         P_STAT(Fore.BLUE + " You look around for something to distract", 2)
-        P_STAT(Fore.BLUE + " them,picking up a stone you throw", 2)
-        P_STAT(Fore.BLUE + " it at the railing,perfect shot,", 2)
+        P_STAT(Fore.BLUE + " them, picking up a stone you throw", 2)
+        P_STAT(Fore.BLUE + " it at the railing, perfect shot,", 2)
         P_STAT(Fore.BLUE + " it makes a loud bang alerting them.", 2)
         P_STAT(Fore.BLUE + " The two guards leave their post", 2)
-        P_STAT(Fore.BLUE + " and go investigate.This is your chance,", 2)
+        P_STAT(Fore.BLUE + " and go investigate. This is your chance,", 2)
         P_STAT(Fore.BLUE + " you move as quickly and quietly as you can.", 2)
         P_STAT(Fore.BLUE + " You are out, you run!!!", 2)
 
@@ -887,7 +887,7 @@ def outside():
         P_STAT(Fore.BLUE + " You put one foot up and pull yourself up", 2)
         P_STAT(Fore.BLUE + " to the top of them, you raise your other foot", 2)
         P_STAT(Fore.BLUE + " but to your surprise it slips, and you ", 2)
-        P_STAT(Fore.BLUE + " impale yourself.You let out an anguished cry", 2)
+        P_STAT(Fore.BLUE + " impale yourself. You let out an anguished cry", 2)
         P_STAT(Fore.BLUE + " which alerts the guards, as they approach,", 2)
         P_STAT(Fore.BLUE + " weapons readied, they slice at you", 2)
         P_STAT(Fore.BLUE + f" with their {new_weapon_two.weapon_type}'s", 1)
