@@ -219,7 +219,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 * My mentor Miguel Martinez
 * Ben Kavanagh's webinar on Python.
 * Deanna Sale for her help on centering the text in the terminal window. 
-* David Horricks for his help on python line legth warnings.
+* David Horricks for his help on python line length warnings.
 * [Mike Dane OOP You Tube Videos](https://www.youtube.com/watch?v=6chvxajS3yc)
 
 ## Code
@@ -227,6 +227,7 @@ I used the video tutorial provided by The Code Institute to create a Heroku acco
 * All code has been written by Stephen D'arcy. Some inspiration was taken from W3 schools [W3 Schools](https://www.w3schools.com/python/)
 * Stack overflow to learn how to use and initialize Colorama [Stack Overflow](https://stackoverflow.com/questions/49841315/how-to-clear-screen-using-colorama)
 * I picked up advice and how to execute f strings with a class at [RealPython](https://realpython.com/python-f-strings/)
+* Advice on requirements needed to break up a while loop [PEP Style Guide](https://www.python.org/dev/peps/pep-0008/should-a-line-break-before-or-after-a-binary-operator)
 
 ## Content
 

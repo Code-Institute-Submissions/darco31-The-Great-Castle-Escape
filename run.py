@@ -345,9 +345,9 @@ def go_left():
     ANSWER = input("=> ").lower().strip()
 
     while (
-        ANSWER not in explore
-        and ANSWER not in proceed
-        and ANSWER not in go_back
+        ANSWER not in explore and
+        ANSWER not in proceed and
+        ANSWER not in go_back
     ):
         P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
         ANSWER = input("=> ").lower().strip()
@@ -385,9 +385,9 @@ def go_left_with_items():
     ANSWER = input("=> ").lower().strip()
 
     while (
-        ANSWER not in explore
-        and ANSWER not in proceed
-        and ANSWER not in go_back
+        ANSWER not in explore and
+        ANSWER not in proceed and
+        ANSWER not in go_back
     ):
         P_STAT(Fore.RED + f" Please pick the correct option {P_NAME}", 2)
         ANSWER = input("=> ").lower().strip()
@@ -484,9 +484,7 @@ def explore_room():
     P_STAT(Fore.BLUE + " in a castle still leaves you feeling confused", 2)
     P_STAT(Fore.BLUE + " You see a bowl with fruit in it, you are starving", 2)
     P_STAT(Fore.BLUE + " so you pick it up and eat while", 2)
-    P_STAT(Fore.BLUE + " continuing to explore. You find a belt,", 2)
-    P_STAT(Fore.BLUE + " you wrap it around you as it may", 2)
-    P_STAT(Fore.BLUE + " come in handy later on", 2)
+    P_STAT(Fore.BLUE + " continuing to explore.", 2)
     P_STAT(Fore.BLUE + " As there is nothing else left to check", 2)
     print(Fore.YELLOW + " Do you proceed or go back? (p or g)")
 
