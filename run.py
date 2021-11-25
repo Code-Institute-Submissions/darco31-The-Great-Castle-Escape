@@ -836,7 +836,7 @@ def bottom_floor():
 
             player_died()
             game_over()
-            play_again()
+            start()
 
         elif ANSWER in right_dir:
             clr_terminal()
@@ -846,7 +846,7 @@ def bottom_floor():
 
             player_died()
             game_over()
-            play_again()
+            start()
 
 # Player decides to return to the 3 paths
 
@@ -892,6 +892,7 @@ def outside():
 
     elif ANSWER in no_list:
         P_STAT(Fore.BLUE + " You decide to go back to the pathways", 2)
+        P_STAT(Fore.BLUE + " Climbing up you go back through the vent", 2)
         bottom_floor()
 
     ANSWER = input("=> ").lower().strip()
@@ -912,7 +913,7 @@ def outside():
         P_STAT(Fore.BLUE + " You are out, you run!!!", 2)
 
         you_escaped()
-        play_again()
+        start()
 
     elif ANSWER in climb:
         clr_terminal()
@@ -932,7 +933,7 @@ def outside():
 
         player_died()
         game_over()
-        play_again()
+        start()
 
 # Play again function called at end of game or when player dies
 
