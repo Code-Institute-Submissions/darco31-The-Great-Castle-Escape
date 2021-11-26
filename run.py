@@ -173,6 +173,7 @@ def try_door():
         P_STAT(Fore.GREEN + " You are too terrified to go on, shame", 1)
         P_STAT(Fore.GREEN + f" Enjoy the solitude and loneliness {P_NAME}", 2)
         game_over()
+        play_again()
 
 # The player can choose to search the drawer or leave it.
 
@@ -801,7 +802,7 @@ def bottom_floor():
 
             player_died()
             game_over()
-            start()
+            play_again()
 
         elif ANSWER in right_dir:
             clr_terminal()
@@ -811,7 +812,7 @@ def bottom_floor():
 
             player_died()
             game_over()
-            start()
+            play_again()
 
     elif ANSWER in left_dir:
         clr_terminal()
@@ -943,7 +944,7 @@ def outside():
 
         player_died()
         game_over()
-        start()
+        play_again()
 
 # Play again function called at end of game or when player dies
 
@@ -968,6 +969,7 @@ def play_again():
         P_STAT(Fore.YELLOW + f" Sorry to see you go {P_NAME}", 1)
         P_STAT(Fore.YELLOW + " Please do comeback again", 1)
         game_over()
+        print(" Hit the button to go again...")
 
 
 start()
