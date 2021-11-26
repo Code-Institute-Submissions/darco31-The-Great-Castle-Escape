@@ -40,7 +40,7 @@
 
 ## Main goals of the project
 
-* To design a fun interactive game for players to enjoy while improving my understanding of the Python language in applications.
+* To design a fun interactive game for players to enjoy while improving my understanding of the Python language in applications. The application has room for expansion, learning and improving my Object Oriented Design principles will allow me to use cleaner code blocks. The story can be expanded with a wide variety of choices for the player to pick from.
 
 #### [Back to content](#table-of-contents)
 
